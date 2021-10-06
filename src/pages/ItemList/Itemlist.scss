@@ -1,0 +1,104 @@
+.list {
+  display: flex;
+  justify-content: center;
+}
+
+.itemListPage {
+  width: 70%;
+  height: 100%;
+  margin-top: 10rem;
+
+  .title {
+    font-size: 2.8rem;
+    margin: 1.5rem 0;
+  }
+
+  .content {
+    font-size: 0.9rem;
+  }
+
+  .filter {
+    margin: 1rem 0;
+  }
+
+  .items {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    height: 100vh;
+
+    .item {
+      height: 65%;
+      width: 24.8%;
+
+      .itemImg {
+        position: relative;
+        height: 80%;
+        margin-bottom: 0.5rem;
+
+        // a {
+        //   overflow: hidden;
+        // }
+        a > img {
+          height: 100%;
+          width: 100%;
+        }
+
+        .imgInPrice {
+          position: absolute;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          left: 0;
+          bottom: 1rem;
+          height: 2rem;
+          background-color: antiquewhite;
+          padding: 0.3rem 0.5rem;
+        }
+
+        .itemPrice > p {
+          text-align: center;
+        }
+
+        i {
+          position: absolute;
+          bottom: 1rem;
+          right: 1rem;
+        }
+      }
+
+      .ex {
+        font-size: 0.7rem;
+        margin-bottom: 0.3rem;
+      }
+
+      .itemName > a {
+        font-size: 1rem;
+        text-decoration: none;
+        color: black;
+      }
+
+      .itemprice {
+        margin: 0.4rem 0;
+        font-weight: 600;
+        font-size: 0.8rem;
+      }
+
+      .itemColor {
+        margin: 0.5rem 0;
+
+        a {
+          text-decoration: none;
+          color: black;
+          margin-right: 0.1rem;
+        }
+      }
+
+      .newItem {
+        margin: 0.5rem 0;
+        font-size: 0.7rem;
+      }
+    }
+  }
+}
