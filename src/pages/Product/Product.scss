@@ -1,0 +1,164 @@
+.product {
+  display: flex;
+  padding: 1.8em;
+  // width: 60em;
+  max-width: 1200;
+
+  .content {
+    // width: 60em;
+
+    .mainImages {
+      display: flex;
+      // flex-wrap: wrap;
+      justify-content: center;
+      width: 100%;
+
+      img {
+        width: 29.75em;
+        margin-left: 0.25em;
+      }
+    }
+
+    .descriptiontBox {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 25em;
+      margin-top: 32px;
+      background-color: white;
+      padding: 0 145px;
+      line-height: 1.7em;
+
+      span {
+        font-size: 20px;
+        font-weight: 300;
+      }
+    }
+
+    .material {
+      margin-top: 40px;
+
+      span {
+        font-size: 13px;
+      }
+
+      .materialContent {
+        font-size: 11px;
+      }
+    }
+
+    .RemainingImgs {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 20px;
+
+      li {
+        width: 29.75em;
+        margin: 0em 0.25em 0 0;
+      }
+
+      img {
+        width: 29.75em;
+        margin: 0.25em 0.25em 0 0;
+      }
+    }
+  }
+
+  .side {
+    width: 26em;
+
+    .sideBox {
+      position: fixed;
+      width: 25em;
+      padding: 20px 28px 60px 60px;
+
+      .sideNameBox {
+        display: flex;
+        justify-content: space-between;
+
+        span {
+          content: '\f004';
+          z-index: 1;
+        }
+
+        i {
+          font-size: 24px;
+          color: red;
+        }
+
+        .productName {
+          font-size: 20px;
+          font-weight: 300;
+        }
+      }
+
+      .productPrice {
+        font-size: 20px;
+        margin-top: 25px;
+      }
+
+      .productColor {
+        margin: 25px 0;
+        font-size: 13px;
+      }
+
+      .ProductColorImg {
+        display: flex;
+        flex-wrap: wrap;
+        width: 23em;
+
+        img {
+          width: 3.625em;
+          height: 5.5em;
+          margin: 0 4px 4px 0;
+        }
+      }
+
+      .size {
+        margin-top: 70px;
+
+        button {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 15px;
+          width: 25.35em;
+          height: 3.6em;
+          background-color: white;
+          border: 1px solid #d0d0d0;
+
+          span {
+            font-size: 12px;
+
+            i {
+              font-size: 16px;
+            }
+          }
+        }
+      }
+      .order {
+        margin-top: 20px;
+
+        button {
+          width: 25.35em;
+          height: 3.6em;
+          padding: 0 140px;
+          background-color: #222222;
+          border: 1px solid;
+
+          i {
+            color: white;
+            margin-right: 5px;
+          }
+
+          span {
+            margin-left: 5px;
+            font-size: 13px;
+            color: white;
+          }
+        }
+      }
+    }
+  }
+}
