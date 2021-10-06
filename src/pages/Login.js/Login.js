@@ -1,6 +1,7 @@
 import React from 'react';
 import '../../styles/common.scss';
 import './Login.scss';
+
 class Login extends React.Component {
   constructor() {
     super();
@@ -9,12 +10,6 @@ class Login extends React.Component {
       password: '',
     };
   }
-
-  handleInput = e => {
-    this.setState({
-      [e.target.name]: e.target.value,
-    });
-  };
 
   goToMain = e => {
     const { email, password } = this.state;
@@ -41,20 +36,11 @@ class Login extends React.Component {
           <p className="or">또는</p>
           <div className="emailName">
             <p className="emailTitle">이메일</p>
-            <input
-              className="emailInput"
-              name="email"
-              onchange={this.handleInput}
-            />
+            <input className="emailInput" name="email" />
           </div>
           <div className="passwordInput">
             <p className="passwordTitle">비밀번호</p>
-            <input
-              type="password"
-              className="passwordInput"
-              name="password"
-              onchange={this.handleInput}
-            />
+            <input type="password" className="passwordInput" name="password" />
           </div>
           <div className="loginState">
             <div className="checkBox">
@@ -69,7 +55,7 @@ class Login extends React.Component {
           <button className="goToSignUp" onClick={this.goToSignUp}>
             멤버십 가입하기
           </button>
-          <a className="membership" href="#">
+          <a href="1" className="membership">
             멤버십 정보
           </a>
         </div>
