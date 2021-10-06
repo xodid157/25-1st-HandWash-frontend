@@ -7,5 +7,8 @@
   },
   "javascript.format.enable": false,
   "eslint.alwaysShowStatus": true,
-  "files.autoSave": "afterDelay"
+  "files.autoSave": "afterDelay",
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  }
 }
