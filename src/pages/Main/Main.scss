@@ -1,2 +1,55 @@
-.main {
+@import '../../styles/variables.scss';
+
+main {
+  @include flexCenter;
+
+  h3 {
+    padding: 1.5em 0;
+    font-size: 1.5em;
+    text-align: center;
+  }
+
+  .trendImgContent {
+    @include flexCenter;
+    margin: 0 1.5em;
+
+    .fa-arrow-left {
+      margin-right: 1.2em;
+    }
+
+    .fa-arrow-right {
+      margin-left: 1.2em;
+    }
+
+    .trendImg {
+      display: flex;
+
+      li {
+        img {
+          margin: 0 0.55em;
+          border-radius: 50%;
+        }
+
+        .categoryTitleContent {
+          display: flex;
+          flex-direction: column;
+          margin: 0.5em 0;
+          text-align: center;
+
+          p {
+            font-size: 0.7em;
+          }
+
+          .category {
+            margin-bottom: 0.4em;
+            color: #707070;
+          }
+        }
+      }
+    }
+  }
+
+  .campaignTeaser {
+    position: relative;
+  }
 }
