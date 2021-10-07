@@ -4,21 +4,74 @@
 }
 
 .itemListPage {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10rem;
   width: 70%;
   height: 100%;
-  margin-top: 10rem;
 
   .title {
-    font-size: 2.8rem;
     margin: 1.5rem 0;
+    font-size: 2.8rem;
   }
 
   .content {
     font-size: 0.9rem;
   }
 
-  .filter {
+  .navFilter {
+    display: flex;
+    justify-content: space-between;
     margin: 1rem 0;
+
+    .navi {
+      margin: 0;
+      padding: 0;
+    }
+
+    .navi > li {
+      margin-right: 1rem;
+      float: left;
+    }
+    .navi > li > a {
+      padding: 10px 50px;
+    }
+
+    .navi li a {
+      display: block;
+      text-align: center;
+      padding: 8px;
+      color: #000000;
+      text-decoration: none;
+    }
+
+    li a {
+      display: block;
+      padding: 10px;
+      text-decoration: none;
+      color: #000000;
+      text-align: center;
+    }
+
+    .navi li ul {
+      display: none;
+    }
+
+    .navi li:hover ul {
+      display: block;
+    }
+    .navFilterRight {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 20%;
+      font-size: 0.8rem;
+
+      a {
+        text-decoration: none;
+        color: black;
+      }
+    }
   }
 
   .items {
@@ -26,23 +79,21 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
-    height: 100vh;
+    height: 100%;
 
     .item {
-      height: 65%;
+      display: flex;
+      flex-direction: column;
+      height: 60%;
       width: 24.8%;
 
       .itemImg {
         position: relative;
-        height: 80%;
         margin-bottom: 0.5rem;
 
-        // a {
-        //   overflow: hidden;
-        // }
         a > img {
-          height: 100%;
           width: 100%;
+          height: auto;
         }
 
         .imgInPrice {
@@ -52,22 +103,26 @@
           justify-content: center;
           left: 0;
           bottom: 1rem;
-          height: 2rem;
           background-color: antiquewhite;
-          padding: 0.3rem 0.5rem;
-        }
-
-        .itemPrice > p {
-          text-align: center;
+          padding: 0.4rem 0.3rem;
+          font-size: 0.8rem;
         }
 
         i {
           position: absolute;
           bottom: 1rem;
           right: 1rem;
+          color: white;
+          font-size: 1.5rem;
+        }
+
+        i:hover {
+          color: red;
         }
       }
-
+      .itemText {
+        padding-bottom: 1rem;
+      }
       .ex {
         font-size: 0.7rem;
         margin-bottom: 0.3rem;
@@ -90,8 +145,8 @@
 
         a {
           text-decoration: none;
-          color: black;
           margin-right: 0.1rem;
+          color: black;
         }
       }
 
