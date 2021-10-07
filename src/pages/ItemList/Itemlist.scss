@@ -1,6 +1,7 @@
 .list {
   display: flex;
   justify-content: center;
+  height: 2000px;
 }
 
 .itemListPage {
@@ -22,6 +23,8 @@
   .navFilter {
     display: flex;
     justify-content: space-between;
+    position: sticky;
+    top: 0;
     margin: 1rem 0;
 
     .navi {

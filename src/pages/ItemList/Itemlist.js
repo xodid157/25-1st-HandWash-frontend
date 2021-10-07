@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Itemlist.scss';
 
 class Item extends React.Component {
@@ -106,10 +107,9 @@ class ItemList extends React.Component {
           <ul className="items">
             <li className="item">
               <div className="itemImg">
-                {/* 나중에 Link 태그로 변경 예정 */}
-                <a href="#">
-                  <img src="images/1111.jpeg" />
-                </a>
+                <Link to="#">
+                  <img src="images/1111.jpeg" alt="itemimage" />
+                </Link>
                 <div className="imgInPrice">
                   <p>W77,000</p>
                 </div>
@@ -118,119 +118,13 @@ class ItemList extends React.Component {
               <div className="itemText">
                 <div className="ex">Conscious</div>
                 <div className="itemName">
-                  {/* 나중에 Link 태그로 변경 예정 */}
-                  <a href="#">리브니트 울 블랜드 드레스</a>
+                  <Link to="#">리브니트 울 블랜드 드레스</Link>
                 </div>
                 <div className="itemprice">W77,000</div>
                 <div className="itemColor">
-                  {/* 나중에 Link 태그로 변경 예정 */}
-                  <a href="#">x</a>
-                  <a href="#">x</a>
-                  <a href="#">x</a>
-                </div>
-                <div className="newItem">신제품</div>
-              </div>
-            </li>
-            <li className="item">
-              <div className="itemImg">
-                <a href="#">
-                  <img src="images/1111.jpeg" />
-                </a>
-                <div className="imgInPrice">
-                  <p>W77,000</p>
-                </div>
-                <i class="far fa-heart fa-2x"></i>
-              </div>
-              <div className="itemText">
-                <div className="ex">Conscious</div>
-                <div className="itemName">
-                  {/* 나중에 Link 태그로 변경 예정 */}
-                  <a href="#">리브니트 울 블랜드 드레스</a>
-                </div>
-                <div className="itemprice">W77,000</div>
-                <div className="itemColor">
-                  {/* 나중에 Link 태그로 변경 예정 */}
-                  <a href="#">x</a>
-                  <a href="#">x</a>
-                  <a href="#">x</a>
-                </div>
-                <div className="newItem">신제품</div>
-              </div>
-            </li>
-            <li className="item">
-              <div className="itemImg">
-                <a href="#">
-                  <img src="images/1111.jpeg" />
-                </a>
-                <div className="imgInPrice">
-                  <p>W77,000</p>
-                </div>
-                <i class="far fa-heart fa-2x"></i>
-              </div>
-              <div className="itemText">
-                <div className="ex">Conscious</div>
-                <div className="itemName">
-                  {/* 나중에 Link 태그로 변경 예정 */}
-                  <a href="#">리브니트 울 블랜드 드레스</a>
-                </div>
-                <div className="itemprice">W77,000</div>
-                <div className="itemColor">
-                  {/* 나중에 Link 태그로 변경 예정 */}
-                  <a href="#">x</a>
-                  <a href="#">x</a>
-                  <a href="#">x</a>
-                </div>
-                <div className="newItem">신제품</div>
-              </div>
-            </li>
-            <li className="item">
-              <div className="itemImg">
-                <a href="#">
-                  <img src="images/1111.jpeg" />
-                </a>
-                <div className="imgInPrice">
-                  <p>W77,000</p>
-                </div>
-                <i class="far fa-heart fa-2x"></i>
-              </div>
-              <div className="itemText">
-                <div className="ex">Conscious</div>
-                <div className="itemName">
-                  {/* 나중에 Link 태그로 변경 예정 */}
-                  <a href="#">리브니트 울 블랜드 드레스</a>
-                </div>
-                <div className="itemprice">W77,000</div>
-                <div className="itemColor">
-                  {/* 나중에 Link 태그로 변경 예정 */}
-                  <a href="#">x</a>
-                  <a href="#">x</a>
-                  <a href="#">x</a>
-                </div>
-                <div className="newItem">신제품</div>
-              </div>
-            </li>
-            <li className="item">
-              <div className="itemImg">
-                <a href="#">
-                  <img src="images/1111.jpeg" />
-                </a>
-                <div className="imgInPrice">
-                  <p>W77,000</p>
-                </div>
-                <i class="far fa-heart fa-2x"></i>
-              </div>
-              <div className="itemText">
-                <div className="ex">Conscious</div>
-                <div className="itemName">
-                  {/* 나중에 Link 태그로 변경 예정 */}
-                  <a href="#">리브니트 울 블랜드 드레스</a>
-                </div>
-                <div className="itemprice">W77,000</div>
-                <div className="itemColor">
-                  {/* 나중에 Link 태그로 변경 예정 */}
-                  <a href="#">x</a>
-                  <a href="#">x</a>
-                  <a href="#">x</a>
+                  <Link to="#">x</Link>
+                  <Link to="#">x</Link>
+                  <Link to="#">x</Link>
                 </div>
                 <div className="newItem">신제품</div>
               </div>
