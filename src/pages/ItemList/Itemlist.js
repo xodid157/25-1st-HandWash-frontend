@@ -109,20 +109,20 @@ class ItemList extends React.Component {
               <div className="navFilterRight">
                 <div className="itemListNum">1234아이템</div>
                 <div>
-                  <a href="#">모델</a>
+                  <Link to="#">모델</Link>
                 </div>
                 <div>
-                  <a href="#">제품</a>
+                  <Link to="#">제품</Link>
                 </div>
                 <div>
-                  <a href="#">
+                  <Link to="#">
                     <i class="far fa-square"></i>
-                  </a>
+                  </Link>
                 </div>
                 <div>
-                  <a href="#">
+                  <Link to="#">
                     <i class="fas fa-th-large"></i>
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
