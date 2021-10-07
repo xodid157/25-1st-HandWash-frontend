@@ -1,0 +1,214 @@
+.signUp {
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .signUpContainer {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 700px;
+    width: 500px;
+    padding: 3em;
+    border: 1px solid #faf9f8;
+
+    .outButton {
+      display: flex;
+      position: absolute;
+      top: 1.2em;
+      right: 1.2em;
+      justify-content: flex-end;
+      border: 0;
+      outline: 0;
+      background-color: transparent;
+      cursor: pointer;
+
+      i {
+        font-size: 2.5em;
+      }
+    }
+    .loginTitle {
+      display: flex;
+      justify-content: center;
+      align-content: center;
+      font-size: 1.25em;
+      padding: 0.8em;
+    }
+
+    .loginSubTitle {
+      display: flex; //일단 그냥 쓴거
+      justify-content: center;
+      margin-bottom: 2em;
+      font-size: 0.85em;
+    }
+
+    .kakaoLogin {
+      width: 100%;
+      padding: 1.4em 9em;
+      margin: 1em 0;
+      border: 0;
+      outline: none;
+      background-color: #fee500;
+      cursor: pointer;
+    }
+
+    .or {
+      margin: 1em 0;
+      font-size: 0.8em;
+    }
+
+    .emailName {
+      width: 100%;
+      margin: 0.3em 0;
+      .emailTitle {
+        margin: 3em 0;
+        font-size: 0.81em;
+
+        .star {
+          color: red;
+        }
+      }
+
+      .emailInput {
+        width: 100%;
+        padding: 0.88em 1em;
+        border: 0.1em solid #d0d0d0;
+      }
+    }
+
+    .passwordName {
+      width: 100%;
+      margin: 0.3em 0;
+
+      .passwordTitle {
+        margin: 0.8em 0;
+        font-size: 0.81em;
+
+        .star {
+          color: red;
+        }
+      }
+      .passwordInput {
+        width: 100%;
+        padding: 0.88em 1em;
+        border: 0.1em solid #d0d0d0;
+      }
+    }
+
+    .birthName {
+      width: 100%;
+      margin: 0.3em 0;
+
+      .birthTitle {
+        margin: 0.8em 0;
+        font-size: 0.81em;
+
+        .star {
+          color: red;
+        }
+      }
+      .birthInput {
+        width: 100%;
+        padding: 0.88em 1em;
+        border: 0.1em solid #d0d0d0;
+      }
+    }
+
+    .birthCoupon {
+      margin: 0.8em 0;
+      font-size: 0.81em;
+    }
+
+    .addInformation {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      padding: 0.88em 1em;
+      border: 1px solid #d0d0d0;
+      background-color: transparent;
+      cursor: pointer;
+    }
+
+    .agreementList {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      margin: 1.5em;
+
+      p {
+        font-size: 1em;
+        margin: 0.2em;
+        padding: 0.2em 0;
+      }
+
+      .agreementCheck {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .terms {
+          color: inherit;
+          font-size: 0.81em;
+        }
+
+        .checkBox {
+          display: inline;
+          width: 20em;
+          margin: 0.4em 0;
+
+          span {
+            margin-left: 0.3em;
+            font-size: 0.81em;
+
+            .star {
+              color: red;
+            }
+          }
+        }
+      }
+    }
+    .footer {
+      font-size: 0.81em;
+      padding: 1em 0;
+
+      .membership {
+        color: #222;
+        margin: 0.3em;
+        font-size: 1em;
+        cursor: pointer;
+      }
+
+      .membership:hover {
+        text-decoration: underline;
+      }
+    }
+
+    .signUpButton {
+      width: 100%;
+      padding: 1em;
+      border: 0;
+      background-color: #222;
+
+      .signButtonSubmit {
+        border: 0;
+        // outline: none;
+        font-size: 0.81em;
+        color: white;
+        cursor: pointer;
+      }
+      .signButtonSubmit:hover {
+        opacity: 0.7;
+      }
+    }
+
+    .goToLogin {
+      margin-top: 1em;
+      color: inherit;
+      font-size: 0.81em;
+    }
+  }
+}
+//패딩,마진,폰트 사이즈만  em  가로세로 %

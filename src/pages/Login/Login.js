@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../../styles/common.scss';
 import './Login.scss';
 
@@ -35,11 +36,15 @@ class Login extends React.Component {
           </button>
           <p className="or">또는</p>
           <div className="emailName">
-            <p className="emailTitle">이메일</p>
+            <p className="emailTitle">
+              이메일<span>&#42;</span>
+            </p>
             <input className="emailInput" name="email" />
           </div>
           <div className="passwordInput">
-            <p className="passwordTitle">비밀번호</p>
+            <p className="passwordTitle">
+              비밀번호<span>&#42;</span>
+            </p>
             <input type="password" className="passwordInput" name="password" />
           </div>
           <div className="loginState">
@@ -49,15 +54,19 @@ class Login extends React.Component {
             </div>
             <span className="lostPassword">비밀번호를 잊으셨나요?</span>
           </div>
-          <button className="loginButton" onClick={this.goToMain}>
-            <p className="loginButtonSubmit">로그인</p>
-          </button>
-          <button className="goToSignUp" onClick={this.goToSignUp}>
-            멤버십 가입하기
-          </button>
-          <a href="1" className="membership">
+          <div className="mainButton">
+            <Link to="/main">
+              <button className="loginButton">
+                <p>로그인</p>
+              </button>
+            </Link>
+            <Link to="/signup">
+              <button className="goToSignUp">멤버십 가입하기</button>
+            </Link>
+          </div>
+          <Link to="#" className="membership">
             멤버십 정보
-          </a>
+          </Link>
         </div>
       </div>
     );

@@ -3,6 +3,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: rgb(250, 249, 248);
 
   .loginContainer {
     position: relative;
@@ -65,6 +66,10 @@
       .emailTitle {
         margin: 0.8em 0;
         font-size: 0.9em;
+
+        span {
+          color: red;
+        }
       }
 
       .emailInput {
@@ -76,9 +81,14 @@
 
     .passwordInput {
       width: 100%;
+
       .passwordTitle {
         margin: 0.8em 0;
         font-size: 0.9em;
+
+        span {
+          color: red;
+        }
       }
       .passwordInput {
         width: 100%;
@@ -109,23 +119,24 @@
         text-decoration: underline;
       }
     }
+    .mainButton {
+      .loginButton {
+        width: 100%;
+        padding: 1em 9em;
+        margin: 1em 0;
+        border: 0;
+        outline: none;
+        background-color: #222;
+        cursor: pointer;
 
-    .loginButton {
-      width: 100%;
-      padding: 1em 9em;
-      margin: 1em 0;
-      border: 0;
-      outline: none;
-      background-color: #222;
-      cursor: pointer;
-
-      .loginButtonSubmit {
-        color: white;
-        padding: 0.25em;
+        p {
+          color: white;
+          padding: 0.25em;
+        }
       }
-    }
-    .loginButton:hover {
-      opacity: 0.7;
+      .loginButton:hover {
+        opacity: 0.7;
+      }
     }
     .goToSignUp {
       width: 100%;
