@@ -3,7 +3,7 @@
 main {
   @include flexCenter;
 
-  h3 {
+  .trendTitle {
     padding: 1.5em 0;
     font-size: 1.5em;
     text-align: center;
@@ -50,6 +50,33 @@ main {
   }
 
   .campaignTeaser {
-    position: relative;
+    margin: 1.5em 0;
+
+    .campaignContent {
+      @include flexCenter;
+      flex-direction: column;
+      position: relative;
+      text-align: center;
+      color: white;
+
+      div {
+        position: absolute;
+
+        h3 {
+          font-size: 2.65em;
+          margin-bottom: 0.35em;
+        }
+        a {
+          display: inline-block;
+          margin-top: 2em;
+          padding: 1em;
+          font-size: 0.7em;
+          text-decoration: none;
+          letter-spacing: 1px;
+          color: #222;
+          background: white;
+        }
+      }
+    }
   }
 }
