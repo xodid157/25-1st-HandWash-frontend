@@ -1,31 +1,35 @@
 .list {
   display: flex;
   justify-content: center;
-  height: 2000px;
 }
 
 .itemListPage {
   display: flex;
   flex-direction: column;
-  margin-top: 10rem;
   width: 70%;
-  height: 100%;
+  margin-top: 10rem;
 
   .title {
-    margin: 1.5rem 0;
+    margin: 0.9rem 0;
     font-size: 2.8rem;
   }
 
   .content {
+    margin-bottom: 1rem;
     font-size: 0.9rem;
+  }
+
+  .bigfilter {
+    position: relative;
   }
 
   .navFilter {
     display: flex;
     justify-content: space-between;
-    position: sticky;
-    top: 0;
-    margin: 1rem 0;
+    position: absolute;
+    top: 1rem;
+    width: 100%;
+    z-index: 1000;
 
     .navi {
       margin: 0;
@@ -33,8 +37,8 @@
     }
 
     .navi > li {
-      margin-right: 1rem;
       float: left;
+      margin-right: 1rem;
     }
     .navi > li > a {
       padding: 10px 50px;
@@ -42,17 +46,17 @@
 
     .navi li a {
       display: block;
-      text-align: center;
       padding: 8px;
       color: #000000;
+      text-align: left;
       text-decoration: none;
     }
 
     li a {
       display: block;
       padding: 10px;
-      text-decoration: none;
       color: #000000;
+      text-decoration: none;
       text-align: center;
     }
 
@@ -61,19 +65,28 @@
     }
 
     .navi li:hover ul {
+      background-color: antiquewhite;
       display: block;
     }
-    .navFilterRight {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      width: 20%;
-      font-size: 0.8rem;
+  }
+  .navFilterRight {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    position: absolute;
+    width: 100%;
+    padding-top: 0.5rem;
+    font-size: 0.8rem;
+    z-index: -1;
 
-      a {
-        text-decoration: none;
-        color: black;
-      }
+    a {
+      padding-left: 1rem;
+      text-decoration: none;
+      color: black;
+    }
+
+    i {
+      font-size: 1.2rem;
     }
   }
 
@@ -82,13 +95,15 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
-    height: 100%;
+    position: absolute;
+    top: 4rem;
+    z-index: 0;
 
     .item {
       display: flex;
       flex-direction: column;
-      height: 60%;
       width: 24.8%;
+      height: 60%;
 
       .itemImg {
         position: relative;
@@ -100,14 +115,14 @@
         }
 
         .imgInPrice {
-          position: absolute;
           display: flex;
           align-items: center;
           justify-content: center;
+          position: absolute;
           left: 0;
           bottom: 1rem;
-          background-color: antiquewhite;
           padding: 0.4rem 0.3rem;
+          background-color: antiquewhite;
           font-size: 0.8rem;
         }
 
@@ -127,8 +142,8 @@
         padding-bottom: 1rem;
       }
       .ex {
-        font-size: 0.7rem;
         margin-bottom: 0.3rem;
+        font-size: 0.7rem;
       }
 
       .itemName > a {
@@ -145,11 +160,19 @@
 
       .itemColor {
         margin: 0.5rem 0;
+        display: flex;
 
         a {
-          text-decoration: none;
           margin-right: 0.1rem;
+          text-decoration: none;
           color: black;
+
+          div {
+            width: 0.5rem;
+            height: 0.5rem;
+            border-radius: 50%;
+            background-color: cadetblue;
+          }
         }
       }
 
