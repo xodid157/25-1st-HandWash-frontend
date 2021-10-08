@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Main.scss';
 
 class Main extends React.Component {
@@ -108,7 +109,7 @@ class Main extends React.Component {
                     만나보세요.
                   </p>
 
-                  <a href="">쇼핑하기</a>
+                  <Link to="/">쇼핑하기</Link>
                 </div>
               </div>
             </div>
@@ -124,7 +125,7 @@ class Main extends React.Component {
                     Lee Dabeen / Jeon Taeyang / Cho Yunhui
                   </p>
 
-                  <a href="">지금 쇼핑하기</a>
+                  <Link to="/">지금 쇼핑하기</Link>
                 </div>
               </div>
             </div>
@@ -139,7 +140,7 @@ class Main extends React.Component {
                 멤버십 친구 초대 시 50 포인트 증정&#x0026;최신 소식을 가장 먼저
                 만나보세요!
               </p>
-              <a href="">로그인</a>
+              <Link to="/">로그인</Link>
             </div>
           </section>
         </div>
@@ -152,9 +153,9 @@ class Main extends React.Component {
 
           <div className="magazinCardList">
             <div className="magazinCard">
-              <a href="">
+              <Link to="/">
                 <img src={'/images/magazin_card_img.jpeg'} alt="" />
-              </a>
+              </Link>
               <div className="magazinCardContents">
                 <p className="vignette">INSIDE H&#x0026;W</p>
                 <p className="heading">공개: Edition by Jetom</p>
@@ -165,9 +166,9 @@ class Main extends React.Component {
               </div>
             </div>
             <div className="magazinCard">
-              <a href="">
+              <Link to="/">
                 <img src={'/images/magazin_card_img.jpeg'} alt="" />
-              </a>
+              </Link>
               <div className="magazinCardContents">
                 <p className="vignette">INSIDE H&#x0026;W</p>
                 <p className="heading">공개: Edition by Jetom</p>
@@ -178,9 +179,9 @@ class Main extends React.Component {
               </div>
             </div>
             <div className="magazinCard">
-              <a href="">
+              <Link to="/">
                 <img src={'/images/magazin_card_img.jpeg'} alt="" />
-              </a>
+              </Link>
               <div className="magazinCardContents">
                 <p className="vignette">INSIDE H&#x0026;W</p>
                 <p className="heading">공개: Edition by Jetom</p>
