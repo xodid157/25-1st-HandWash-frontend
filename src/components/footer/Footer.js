@@ -7,19 +7,19 @@ class Footer extends Component {
     return (
       <footer>
         <div className="footerIcons">
-          <a href="https://velog.io/@jetom" target="_blank">
+          <a href="https://velog.io/@maxkmh" target="_blank">
             <i class="fas fa-dumbbell"></i>
           </a>
-          <a href="https://velog.io/@jetom" target="_blank">
+          <a href="https://velog.io/@gur0601" target="_blank">
             <i class="fas fa-drumstick-bite"></i>
           </a>
           <a href="https://velog.io/@jetom" target="_blank">
             <i class="fas fa-paw"></i>
           </a>
-          <a href="https://velog.io/@jetom" target="_blank">
+          <a href="https://velog.io/@thisisemptyyy" target="_blank">
             <i class="fas fa-laptop"></i>
           </a>
-          <a href="https://velog.io/@jetom" target="_blank">
+          <a href="https://velog.io/@xodid157" target="_blank">
             <i class="fas fa-sun"></i>
           </a>
           <a href="https://velog.io/@jetom" target="_blank">
