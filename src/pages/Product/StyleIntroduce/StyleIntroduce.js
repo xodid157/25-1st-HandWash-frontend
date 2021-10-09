@@ -1,4 +1,5 @@
 import React from 'react';
+import './StyleIntroduce.scss';
 
 class StyleIntroduce extends React.Component {
   render() {

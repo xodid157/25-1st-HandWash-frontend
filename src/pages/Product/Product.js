@@ -8,12 +8,31 @@ import Recommendations from './Recommendations/Recommendations';
 import './Product.scss';
 
 class Product extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      product: [],
+    };
+  }
+
+  componentDidMount() {
+    fetch('/data/Product/side.json', {
+      method: 'GET',
+    })
+      .then(res => res.json())
+      .then(result => {
+        this.setState({
+          product: result,
+        });
+      });
+  }
+
   render() {
     return (
       <main className="product">
-        <section class="productMain">
-          <Content />
-          <Side />
+        <section className="productMain">
+          <Content product={this.state.product} />
+          <Side product={this.state.product} />
         </section>
         <section>
           <ContentInfo />

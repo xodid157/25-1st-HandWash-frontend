@@ -1,43 +1,28 @@
 import React from 'react';
-
+import './Side.scss';
 class Side extends React.Component {
   render() {
+    const { product } = this.props;
+
     return (
       <article className="side">
         <div className="sideBox">
           <div className="sideNameBox">
-            <span className="productName">코튼 조거 팬츠</span>
-            {/* <i class="far fa-heart"></i> */}
-            <i class="fas fa-heart"></i>
+            <span className="productName">{product.name}</span>
+            <i className="fas fa-heart"></i>
           </div>
           <div className="productPrice">
-            <span>₩ 39,900</span>
+            <span>₩ {product.price} </span>
           </div>
           <div className="productColor">
-            <span>블랙</span>
+            <span>{product.color}</span>
           </div>
-          <ul className="ProductColorImg">
-            <li>
-              <img alt="colors" src="./images/Product/hmgoepprod (2).jpeg" />
-            </li>
-            <li>
-              <img alt="colors" src="./images/Product/hmgoepprod (2).jpeg" />
-            </li>
-            <li>
-              <img alt="colors" src="./images/Product/hmgoepprod (2).jpeg" />
-            </li>
-            <li>
-              <img alt="colors" src="./images/Product/hmgoepprod (2).jpeg" />
-            </li>
-            <li>
-              <img alt="colors" src="./images/Product/hmgoepprod (2).jpeg" />
-            </li>
-            <li>
-              <img alt="colors" src="./images/Product/hmgoepprod (2).jpeg" />
-            </li>
-            <li>
-              <img alt="colors" src="./images/Product/hmgoepprod (2).jpeg" />
-            </li>
+          <ul className="productColorImg">
+            {product.images?.map(img => (
+              <li key={img.id}>
+                <img alt="colors" src={img.url} />
+              </li>
+            ))}
           </ul>
           <div className="size">
             <button type="button">
@@ -47,7 +32,7 @@ class Side extends React.Component {
           </div>
           <div className="order">
             <button type="button">
-              <i class="fas fa-shopping-bag"></i>
+              <i className="fas fa-shopping-bag"></i>
               <span>담기</span>
             </button>
           </div>

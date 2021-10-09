@@ -1,0 +1,45 @@
+.styleIntroduce {
+  display: flex;
+  margin-top: 5em;
+
+  .hwStyle {
+    display: flex;
+    justify-content: center;
+    padding: 4em 2em;
+    background-color: white;
+
+    .introduceText {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      width: 30%;
+      padding: 3em 0;
+
+      p {
+        padding: 0.5em 0;
+        font-size: 1.75em;
+      }
+
+      span {
+        font-size: 0.813em;
+      }
+    }
+
+    .introduceInstar {
+      ul {
+        display: flex;
+        justify-content: flex-end;
+
+        li {
+          width: 29%;
+          padding: 0 0.5em;
+
+          img {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

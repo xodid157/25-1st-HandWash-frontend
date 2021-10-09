@@ -1,4 +1,5 @@
 import React from 'react';
+import './ContentInfo.scss';
 
 class ContentInfo extends React.Component {
   render() {
