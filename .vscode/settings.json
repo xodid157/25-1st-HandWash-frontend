@@ -7,5 +7,14 @@
   },
   "javascript.format.enable": false,
   "eslint.alwaysShowStatus": true,
-  "files.autoSave": "afterDelay"
+  "files.autoSave": "afterDelay",
+  "[json]": {
+    "editor.quickSuggestions": {
+      "strings": true
+    },
+    "editor.suggest.insertMode": "replace"
+  },
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  }
 }
