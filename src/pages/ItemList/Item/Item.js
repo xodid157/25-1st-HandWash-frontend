@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Colorchip from './Colorchip';
+import Colorchip from './ColorChip/Colorchip';
+import './Item.scss';
 
 class Item extends React.Component {
   render() {

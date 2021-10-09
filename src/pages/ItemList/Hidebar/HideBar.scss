@@ -1,0 +1,55 @@
+.hideBar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 400px;
+  height: 100%;
+  padding-top: 3rem;
+  background-color: rgb(255, 243, 240);
+  z-index: 9999;
+  transition: right 0.5s ease;
+
+  ul {
+    width: 100%;
+
+    .title {
+      margin-bottom: 3rem;
+      font-size: 1.1rem;
+      text-align: center;
+    }
+
+    li {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.1rem 1rem;
+      width: 95%;
+
+      span {
+        margin-bottom: 3.3rem;
+        font-size: 1.1rem;
+        font-weight: 400;
+      }
+
+      &:hover {
+        color: red;
+        cursor: pointer;
+      }
+
+      span {
+        font-size: 0.8rem;
+        font-weight: 400;
+      }
+      i {
+        font-weight: 50;
+        font-size: 1.1rem;
+      }
+    }
+  }
+}
+
+.showBar {
+  right: -400px;
+}

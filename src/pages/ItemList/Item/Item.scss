@@ -1,0 +1,71 @@
+.item {
+  display: flex;
+  flex-direction: column;
+  width: 24.8%;
+  height: 60%;
+
+  .itemImg {
+    position: relative;
+    margin-bottom: 0.5rem;
+
+    a > img {
+      width: 100%;
+      height: auto;
+    }
+
+    .imgInPrice {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      left: 0;
+      bottom: 1rem;
+      padding: 0.4rem 0.3rem;
+      background-color: antiquewhite;
+      font-size: 0.8rem;
+    }
+
+    i {
+      position: absolute;
+      bottom: 1rem;
+      right: 1rem;
+      color: white;
+      font-size: 1.5rem;
+    }
+
+    i:hover {
+      color: red;
+      cursor: pointer;
+    }
+  }
+  .itemText {
+    padding-bottom: 1rem;
+  }
+  .ex {
+    margin-bottom: 0.3rem;
+    font-size: 0.7rem;
+  }
+
+  .itemName > a {
+    font-size: 1rem;
+    text-decoration: none;
+    color: black;
+  }
+
+  .itemprice {
+    margin: 0.4rem 0;
+    font-weight: 600;
+    font-size: 0.8rem;
+  }
+
+  .itemColor {
+    display: flex;
+    height: 0.5rem;
+    margin: 0.5rem 0;
+  }
+
+  .newItem {
+    margin: 0.5rem 0;
+    font-size: 0.6rem;
+  }
+}

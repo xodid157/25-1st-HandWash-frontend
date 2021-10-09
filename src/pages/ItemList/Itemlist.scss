@@ -1,6 +1,7 @@
 .list {
   display: flex;
   justify-content: center;
+  position: relative;
 }
 
 .itemListPage {
@@ -23,39 +24,22 @@
   .navFilter {
     display: flex;
     justify-content: space-between;
+    flex-direction: column;
     position: absolute;
     top: 17.5rem;
     width: 70%;
     z-index: 1000;
 
-    .navi > li {
-      float: left;
-      margin-right: 1rem;
-    }
+    .navi {
+      a {
+        text-decoration: none;
+        color: black;
+        font-size: 0.9rem;
+      }
 
-    .navi li a {
-      display: block;
-      width: 7rem;
-      color: #000000;
-      text-decoration: none;
-    }
-    .navi ul li a {
-      width: 5rem;
-      padding: 1rem 0.7rem;
-      margin-top: 1rem;
-    }
-
-    .navi ul li:hover {
-      background-color: antiquewhite;
-    }
-
-    .navi li ul {
-      display: none;
-    }
-
-    .navi li:hover ul {
-      background-color: white;
-      display: block;
+      .hii {
+        cursor: pointer;
+      }
     }
   }
 
@@ -86,102 +70,12 @@
     flex-wrap: wrap;
     justify-content: space-between;
     margin-top: 3.5rem;
-
-    .item {
-      display: flex;
-      flex-direction: column;
-      width: 24.8%;
-      height: 60%;
-
-      .itemImg {
-        position: relative;
-        margin-bottom: 0.5rem;
-
-        a > img {
-          width: 100%;
-          height: auto;
-        }
-
-        .imgInPrice {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          position: absolute;
-          left: 0;
-          bottom: 1rem;
-          padding: 0.4rem 0.3rem;
-          background-color: antiquewhite;
-          font-size: 0.8rem;
-        }
-
-        i {
-          position: absolute;
-          bottom: 1rem;
-          right: 1rem;
-          color: white;
-          font-size: 1.5rem;
-        }
-
-        i:hover {
-          color: red;
-        }
-      }
-      .itemText {
-        padding-bottom: 1rem;
-      }
-      .ex {
-        margin-bottom: 0.3rem;
-        font-size: 0.7rem;
-      }
-
-      .itemName > a {
-        font-size: 1rem;
-        text-decoration: none;
-        color: black;
-      }
-
-      .itemprice {
-        margin: 0.4rem 0;
-        font-weight: 600;
-        font-size: 0.8rem;
-      }
-
-      .itemColor {
-        margin: 0.5rem 0;
-        display: flex;
-
-        a {
-          margin-right: 0.1rem;
-
-          div {
-            width: 0.5rem;
-            height: 0.5rem;
-            border-radius: 50%;
-
-            &.red {
-              background-color: red;
-            }
-
-            &.blue {
-              background-color: blue;
-            }
-          }
-        }
-      }
-
-      .newItem {
-        margin: 0.5rem 0;
-        font-size: 0.6rem;
-      }
-    }
+    margin-bottom: 10rem;
   }
   .showMoreBtn {
     position: absolute;
-    left: 39%;
-    bottom: -40rem;
-    height: 2.9rem;
-    width: 20rem;
-    margin-bottom: 5rem;
+    left: 43%;
+    padding: 1.5% 4%;
     color: white;
     border-style: none;
     background-color: rgba(0, 0, 0, 0.877);

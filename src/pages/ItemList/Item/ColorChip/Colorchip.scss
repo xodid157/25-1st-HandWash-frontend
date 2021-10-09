@@ -1,0 +1,19 @@
+.itemColor {
+  a {
+    margin-right: 0.1rem;
+
+    div {
+      width: 0.5rem;
+      height: 0.5rem;
+      border-radius: 50%;
+
+      &.red {
+        background-color: red;
+      }
+
+      &.blue {
+        background-color: blue;
+      }
+    }
+  }
+}

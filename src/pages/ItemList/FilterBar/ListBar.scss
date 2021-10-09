@@ -1,0 +1,33 @@
+.listBar {
+  float: left;
+  margin-right: 0.7rem;
+  font-size: 0.9rem;
+
+  .bigListName {
+    display: block;
+    width: 5rem;
+    color: #000000;
+    text-decoration: none;
+  }
+
+  .sListWrapper {
+    display: none;
+
+    .sListName {
+      width: 5rem;
+      padding: 1rem 0.7rem;
+      margin-top: 1rem;
+
+      &:hover {
+        background-color: antiquewhite;
+      }
+    }
+  }
+
+  &:hover {
+    .sListWrapper {
+      background-color: white;
+      display: block;
+    }
+  }
+}
