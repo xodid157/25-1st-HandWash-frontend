@@ -1,11 +1,49 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Magazin from '../../components/Magazin/Magazin';
+import Trend from '../../components/Trend/Trend';
 import './Main.scss';
 import '../../components/Magazin/Magazin.scss';
+import Campaign from '../../components/Campaign/Campaign';
 
 class Main extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      magazinList: [],
+      trendList: [],
+      campaignList: [],
+    };
+  }
+
+  componentDidMount() {
+    fetch('data/magazinData.json')
+      .then(magazin => magazin.json())
+      .then(data =>
+        this.setState({
+          magazinList: data,
+        })
+      );
+
+    fetch('data/trendData.json')
+      .then(trend => trend.json())
+      .then(data =>
+        this.setState({
+          trendList: data,
+        })
+      );
+
+    fetch('data/campaignData.json')
+      .then(campaign => campaign.json())
+      .then(data =>
+        this.setState({
+          campaignList: data,
+        })
+      );
+  }
+
   render() {
+    const { magazinList, trendList, campaignList } = this.state;
     return (
       <>
         <main>
@@ -13,126 +51,34 @@ class Main extends React.Component {
             <h3 className="trendTitle">최신 트렌드</h3>
 
             <div className="trendImgContent">
-              <i class="fas fa-arrow-left"></i>
+              <i className="fas fa-arrow-left"></i>
               <ul className="trendImg">
-                <li>
-                  <img
-                    src="https://www2.hm.com/content/dam/TOOLBOX/project-me/personalizedentrances/10217.png"
-                    alt=""
-                  />
-                  <div className="categoryTitleContent">
-                    <p className="category">여성</p>
-                    <p>가디건 & 풀오버</p>
-                  </div>
-                </li>
-                <li>
-                  <img
-                    src="https://www2.hm.com/content/dam/TOOLBOX/project-me/personalizedentrances/10217.png"
-                    alt=""
-                  />
-                  <div className="categoryTitleContent">
-                    <p className="category">여성</p>
-                    <p>가디건 & 풀오버</p>
-                  </div>
-                </li>
-                <li>
-                  <img
-                    src="https://www2.hm.com/content/dam/TOOLBOX/project-me/personalizedentrances/10217.png"
-                    alt=""
-                  />
-                  <div className="categoryTitleContent">
-                    <p className="category">여성</p>
-                    <p>가디건 & 풀오버</p>
-                  </div>
-                </li>
-                <li>
-                  <img
-                    src="https://www2.hm.com/content/dam/TOOLBOX/project-me/personalizedentrances/10217.png"
-                    alt=""
-                  />
-                  <div className="categoryTitleContent">
-                    <p className="category">여성</p>
-                    <p>가디건 & 풀오버</p>
-                  </div>
-                </li>
-                <li>
-                  <img
-                    src="https://www2.hm.com/content/dam/TOOLBOX/project-me/personalizedentrances/10217.png"
-                    alt=""
-                  />
-                  <div className="categoryTitleContent">
-                    <p className="category">여성</p>
-                    <p>가디건 & 풀오버</p>
-                  </div>
-                </li>
-                <li>
-                  <img
-                    src="https://www2.hm.com/content/dam/TOOLBOX/project-me/personalizedentrances/10217.png"
-                    alt=""
-                  />
-                  <div className="categoryTitleContent">
-                    <p className="category">여성</p>
-                    <p>가디건 & 풀오버</p>
-                  </div>
-                </li>
-                <li>
-                  <img
-                    src="https://www2.hm.com/content/dam/TOOLBOX/project-me/personalizedentrances/10217.png"
-                    alt=""
-                  />
-                  <div className="categoryTitleContent">
-                    <p className="category">여성</p>
-                    <p>가디건 & 풀오버</p>
-                  </div>
-                </li>
-                <li>
-                  <img
-                    src="https://www2.hm.com/content/dam/TOOLBOX/project-me/personalizedentrances/10217.png"
-                    alt=""
-                  />
-                  <div className="categoryTitleContent">
-                    <p className="category">여성</p>
-                    <p>가디건 & 풀오버</p>
-                  </div>
-                </li>
+                {trendList.map((trend, idx) => {
+                  return (
+                    <Trend
+                      key={idx}
+                      category={trend.category}
+                      categoryTitle={trend.categoryTitle}
+                    />
+                  );
+                })}
               </ul>
-              <i class="fas fa-arrow-right"></i>
+              <i className="fas fa-arrow-right"></i>
             </div>
 
             <section>
-              <div className="campaignLayout">
-                <div className="campaignContent">
-                  <img src={'/images/main_img.jpeg'} alt="" />
-                  <div>
-                    <h3>
-                      가을 머스트 <b>&#x002D;</b> 해브
-                    </h3>
-                    <p>
-                      멋스러운 니트, 재킷, 가디건 등 시즌 인기 아이템을 지금
-                      만나보세요.
-                    </p>
-
-                    <Link to="/">쇼핑하기</Link>
-                  </div>
-                </div>
-              </div>
+              {campaignList.map((campaign, idx) => {
+                return (
+                  <Campaign
+                    key={idx}
+                    campaignTitle={campaign.campaignTitle}
+                    campaignContents={campaign.campaignContents}
+                    linkTitle={campaign.linkTitle}
+                  />
+                );
+              })}
             </section>
-            <section>
-              <div className="campaignLayout">
-                <div className="campaignContent">
-                  <img src={'/images/main_img.jpeg'} alt="" />
-                  <div>
-                    <h3>HandWash</h3>
-                    <p>
-                      Kim Minho / Seo Donghyeok / Shin hyeri <br />
-                      Lee Dabeen / Jeon Taeyang / Cho Yunhui
-                    </p>
 
-                    <Link to="/">지금 쇼핑하기</Link>
-                  </div>
-                </div>
-              </div>
-            </section>
             <section>
               <div className="banners">
                 <h3>
@@ -151,12 +97,20 @@ class Main extends React.Component {
         <section className="magazineContent">
           <h2>MAGAZINE</h2>
           <h3>A WORLD OF INSPIRATION</h3>
-          <a href="" className="magazineLink">
+          <Link to="/" className="magazineLink">
             READ H&#x0026;W MAGAZINE
-          </a>
+          </Link>
 
           <div className="magazinCardList">
-            <Magazin />
+            {magazinList.map((magazin, idx) => {
+              return (
+                <Magazin
+                  key={idx}
+                  heading={magazin.heading}
+                  cardLink={magazin.cardLink}
+                />
+              );
+            })}
           </div>
         </section>
       </>
