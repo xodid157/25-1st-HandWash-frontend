@@ -1,5 +1,5 @@
 .signUp {
-  height: 80%;
+  // height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -9,10 +9,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 700px;
+    height: 100%;
     width: 500px;
+    margin-top: 1.25em;
     padding: 3em;
-    border: 1px solid #faf9f8;
+    background-color: #faf9f8;
 
     .outButton {
       display: flex;
@@ -59,10 +60,10 @@
       font-size: 0.8em;
     }
 
-    .emailName {
+    .emailTitle {
       width: 100%;
       margin: 0.3em 0;
-      .emailTitle {
+      .emailName {
         margin: 3em 0;
         font-size: 0.81em;
 
@@ -78,11 +79,11 @@
       }
     }
 
-    .passwordName {
+    .passwordTitle {
       width: 100%;
       margin: 0.3em 0;
 
-      .passwordTitle {
+      .passwordName {
         margin: 0.8em 0;
         font-size: 0.81em;
 
@@ -97,11 +98,11 @@
       }
     }
 
-    .birthName {
+    .birthTitle {
       width: 100%;
       margin: 0.3em 0;
 
-      .birthTitle {
+      .birthName {
         margin: 0.8em 0;
         font-size: 0.81em;
 
@@ -111,25 +112,49 @@
       }
       .birthInput {
         width: 100%;
-        padding: 0.88em 1em;
+        padding: 0.88em 0.5em;
         border: 0.1em solid #d0d0d0;
+        background-color: #fff;
+
+        .yearInput {
+          width: 15%;
+          padding: 0em 0.5em;
+          border: none;
+        }
+        .dayInput {
+          width: 10%;
+          padding: 0em 0.5em;
+          border: none;
+        }
+      }
+
+      p {
+        margin: 0.8em 0;
+        font-size: 0.81em;
+      }
+
+      .birthCoupon {
+        font-size: 0.69em;
       }
     }
 
-    .birthCoupon {
-      margin: 0.8em 0;
-      font-size: 0.81em;
-    }
-
     .addInformation {
+      position: relative;
       display: flex;
       justify-content: space-between;
       align-items: center;
       width: 100%;
-      padding: 0.88em 1em;
-      border: 1px solid #d0d0d0;
-      background-color: transparent;
+      padding: 1.25em 0;
+      border: none;
+      background-color: #fff;
       cursor: pointer;
+
+      .benefits {
+        padding-left: 1em;
+      }
+      i {
+        padding-right: 1em;
+      }
     }
 
     .agreementList {
@@ -194,8 +219,8 @@
 
       .signButtonSubmit {
         border: 0;
-        // outline: none;
         font-size: 0.81em;
+        padding: 0.4em;
         color: white;
         cursor: pointer;
       }

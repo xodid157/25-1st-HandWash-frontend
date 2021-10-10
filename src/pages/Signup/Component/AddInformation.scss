@@ -1,0 +1,38 @@
+.information {
+  // position: absolute;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  top: 0;
+  width: 100%;
+  padding: 0 1em;
+  padding-bottom: 1em;
+  background-color: #fff;
+
+  .subInfo {
+    font-size: 0.81em;
+    margin-bottom: 1.3em;
+    padding-right: 30px;
+    line-height: 20px;
+  }
+
+  .infoInputList {
+    .inputBox {
+      margin: 0.81em 0;
+
+      .inputTitle {
+        margin: 0.5em 0;
+        font-size: 0.81em;
+      }
+      .infoInput {
+        width: 100%;
+        padding: 0.88em;
+        border: 0.1em solid #d0d0d0;
+      }
+    }
+    .exNumber {
+      font-size: 0.69em;
+    }
+  }
+}
+//  &&

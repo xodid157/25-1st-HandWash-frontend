@@ -1,9 +1,55 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import AddInformation from '../Signup/Component/AddInformation';
 import '../../styles/common.scss';
 import './Signup.scss';
 
 class Signup extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      email: '',
+      password: '',
+      birth: '',
+      isInfo: false,
+    };
+  }
+
+  handleInput = e => {
+    const { name, value } = e.target;
+    this.setState({
+      [name]: value,
+    });
+  };
+
+  goToMain = e => {
+    const { email, password, birth } = this.state;
+
+    fetch('메인으로 가는 백엔드 주소', {
+      method: 'POST',
+      body: JSON.stringify({
+        email: email,
+        password: password,
+        birth: birth, //여기 백엔드랑 할 때 안되면 쪼갠거 확인
+      }),
+    })
+      .then(res => res.json())
+      .then(res => {
+        console.log(res.token);
+        if (res.token) {
+          localStorage.setItem('token', res.token);
+          this.props.history.push('/main');
+        }
+      });
+  };
+
+  changeList = e => {
+    this.setState({
+      isInfo: !this.state.isInfo,
+      // 이걸 실행됬을 때 isInfo가 true 아니면 false
+    });
+  };
+
   render() {
     return (
       <div className="signUp">
@@ -20,36 +66,75 @@ class Signup extends React.Component {
             <i className="fas fa-comment"></i> &nbsp;카카오로 가입
           </button>
           <p className="or">또는</p>
-          <div className="emailName">
-            <span className="emailTitle">
+          <div className="emailTitle">
+            <span className="emailName">
               이메일<span className="star">&#42;</span>
             </span>
-            <input className="emailInput" name="email" />
+            <input
+              className="emailInput"
+              name="email"
+              onChange={this.handleInput}
+            />
           </div>
-          <div className="passwordName">
-            <p className="passwordTitle">
+          <div className="passwordTitle">
+            <p className="passwordName">
               비밀번호 설정하기<span className="star">&#42;</span>
             </p>
-            <input type="password" className="passwordInput" name="password" />
+            <input
+              type="password"
+              className="passwordInput"
+              name="password"
+              onChange={this.handleInput}
+            />
           </div>
-          <div className="birthName">
-            <p className="birthTitle">
+          <div className="birthTitle">
+            <p className="birthName">
               생년월일<span className="star">&#42;</span>
             </p>
-            <input className="birthInput" name="birth" />
+            <div className="birthInput">
+              <input
+                className="yearInput"
+                name="birth"
+                onChange={this.handleInput}
+                placeholder="----"
+                maxLength="4"
+              />
+              <span>년</span>
+              <input
+                className="dayInput"
+                name="birth"
+                onChange={this.handleInput}
+                placeholder="--"
+                maxLength="2"
+              />
+              <span>월</span>
+              <input
+                className="dayInput"
+                name="birth"
+                onChange={this.handleInput}
+                placeholder="--"
+                maxLength="2"
+              />
+              <span>일</span>
+            </div>
             <p className="birthCoupon">H&amp;W이 생일 쿠폰을 드립니다</p>
           </div>
           <button
             className="
             addInformation"
+            onClick={this.changeList}
           >
             <span className="benefits">
               정보 추가하고 더 큰 혜택을 받으세요
             </span>
+            {/* 여기에 아이콘을 누르면 display: none 이였다가 펼쳐지게 기능 구현 */}
+            {/* 이후 + 클릭시 +, span색 빨간색으로 변경 */}
             <i className="fal fa-plus"></i>
           </button>
+          {this.state.isInfo && <AddInformation />}
           <div className="agreementList">
             <p>다음 내용에 동의합니다.</p>
+            {/* 여기도 필수항목 3개 체크하면 멤버십가입 버튼 활성화하게 선택 영역은 상관없음 */}
             <div className="agreementCheck">
               <div className="checkBox">
                 <input type="checkbox" name="agreementCheck" />
@@ -102,7 +187,7 @@ class Signup extends React.Component {
           <button className="signUpButton" onClick={this.goToMain}>
             <p className="signButtonSubmit">멤버십 가입하기</p>
           </button>
-          <Link to="1" className="goToLogin">
+          <Link to="/login" className="goToLogin">
             로그인으로 돌아가기
           </Link>
         </div>

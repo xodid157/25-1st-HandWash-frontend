@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+
 import '../../styles/common.scss';
 import './Login.scss';
 
@@ -12,18 +13,43 @@ class Login extends React.Component {
     };
   }
 
-  goToMain = e => {
-    const { email, password } = this.state;
-    email.includes('@') && password.length >= 8
-      ? this.props.history.push('/main')
-      : alert('다시 확인해 주세요');
+  handleInput = e => {
+    const { name, value } = e.target;
+    this.setState({
+      [name]: value,
+    });
   };
+
+  goToMain = e => {
+    fetch('http://172.30.1.4:8000/users/signin', {
+      method: 'POST',
+      body: JSON.stringify({
+        email: this.state.email,
+        password: this.state.password,
+      }),
+    })
+      .then(res => res.json())
+      .then(res => {
+        if (res) {
+          localStorage.setItem('token', res.token);
+          this.props.history.push('/main');
+        } else if (!res.token) {
+          alert('아이디, 비밀번호를 확인해주세요');
+          //이 부분에 이메일 패스워드 조건 걸어주는 건가?
+        }
+      });
+  };
+  // 조건에 따라 로그인 버튼 활성화 만들어야됨
+  // const { email, password } = this.state;
+  // email.includes('@') && password.length >= 8
+  //   ? this.props.history.push('/main')
+  //   : alert('다시 확인해 주세요');
 
   render() {
     return (
       <div className="login">
         <div className="loginContainer">
-          <button className="outButton">
+          <button className="closeButton">
             <i className="fal fa-times"></i>
           </button>
           <p className="loginTitle">로그인</p>
@@ -39,13 +65,22 @@ class Login extends React.Component {
             <p className="emailTitle">
               이메일<span>&#42;</span>
             </p>
-            <input className="emailInput" name="email" />
+            <input
+              className="emailInput"
+              name="email"
+              onChange={this.handleInput}
+            />
           </div>
           <div className="passwordInput">
             <p className="passwordTitle">
               비밀번호<span>&#42;</span>
             </p>
-            <input type="password" className="passwordInput" name="password" />
+            <input
+              type="password"
+              className="passwordInput"
+              name="password"
+              onChange={this.handleInput}
+            />
           </div>
           <div className="loginState">
             <div className="checkBox">
@@ -55,11 +90,11 @@ class Login extends React.Component {
             <span className="lostPassword">비밀번호를 잊으셨나요?</span>
           </div>
           <div className="mainButton">
-            <Link to="/main">
-              <button className="loginButton">
-                <p>로그인</p>
-              </button>
-            </Link>
+            {/* <Link to="/main"> */}
+            <button className="loginButton" onClick={this.goToMain}>
+              <p>로그인</p>
+            </button>
+            {/* </Link> */}
             <Link to="/signup">
               <button className="goToSignUp">멤버십 가입하기</button>
             </Link>
