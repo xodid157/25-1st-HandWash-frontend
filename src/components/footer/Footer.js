@@ -7,23 +7,27 @@ class Footer extends Component {
     return (
       <footer>
         <div className="footerIcons">
-          <a href="https://velog.io/@maxkmh" target="_blank">
-            <i class="fas fa-dumbbell"></i>
+          <a href="https://velog.io/@maxkmh" target="_blank" rel="noreferrer">
+            <i className="fas fa-dumbbell"></i>
           </a>
-          <a href="https://velog.io/@gur0601" target="_blank">
-            <i class="fas fa-drumstick-bite"></i>
+          <a href="https://velog.io/@gur0601" target="_blank" rel="noreferrer">
+            <i className="fas fa-drumstick-bite"></i>
           </a>
-          <a href="https://velog.io/@jetom" target="_blank">
-            <i class="fas fa-paw"></i>
+          <a href="https://velog.io/@jetom" target="_blank" rel="noreferrer">
+            <i className="fas fa-paw"></i>
           </a>
-          <a href="https://velog.io/@thisisemptyyy" target="_blank">
-            <i class="fas fa-laptop"></i>
+          <a
+            href="https://velog.io/@thisisemptyyy"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <i className="fas fa-laptop"></i>
           </a>
-          <a href="https://velog.io/@xodid157" target="_blank">
-            <i class="fas fa-sun"></i>
+          <a href="https://velog.io/@xodid157" target="_blank" rel="noreferrer">
+            <i className="fas fa-sun"></i>
           </a>
-          <a href="https://velog.io/@jetom" target="_blank">
-            <i class="fas fa-gamepad"></i>
+          <a href="https://velog.io/@jetom" target="_blank" rel="noreferrer">
+            <i className="fas fa-gamepad"></i>
           </a>
         </div>
 
