@@ -1,0 +1,58 @@
+.a {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  top: 0%;
+  right: 0%;
+  right: -100%;
+  width: 500px;
+  height: 100%;
+  background-color: white;
+  z-index: 1;
+
+  .titleBox {
+    padding: 1.5em;
+
+    .title {
+      padding: 18px 32px 19px;
+      font-size: 1em;
+    }
+
+    button {
+      position: absolute;
+      top: 3.5%;
+      right: 5%;
+      width: 24px;
+      height: 24px;
+      border: 0;
+      background-color: white;
+
+      .close {
+        opacity: 0.8;
+      }
+
+      .close:before,
+      .close:after {
+        position: absolute;
+        top: -12%;
+        content: ' ';
+        height: 24px;
+        width: 1px;
+        background-color: #000;
+      }
+      .close:before {
+        transform: rotate(45deg);
+      }
+      .close:after {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+  .content {
+    position: relative;
+    padding: 0 2.5em;
+    font-size: 0.8em;
+    line-height: 1.5em;
+  }
+}

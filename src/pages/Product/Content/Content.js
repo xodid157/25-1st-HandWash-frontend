@@ -2,21 +2,22 @@ import React from 'react';
 import './Content.scss';
 
 class Content extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      mainImages: [],
-    };
-  }
+  // constructor() {
+  //   super();
+  //   this.state = {
+  //     mainImages: [],
+  //     product:{this.props.product}
+  //   };
+  // }
 
   render() {
     const { product } = this.props;
     return (
       <article className="content">
         <ul className="mainImages">
-          {product.mainImg?.map(img => (
+          {product.main_image?.map(img => (
             <li key={img.id}>
-              <img alt="blackPants" src={img.url} />
+              <img alt="mainImage" src={img} />
             </li>
           ))}
         </ul>

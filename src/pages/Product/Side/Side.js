@@ -1,9 +1,14 @@
 import React from 'react';
 import './Side.scss';
 class Side extends React.Component {
+  // componentDidMount() {
+  //   this.setState({
+  //     product: this.props.product,
+  //   });
+  // }
   render() {
     const { product } = this.props;
-
+    console.log(this.props);
     return (
       <article className="side">
         <div className="sideBox">
@@ -15,12 +20,12 @@ class Side extends React.Component {
             <span>₩ {product.price} </span>
           </div>
           <div className="productColor">
-            <span>{product.color}</span>
+            <span>블랙</span>
           </div>
           <ul className="productColorImg">
-            {product.images?.map(img => (
-              <li key={img.id}>
-                <img alt="colors" src={img.url} />
+            {product.color?.map(url => (
+              <li key={url.id}>
+                <img alt="colors" src={url.image} />
               </li>
             ))}
           </ul>

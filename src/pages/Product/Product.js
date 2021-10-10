@@ -5,6 +5,7 @@ import ContentInfo from './ContentInfo/ContentInfo';
 import StyleIntroduce from './StyleIntroduce/StyleIntroduce';
 import StyleRecommend from './StyleRecommend/StyleRecommend';
 import Recommendations from './Recommendations/Recommendations';
+import SideModal from './SideModal/SideModal';
 import './Product.scss';
 
 class Product extends React.Component {
@@ -12,11 +13,12 @@ class Product extends React.Component {
     super();
     this.state = {
       product: [],
+      sideModal: false,
     };
   }
 
   componentDidMount() {
-    fetch('/data/Product/side.json', {
+    fetch('http://172.30.1.12:8000/products/2', {
       method: 'GET',
     })
       .then(res => res.json())
@@ -27,12 +29,18 @@ class Product extends React.Component {
       });
   }
 
+  openModal = () => {
+    this.setState({
+      sideModal: true,
+    });
+  };
   render() {
     return (
       <main className="product">
         <section className="productMain">
           <Content product={this.state.product} />
           <Side product={this.state.product} />
+          <SideModal />
         </section>
         <section>
           <ContentInfo />
