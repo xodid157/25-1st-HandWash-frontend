@@ -1,9 +1,29 @@
 import React from 'react';
-import { SERVICES_LIST, CATEGORIES_LIST, USER_MENU } from './data';
+import { SERVICES_LIST, USER_MENU } from './data';
 import './Nav.scss';
 
 class Nav extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      categoryList: {},
+    };
+  }
+
+  componentDidMount() {
+    fetch('http://172.30.1.12:8000/products/categories', {
+      method: 'GET',
+    })
+      .then(res => res.json())
+      .then(category => {
+        this.setState({
+          categoryList: category,
+        });
+      });
+  }
+
   render() {
+    console.log(this.state.categoryList);
     return (
       <nav className="navContainer">
         <div className="menuServices">
@@ -27,11 +47,13 @@ class Nav extends React.Component {
           H <span className="small">&#x0026;</span> W
         </h1>
 
-        <ul className="menu">
-          {CATEGORIES_LIST.map((category, idx) => (
-            <li key={idx}>{category}</li>
-          ))}
-        </ul>
+        <div>
+          <ul className="menu">
+            {categoryList.map((menu, idx) => (
+              <li key={idx}>{menu}</li>
+            ))}
+          </ul>
+        </div>
 
         <form>
           <button>
