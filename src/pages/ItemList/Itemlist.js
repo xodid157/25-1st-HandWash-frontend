@@ -16,13 +16,24 @@ class ItemList extends React.Component {
     };
   }
 
+  // componentDidMount() {
+  //   fetch('data/itemLists.json')
+  //     .then(res => res.json())
+  //     .then(data => {
+  //       this.setState({ itemlist: data });
+  //     });
+  // }
+
   componentDidMount() {
-    fetch('data/itemLists.json')
+    fetch('http://172.30.1.12:8000/products/23', {
+      method: 'GET',
+    })
       .then(res => res.json())
-      .then(data => {
-        this.setState({ itemlist: data });
+      .then(result => {
+        this.setState({
+          itemlist: [result],
+        });
       });
-    console.log(this.state);
   }
 
   handleSideBar = () => {
@@ -72,10 +83,10 @@ class ItemList extends React.Component {
                 id={item.id}
                 name={item.name}
                 price={item.price}
-                img={item.img}
-                colors={item.colors}
+                img={item.main_image}
+                color={item.color}
                 is_new={item.is_new}
-                is_concious={item.is_concious}
+                is_conscious={item.is_conscious}
               />
             ))}
           </ul>

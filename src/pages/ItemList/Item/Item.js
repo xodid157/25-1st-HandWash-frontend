@@ -19,7 +19,7 @@ class Item extends React.Component {
   };
 
   render() {
-    const { name, price, img, colors, is_new, is_concious } = this.props;
+    const { name, price, img, color, is_new, is_conscious } = this.props;
     const { likeBtn } = this.state;
     return (
       <li className="item">
@@ -36,19 +36,21 @@ class Item extends React.Component {
           ></i>
         </div>
         <div className="itemText">
-          <div className={`notConcious ${is_concious === 1 && 'yesConcious'}`}>
-            {is_concious === 1 && 'Concious'}
+          <div
+            className={`notConcious ${is_conscious === true && 'yesConcious'}`}
+          >
+            {is_conscious === true && 'Concious'}
           </div>
           <div className="itemName">
             <Link to="#">{name}</Link>
           </div>
           <div className="itemprice">{price}</div>
           <div className="itemColor">
-            {colors.map((color, index) => (
+            {color.map((color, index) => (
               <Colorchip key={index} color={color} />
             ))}
           </div>
-          <div className="newItem">{is_new === 1 && '신제품'}</div>
+          <div className="newItem">{is_new === false && '신제품'}</div>
         </div>
       </li>
     );

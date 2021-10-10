@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 class Slistname extends React.Component {
   render() {
     const { children } = this.props;

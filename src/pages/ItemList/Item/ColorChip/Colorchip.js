@@ -7,7 +7,7 @@ class Colorchip extends React.Component {
     const { color } = this.props;
     return (
       <Link to="#">
-        <div className={color}></div>
+        <div className={color.color}></div>
       </Link>
     );
   }
