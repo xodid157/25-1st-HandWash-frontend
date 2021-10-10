@@ -26,7 +26,7 @@ class Nav extends React.Component {
 
   render() {
     const { categoryList } = this.state;
-    console.log(categoryList);
+    console.log(categoryList.category_list[0].name);
     return (
       <nav className="navContainer">
         <div className="menuServices">
@@ -37,10 +37,10 @@ class Nav extends React.Component {
           </ul>
 
           <ul className="userMenu">
-            {USER_MENU.map((menu, idx) => (
+            {USER_MENU.map((userMenu, idx) => (
               <li key={idx}>
-                <i className={`fas ${menu.type}`} />
-                <span>{menu.txt}</span>
+                <i className={`fas ${userMenu.type}`} />
+                <span>{userMenu.txt}</span>
               </li>
             ))}
           </ul>
@@ -51,7 +51,11 @@ class Nav extends React.Component {
         </h1>
 
         <div>
-          <ul className="menu"></ul>
+          <ul className="menu">
+            {categoryList.map((category, idx) => {
+              return <li key={idx}>{category.name}</li>;
+            })}
+          </ul>
         </div>
 
         <form>
