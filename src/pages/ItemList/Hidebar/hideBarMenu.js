@@ -1,5 +1,5 @@
 import React from 'react';
-import Slist from './Slist';
+// import Slist from './Slist';
 
 class HideBarMenu extends React.Component {
   // constructor(props) {
@@ -9,7 +9,7 @@ class HideBarMenu extends React.Component {
   // }
 
   render() {
-    const { menu, smenu } = this.props;
+    const { menu } = this.props;
     return (
       <li>
         <span>{menu}</span>
@@ -19,3 +19,7 @@ class HideBarMenu extends React.Component {
   }
 }
 export default HideBarMenu;
+
+// <li>
+//   <span>{<Slist menu={smenu.filter(x => menu.key == x.key)} />}</span>
+// </li>

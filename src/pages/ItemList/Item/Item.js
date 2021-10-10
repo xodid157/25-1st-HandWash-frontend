@@ -4,21 +4,41 @@ import Colorchip from './ColorChip/Colorchip';
 import './Item.scss';
 
 class Item extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      likeBtn: false,
+    };
+  }
+
+  handleLikeBtn = () => {
+    const { likeBtn } = this.state;
+    this.setState({
+      likeBtn: !likeBtn,
+    });
+  };
+
   render() {
-    const { name, price, img, colors } = this.props;
+    const { name, price, img, colors, is_new, is_concious } = this.props;
+    const { likeBtn } = this.state;
     return (
       <li className="item">
         <div className="itemImg">
           <Link to="#">
             <img src={img} alt={name} />
           </Link>
-          <div className="imgInPrice">
+          {/* <div className="imgInPrice">
             <p>{price}</p>
-          </div>
-          <i className="fas fa-heart fa-2x"></i>
+          </div> */}
+          <i
+            onClick={this.handleLikeBtn}
+            className={`fas fa-heart fa-2x ${likeBtn ? 'likeBtn' : ''}`}
+          ></i>
         </div>
         <div className="itemText">
-          <div className="ex">Conscious</div>
+          <div className={`notConcious ${is_concious === 1 && 'yesConcious'}`}>
+            {is_concious === 1 && 'Concious'}
+          </div>
           <div className="itemName">
             <Link to="#">{name}</Link>
           </div>
@@ -28,7 +48,7 @@ class Item extends React.Component {
               <Colorchip key={index} color={color} />
             ))}
           </div>
-          <div className="newItem">신제품</div>
+          <div className="newItem">{is_new === 1 && '신제품'}</div>
         </div>
       </li>
     );
@@ -36,5 +56,3 @@ class Item extends React.Component {
 }
 
 export default Item;
-
-// color.length > 0 &&

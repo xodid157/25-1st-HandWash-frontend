@@ -48,6 +48,42 @@
       }
     }
   }
+  .line {
+    margin-top: 2rem;
+    width: 100%;
+    border-top: 0.1rem solid rgba(0, 0, 0, 0.199);
+  }
+  .allItem {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-size: 0.8rem;
+  }
+  .hideBarBtn {
+    display: flex;
+    justify-content: space-between;
+    width: 88%;
+
+    button {
+      width: 47%;
+      padding: 0.5rem 2rem;
+      color: aliceblue;
+      background-color: black;
+      border-style: none;
+      font-size: 0.7rem;
+    }
+    button:first-child {
+      background-color: white;
+      color: black;
+      border: 0.001rem solid black;
+
+      &:hover {
+        color: rgba(0, 0, 0, 0.568);
+      }
+    }
+    button:last-child:hover {
+      background-color: rgba(0, 0, 0, 0.644);
+    }
+  }
 }
 
 .showBar {

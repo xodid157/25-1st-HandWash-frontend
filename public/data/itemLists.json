@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "name": "리브니트 울 블랜드 드레스",
+    "price": "W77,000",
+    "colors": ["black", "white"],
+    "img": "images/1111.jpeg",
+    "is_new": 1,
+    "is_concious": 0
+  },
+  {
+    "id": 1,
+    "name": "리브니트 울 블랜드 드레스",
+    "price": "W77,000",
+    "colors": ["black"],
+    "img": "images/1111.jpeg",
+    "is_new": 1,
+    "is_concious": 1
+  },
+  {
+    "id": 1,
+    "name": "리브니트 울 블랜드 드레스",
+    "price": "W77,000",
+    "colors": [],
+    "img": "images/1111.jpeg",
+    "is_new": 0,
+    "is_concious": 1
+  },
+  {
+    "id": 1,
+    "name": "리브니트 울 블랜드 드레스",
+    "price": "W77,000",
+    "colors": ["gray", "white", "navy"],
+    "img": "images/1111.jpeg",
+    "is_new": 1,
+    "is_concious": 0
+  },
+  {
+    "id": 1,
+    "name": "리브니트 울 블랜드 드레스",
+    "price": "W77,000",
+    "colors": ["black", "gray", "white", "navy"],
+    "img": "images/1111.jpeg",
+    "is_new": 1,
+    "is_concious": 1
+  },
+  {
+    "id": 1,
+    "name": "리브니트 울 블랜드 드레스",
+    "price": "W77,000",
+    "colors": ["navy"],
+    "img": "images/1111.jpeg",
+    "is_new": 0,
+    "is_concious": 1
+  },
+  {
+    "id": 1,
+    "name": "리브니트 울 블랜드 드레스",
+    "price": "W77,000",
+    "colors": ["gray", "white"],
+    "img": "images/1111.jpeg",
+    "is_new": 1,
+    "is_concious": 1
+  },
+  {
+    "id": 1,
+    "name": "리브니트 울 블랜드 드레스",
+    "price": "W77,000",
+    "colors": [],
+    "img": "images/1111.jpeg",
+    "is_new": 1,
+    "is_concious": 1
+  }
+]

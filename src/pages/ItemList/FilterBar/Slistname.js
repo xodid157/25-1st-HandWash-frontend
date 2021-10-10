@@ -6,7 +6,7 @@ class Slistname extends React.Component {
     const { children } = this.props;
     return (
       <li className="sListName">
-        <Link to="#">{children}</Link>
+        <span>{children}</span>
       </li>
     );
   }

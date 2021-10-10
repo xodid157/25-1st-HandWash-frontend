@@ -1,8 +1,8 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import Item from './../ItemList/Item/Item';
 import Listbar from './FilterBar/Listbar';
 import HideBar from './Hidebar/HideBar';
+import FilterSideBar from './FilterSideBar/FilterSideBar';
 import FILTER_LIST from './FILTERLIST';
 import './Itemlist.scss';
 
@@ -10,9 +10,19 @@ class ItemList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      itemlist: [],
       navlist: FILTER_LIST,
       isSidebar: false,
     };
+  }
+
+  componentDidMount() {
+    fetch('data/itemLists.json')
+      .then(res => res.json())
+      .then(data => {
+        this.setState({ itemlist: data });
+      });
+    console.log(this.state);
   }
 
   handleSideBar = () => {
@@ -23,9 +33,10 @@ class ItemList extends React.Component {
   };
 
   render() {
-    const { navlist, isSidebar } = this.state;
+    const { navlist, isSidebar, itemlist } = this.state;
     return (
       <div className="list">
+        {/* <div className="hide"> */}
         <HideBar isSidebar={isSidebar} />
         <div className="itemListPage">
           <div className="listName">
@@ -52,28 +63,10 @@ class ItemList extends React.Component {
                 </span>
               </div>
             </ul>
-            <div className="navFilterRight">
-              <div className="itemListNum">1234아이템</div>
-              <div>
-                <Link to="#">모델</Link>
-              </div>
-              <div>
-                <Link to="#">제품</Link>
-              </div>
-              <div>
-                <Link to="#">
-                  <i className="far fa-square"></i>
-                </Link>
-              </div>
-              <div>
-                <Link to="#">
-                  <i className="fas fa-th-large"></i>
-                </Link>
-              </div>
-            </div>
+            <FilterSideBar />
           </div>
           <ul className="items">
-            {ITEM_LIST.map(item => (
+            {itemlist.map(item => (
               <Item
                 key={item.id}
                 id={item.id}
@@ -81,6 +74,8 @@ class ItemList extends React.Component {
                 price={item.price}
                 img={item.img}
                 colors={item.colors}
+                is_new={item.is_new}
+                is_concious={item.is_concious}
               />
             ))}
           </ul>
@@ -89,66 +84,8 @@ class ItemList extends React.Component {
           </div>
         </div>
       </div>
+      // </div>
     );
   }
 }
 export default ItemList;
-
-const ITEM_LIST = [
-  {
-    id: 1,
-    name: '리브니트 울 블랜드 드레스',
-    price: 'W77,000',
-    img: 'images/1111.jpeg',
-    colors: ['red', 'blue'],
-  },
-  {
-    id: 2,
-    name: '리브니트 울 블랜드 드레스',
-    price: 'W77,000',
-    img: 'images/1111.jpeg',
-    colors: [],
-  },
-  {
-    id: 3,
-    name: '리브니트 울 블랜드 드레스',
-    price: 'W77,000',
-    img: 'images/1111.jpeg',
-    colors: ['red', 'red', 'red'],
-  },
-  {
-    id: 4,
-    name: '리브니트 울 블랜드 드레스',
-    price: 'W77,000',
-    img: 'images/1111.jpeg',
-    colors: ['blue', 'blue'],
-  },
-  {
-    id: 5,
-    name: '리브니트 울 블랜드 드레스',
-    price: 'W77,000',
-    img: 'images/1111.jpeg',
-    colors: ['blue', 'red', 'blue'],
-  },
-  {
-    id: 6,
-    name: '리브니트 울 블랜드 드레스',
-    price: 'W77,000',
-    img: 'images/1111.jpeg',
-    colors: [],
-  },
-  {
-    id: 7,
-    name: '리브니트 울 블랜드 드레스',
-    price: 'W77,000',
-    img: 'images/1111.jpeg',
-    colors: ['red', 'red', 'red', 'red'],
-  },
-  {
-    id: 8,
-    name: '리브니트 울 블랜드 드레스',
-    price: 'W77,000',
-    img: 'images/1111.jpeg',
-    colors: [],
-  },
-];

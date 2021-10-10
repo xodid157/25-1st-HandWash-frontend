@@ -7,12 +7,20 @@
       height: 0.5rem;
       border-radius: 50%;
 
-      &.red {
-        background-color: red;
+      &.black {
+        background-color: black;
       }
 
-      &.blue {
-        background-color: blue;
+      &.gray {
+        background-color: gray;
+      }
+
+      &.white {
+        background-color: bisque;
+      }
+
+      &.navy {
+        background-color: midnightblue;
       }
     }
   }

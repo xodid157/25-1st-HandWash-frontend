@@ -21,6 +21,14 @@ class HideBar extends React.Component {
             <HideBarMenu key={index} menu={menu.bigname} smenu={menu.sname} />
           ))}
         </ul>
+        <div className="line"></div>
+        <div className="allItem">
+          <span>439개 아이템</span>
+        </div>
+        <div className="hideBarBtn">
+          <button>모두 비우기</button>
+          <button>완료</button>
+        </div>
       </div>
     );
   }
