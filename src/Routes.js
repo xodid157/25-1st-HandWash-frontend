@@ -9,11 +9,11 @@ class Routes extends React.Component {
   render() {
     return (
       <Router>
+        <Nav />
         <Switch>
-          <Route exact path="/nav" component={Nav} />
           <Route exact path="/main" component={Main} />
-          <Route exact path="/footer" component={Footer} />
         </Switch>
+        <Footer />
       </Router>
     );
   }
