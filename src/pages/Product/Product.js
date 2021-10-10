@@ -18,7 +18,7 @@ class Product extends React.Component {
   }
 
   componentDidMount() {
-    fetch('http://172.30.1.12:8000/products/2', {
+    fetch('http://172.30.1.12:8000/products/:id', {
       method: 'GET',
     })
       .then(res => res.json())
