@@ -8,7 +8,6 @@ class AddInformation extends React.Component {
     this.state = {
       email: '',
       password: '',
-      birth: '',
     };
   }
   render() {
@@ -21,15 +20,23 @@ class AddInformation extends React.Component {
         <div className="infoInputList">
           <div className="inputBox">
             <p className="inputTitle">이름</p>
-            <input className="infoInput" name="lastName" />
+            <input
+              className="infoInput"
+              name="lastname"
+              onChange={this.props.handleInput}
+            />
           </div>
           <div className="inputBox">
             <p className="inputTitle">성</p>
-            <input className="infoInput" name="firstName" />
+            <input
+              className="infoInput"
+              name="firstname"
+              onChange={this.props.handleInput}
+            />
           </div>
           <div className="inputBox">
             <p className="inputTitle">성별</p>
-            <select className="infoInput" name="gender">
+            <select className="infoInput" name="">
               <option value="sex">성별을 선택하십시오</option>
               <option value="man">남성</option>
               <option value="woman">여성</option>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import LoginInput from './LoginInput';
 import '../../styles/common.scss';
 import './Login.scss';
 
@@ -46,6 +46,7 @@ class Login extends React.Component {
   //   : alert('다시 확인해 주세요');
 
   render() {
+    console.log(this.state.password);
     return (
       <div className="login">
         <div className="loginContainer">
@@ -56,32 +57,11 @@ class Login extends React.Component {
           <p className="loginSubTitle">
             다양한 할인 혜택과 이벤트,보너스 쿠폰을 놓치지 마세요
           </p>
-
           <button className="kakaoLogin">
             <i className="fas fa-comment"></i> &nbsp;카카오로 로그인
           </button>
           <p className="or">또는</p>
-          <div className="emailName">
-            <p className="emailTitle">
-              이메일<span>&#42;</span>
-            </p>
-            <input
-              className="emailInput"
-              name="email"
-              onChange={this.handleInput}
-            />
-          </div>
-          <div className="passwordInput">
-            <p className="passwordTitle">
-              비밀번호<span>&#42;</span>
-            </p>
-            <input
-              type="password"
-              className="passwordInput"
-              name="password"
-              onChange={this.handleInput}
-            />
-          </div>
+          <LoginInput handleInput={this.handleInput} />
           <div className="loginState">
             <div className="checkBox">
               <input type="checkbox" name="loginCheck" />
@@ -90,11 +70,9 @@ class Login extends React.Component {
             <span className="lostPassword">비밀번호를 잊으셨나요?</span>
           </div>
           <div className="mainButton">
-            {/* <Link to="/main"> */}
             <button className="loginButton" onClick={this.goToMain}>
               <p>로그인</p>
             </button>
-            {/* </Link> */}
             <Link to="/signup">
               <button className="goToSignUp">멤버십 가입하기</button>
             </Link>
