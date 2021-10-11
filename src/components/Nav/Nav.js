@@ -1,6 +1,6 @@
 import React from 'react';
 import Login from '../Login/Login';
-import { SERVICES_LIST, MAIN_MENU_LIST, USER_MENU } from './data';
+import { SERVICES_LIST, MAIN_MENU_LIST } from './data';
 import './Nav.scss';
 
 class Nav extends React.Component {
@@ -33,6 +33,10 @@ class Nav extends React.Component {
       });
   }
 
+  test = () => {
+    console.log('test');
+  };
+
   render() {
     const { categoryList } = this.state;
 
@@ -41,19 +45,29 @@ class Nav extends React.Component {
         <div className="menuServices">
           <ul className="menuServicesList">
             {SERVICES_LIST.map((el, idx) => (
-              <li key={idx} onClick={this.userMenuHover}>
-                {el}
-              </li>
+              <li key={idx}>{el}</li>
             ))}
           </ul>
 
           <ul className="userMenu">
-            {USER_MENU.map((userMenu, idx) => (
+            {/* {USER_MENU.map((userMenu, idx) => (
               <li key={idx}>
                 <i className={`fas ${userMenu.type}`} />
                 <span>{userMenu.txt}</span>
               </li>
-            ))}
+            ))} */}
+            <li onClick={this.test}>
+              <i className="fas fa-user" />
+              로그인
+            </li>
+            <li>
+              <i className="fas fa-heart" />
+              즐겨찾기
+            </li>
+            <li>
+              <i className="fas fa-shopping-bag" />
+              쇼핑백
+            </li>
             <Login />
           </ul>
         </div>
