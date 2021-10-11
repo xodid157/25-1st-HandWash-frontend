@@ -6,6 +6,10 @@
     format('truetype');
 }
 
+.off {
+  display: none;
+}
+
 .navContainer {
   height: 185px;
   padding-top: 2.1em;
@@ -48,8 +52,8 @@
         position: absolute;
         min-width: 250px;
         top: 100%;
-        right: 0;
-        box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+        right: 3%;
+        box-shadow: 0 2px 4px 0 #0000001f;
         z-index: 10;
         background: #faf9f8;
 

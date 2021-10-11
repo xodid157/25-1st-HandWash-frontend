@@ -35,14 +35,15 @@ class Nav extends React.Component {
 
   render() {
     const { categoryList } = this.state;
-    console.log(categoryList.category_list[0].main_category?.[0].name);
 
     return (
       <nav className="navContainer">
         <div className="menuServices">
-          <ul class="menuServicesList">
+          <ul className="menuServicesList">
             {SERVICES_LIST.map((el, idx) => (
-              <li key={idx}>{el}</li>
+              <li key={idx} onClick={this.userMenuHover}>
+                {el}
+              </li>
             ))}
           </ul>
 
@@ -53,7 +54,6 @@ class Nav extends React.Component {
                 <span>{userMenu.txt}</span>
               </li>
             ))}
-
             <Login />
           </ul>
         </div>
