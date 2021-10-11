@@ -10,6 +10,8 @@ class Nav extends React.Component {
       categoryList: {
         category_list: [{}],
       },
+
+      isUserMenuHover: false,
     };
   }
 
@@ -33,12 +35,14 @@ class Nav extends React.Component {
       });
   }
 
-  test = () => {
-    console.log('test');
+  userMenuHoverChange = () => {
+    this.setState({
+      isUserMenuHover: !this.state.isUserMenuHover,
+    });
   };
 
   render() {
-    const { categoryList } = this.state;
+    const { categoryList, isUserMenuHover } = this.state;
 
     return (
       <nav className="navContainer">
@@ -56,7 +60,7 @@ class Nav extends React.Component {
                 <span>{userMenu.txt}</span>
               </li>
             ))} */}
-            <li onClick={this.test}>
+            <li onMouseEnter={this.userMenuHoverChange}>
               <i className="fas fa-user" />
               로그인
             </li>
@@ -68,7 +72,7 @@ class Nav extends React.Component {
               <i className="fas fa-shopping-bag" />
               쇼핑백
             </li>
-            <Login />
+            {isUserMenuHover && <Login />}
           </ul>
         </div>
 
