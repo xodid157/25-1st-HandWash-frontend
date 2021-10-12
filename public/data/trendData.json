@@ -1,14 +1,42 @@
 [
   {
     "id": 1,
-    "campaignTitle": "가을 머스트 - 해브",
-    "campaignContents": "멋스러운 니트, 재킷, 가디건 등 시즌 인기 아이템을 지금 만나보세요.",
-    "linkTitle": "쇼핑하기"
+    "category": "여성",
+    "categoryTitle": "가디건 & 풀오버"
   },
   {
     "id": 2,
-    "campaignTitle": "HandWash",
-    "campaignContents": "Kim Minho / Seo Donghyeok / Shin hyeri / Lee Dabeen / Jeon Taeyang / Cho Yunhui",
-    "linkTitle": "지금 쇼핑하기"
+    "category": "여성",
+    "categoryTitle": "가디건 & 풀오버"
+  },
+  {
+    "id": 3,
+    "category": "여성",
+    "categoryTitle": "가디건 & 풀오버"
+  },
+  {
+    "id": 4,
+    "category": "여성",
+    "categoryTitle": "가디건 & 풀오버"
+  },
+  {
+    "id": 5,
+    "category": "여성",
+    "categoryTitle": "가디건 & 풀오버"
+  },
+  {
+    "id": 6,
+    "category": "여성",
+    "categoryTitle": "가디건 & 풀오버"
+  },
+  {
+    "id": 7,
+    "category": "여성",
+    "categoryTitle": "가디건 & 풀오버"
+  },
+  {
+    "id": 8,
+    "category": "여성",
+    "categoryTitle": "가디건 & 풀오버"
   }
 ]
