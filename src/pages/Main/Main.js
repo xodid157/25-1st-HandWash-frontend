@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import Magazin from '../../components/Magazin/Magazin';
 import Campaign from '../../components/Campaign/Campaign';
 import Trend from '../../components/Trend/Trend';
-import './Main.scss';
 import '../../components/Magazin/Magazin.scss';
 
 class Main extends React.Component {
