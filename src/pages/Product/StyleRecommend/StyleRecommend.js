@@ -35,6 +35,7 @@ class StyleRecommend extends React.Component {
       },
     ];
 
+    const { colorHeart, isHeart } = this.props;
     return (
       <article className="styleRecommend">
         <div>
@@ -45,7 +46,11 @@ class StyleRecommend extends React.Component {
             <li className="styleContent" key={content.id}>
               <div className="box">
                 <img alt="styleImg" src={content.url} />
-                <i className="fas fa-heart" />
+                <i
+                  // className={!isHeart ? 'fas fa-heart' : 'fas fa-heart red '}
+                  onClick={colorHeart}
+                  className={`fas fa-heart ${isHeart ? 'red' : ''}`}
+                />
               </div>
               <span className="blank">blank staples</span>
               <Link to="#" className="link">

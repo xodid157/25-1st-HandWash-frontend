@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import Main from './pages/Main/Main';
 import Nav from './components/Nav/Nav';
+import Footer from './components/footer/Footer';
 import Product from './pages/Product/Product';
 
 class Routes extends React.Component {
@@ -12,9 +13,10 @@ class Routes extends React.Component {
         <Nav />
         <Switch>
           <Route exact path="/main" component={Main} />
-          <Route exact path="/nav" component={Nav} />
-          <Route exact path="/product/:id" component={Product} />
+          <Route exact path="/Product/:id" component={Product} />
+          <Route exact path="/Product" component={Product} />
         </Switch>
+        <Footer />
       </Router>
     );
   }

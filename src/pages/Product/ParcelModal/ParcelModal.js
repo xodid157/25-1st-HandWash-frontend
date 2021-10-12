@@ -1,14 +1,16 @@
 import React from 'react';
-import './SideModal.scss';
-class SideModal extends React.Component {
+import './ParcelModal.scss';
+
+class ParcelModal extends React.Component {
   render() {
+    const { parcelModal, closeModal } = this.props;
     return (
-      <section>
+      <section className="parcelModal">
         <article>
-          <div className="a">
+          <div className={!parcelModal ? 'openSide' : 'openSide closeSide'}>
             <div className="titleBox">
               <span className="title"> 배송 및 결제</span>
-              <button>
+              <button onClick={closeModal}>
                 <div className="close"></div>
               </button>
             </div>
@@ -35,4 +37,4 @@ class SideModal extends React.Component {
   }
 }
 
-export default SideModal;
+export default ParcelModal;

@@ -2,21 +2,13 @@ import React from 'react';
 import './Content.scss';
 
 class Content extends React.Component {
-  // constructor() {
-  //   super();
-  //   this.state = {
-  //     mainImages: [],
-  //     product:{this.props.product}
-  //   };
-  // }
-
   render() {
     const { product } = this.props;
     return (
       <article className="content">
         <ul className="mainImages">
-          {product.main_image?.map(img => (
-            <li key={img.id}>
+          {product.main_image?.map((img, index) => (
+            <li key={index}>
               <img alt="mainImage" src={img} />
             </li>
           ))}
@@ -39,9 +31,9 @@ class Content extends React.Component {
           </ul>
         </div>
         <ul className="remainingImgs">
-          {product.subImg?.map(img => (
-            <li key={img.id}>
-              <img alt="blackPants" src={img.url} />
+          {product.sub_image?.map((img, index) => (
+            <li key={index}>
+              <img alt="blackPants" src={img} />
             </li>
           ))}
         </ul>

@@ -5,7 +5,8 @@ import ContentInfo from './ContentInfo/ContentInfo';
 import StyleIntroduce from './StyleIntroduce/StyleIntroduce';
 import StyleRecommend from './StyleRecommend/StyleRecommend';
 import Recommendations from './Recommendations/Recommendations';
-import SideModal from './SideModal/SideModal';
+import ParcelModal from './ParcelModal/ParcelModal';
+import DetailsModal from './DetailsModal/DetailsModal';
 import './Product.scss';
 
 class Product extends React.Component {
@@ -13,12 +14,15 @@ class Product extends React.Component {
     super();
     this.state = {
       product: [],
-      sideModal: false,
+      etailsModal: false,
+      parcelModal: false,
+      isSizeModal: false,
+      isHeart: false,
     };
   }
 
   componentDidMount() {
-    fetch('http://172.30.1.12:8000/products/:id', {
+    fetch('./data/Product/product.json', {
       method: 'GET',
     })
       .then(res => res.json())
@@ -28,25 +32,74 @@ class Product extends React.Component {
         });
       });
   }
+  openSize = () => {
+    this.setState({
+      isSizeModal: true,
+    });
+  };
 
   openModal = () => {
     this.setState({
-      sideModal: true,
+      parcelModal: true,
     });
   };
+
+  openDetail = () => {
+    this.setState({
+      detailsModal: true,
+    });
+  };
+  colorHeart = () => {
+    this.setState({
+      isHeart: !this.state.isHeart,
+    });
+  };
+  closeModal = () => {
+    this.setState({
+      detailsModal: false,
+      parcelModal: false,
+      isSizeModal: false,
+    });
+  };
+
   render() {
+    const { parcelModal, product, detailsModal, isSizeModal, isHeart } =
+      this.state;
     return (
       <main className="product">
         <section className="productMain">
-          <Content product={this.state.product} />
-          <Side product={this.state.product} />
-          <SideModal />
+          <Content product={product} />
+          <Side
+            product={product}
+            openSize={this.openSize}
+            isSizeModal={isSizeModal}
+            closeModal={this.closeModal}
+          />
+          <div
+            className={
+              detailsModal || parcelModal || isSizeModal ? 'black' : ''
+            }
+            onClick={this.closeModal}
+          >
+            <DetailsModal
+              detailsModal={detailsModal}
+              closeModal={this.closeModal}
+              product={product}
+            />
+            <ParcelModal
+              parcelModal={parcelModal}
+              closeModal={this.closeModal}
+            />
+          </div>
         </section>
         <section>
-          <ContentInfo />
+          <ContentInfo
+            openModal={this.openModal}
+            openDetail={this.openDetail}
+          />
           <StyleIntroduce />
-          <StyleRecommend />
-          <Recommendations />
+          <StyleRecommend colorHeart={this.colorHeart} isHeart={isHeart} />
+          <Recommendations colorHeart={this.colorHeart} isHeart={isHeart} />
         </section>
       </main>
     );

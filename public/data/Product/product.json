@@ -1,70 +1,61 @@
 {
-  "id": 1,
+  "id": 21,
   "name": "코튼 조거 팬츠",
   "price": "39,900",
-  "color": "블랙",
-  "description": "스트리트 패션을 추구하는 Blank Staples는 하얀 캔버스처럼 개개인의개성과 창의력으로 재해석할 수 있는 프리미엄 컬렉션입니다. 심플한스타일의 조거 팬츠. 고급스러운 촉감의 톡톡한 460g 오가닉 코튼스웨트셔츠 소재. 고무밴드가 내장된 허릿단과 아랫단. 저지 안감이부착된 옆면 포켓, 뒷면 포켓.",
+  "main_image": [
+    "https://lp2.hm.com/hmgoepprod?set=quality%5B79%5D%2Csource%5B%2Ffa%2F69%2Ffa69b710e4a0124447d6afff1ecfd6e62ff5f6cf.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5B%5D%2Ctype%5BLOOKBOOK%5D%2Cres%5Bm%5D%2Chmver%5B1%5D&call=url[file:/product/main]",
+    "https://lp2.hm.com/hmgoepprod?set=quality%5B79%5D%2Csource%5B%2F59%2F5b%2F595bbea6f545c24d7b7858d990cbf5e290b66ba2.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5B%5D%2Ctype%5BLOOKBOOK%5D%2Cres%5Bm%5D%2Chmver%5B1%5D&call=url[file:/product/main]"
+  ],
+  "sub_image": [
+    "https://lp2.hm.com/hmgoepprod?set=quality%5B79%5D%2Csource%5B%2F89%2F2e%2F892e3e5609b2b43070b2c686f61690a138e5199b.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5B%5D%2Ctype%5BLOOKBOOK%5D%2Cres%5Bm%5D%2Chmver%5B1%5D&call=url[file:/product/main]",
+    "https://lp2.hm.com/hmgoepprod?set=quality%5B79%5D%2Csource%5B%2F87%2Ff7%2F87f754628dc56944dcb53f4f78bbf24a26f64807.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5B%5D%2Ctype%5BLOOKBOOK%5D%2Cres%5Bm%5D%2Chmver%5B1%5D&call=url[file:/product/main]",
+    "https://lp2.hm.com/hmgoepprod?set=quality%5B79%5D%2Csource%5B%2Fa8%2F3a%2Fa83ade25e20c5c1d846bfdf005189f3421d39ec9.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5B%5D%2Ctype%5BDESCRIPTIVESTILLLIFE%5D%2Cres%5Bm%5D%2Chmver%5B2%5D&call=url[file:/product/main]",
+    "https://lp2.hm.com/hmgoepprod?set=quality%5B79%5D%2Csource%5B%2F32%2F3b%2F323b189800dcc4a001cd108ce392d21142f02437.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5B%5D%2Ctype%5BDESCRIPTIVEDETAIL%5D%2Cres%5Bm%5D%2Chmver%5B2%5D&call=url[file:/product/main]",
+    "https://lp2.hm.com/hmgoepprod?set=quality%5B79%5D%2Csource%5B%2F9c%2F17%2F9c1754c8900ba250137882f70ba7756c69f13154.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5B%5D%2Ctype%5BDESCRIPTIVEDETAIL%5D%2Cres%5Bm%5D%2Chmver%5B2%5D&call=url[file:/product/main]"
+  ],
+  "color": [
+    {
+      "id": 21,
+      "color": "블랙",
+      "image": "https://cdn.pixabay.com/photo/2021/07/15/08/04/man-6467779_1280.jpg"
+    },
+
+    {
+      "id": 35,
+      "color": "베이지",
+      "image": "https://images.unsplash.com/photo-1591357037205-166318b51afd?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjh8fHNoaXJ0c3xlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
+    },
+    {
+      "id": 25,
+      "color": "스카이 블루",
+      "image": "https://images.unsplash.com/photo-1591357037205-166318b51afd?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjh8fHNoaXJ0c3xlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
+    },
+    {
+      "id": 15,
+      "color": "브라운",
+      "image": "https://images.unsplash.com/photo-1591357037205-166318b51afd?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjh8fHNoaXJ0c3xlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
+    },
+    {
+      "id": 37,
+      "color": "그레이",
+      "image": "https://images.unsplash.com/photo-1591357037205-166318b51afd?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjh8fHNoaXJ0c3xlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
+    },
+    {
+      "id": 38,
+      "color": "머스타드",
+      "image": "https://images.unsplash.com/photo-1591357037205-166318b51afd?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjh8fHNoaXJ0c3xlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
+    },
+    {
+      "id": 39,
+      "color": "차콜",
+      "image": "https://images.unsplash.com/photo-1591357037205-166318b51afd?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjh8fHNoaXJ0c3xlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
+    }
+  ],
+  "size": ["S", "L", "XL"],
+  "description": "스트리트 패션을 추구하는 Blank Staples는 하얀 캔버스처럼 개개인의 개성과 창의력으로 재해석할 수 있는 프리미엄 컬렉션입니다. 심플한 스타일의 조거 팬츠. 고급스러운 촉감의 톡톡한 460g 오가닉 코튼 스웨트셔츠 소재. 고무밴드가 내장된 허릿단과 아랫단. 저지 안감이 부착된 옆면 포켓, 뒷면 포켓.",
+  "length": "medium",
+  "fit": "레귤러",
   "configuration": "코튼 100%",
-  "images": [
-    {
-      "id": 1,
-      "url": "./images/Product/hmgoepprod (2).jpeg"
-    },
-    {
-      "id": 2,
-      "url": "./images/Product/hmgoepprod (2).jpeg"
-    },
-    {
-      "id": 3,
-      "url": "./images/Product/hmgoepprod (2).jpeg"
-    },
-    {
-      "id": 4,
-      "url": "./images/Product/hmgoepprod (2).jpeg"
-    },
-    {
-      "id": 5,
-      "url": "./images/Product/hmgoepprod (2).jpeg"
-    },
-    {
-      "id": 6,
-      "url": "./images/Product/hmgoepprod (2).jpeg"
-    },
-    {
-      "id": 7,
-      "url": "./images/Product/hmgoepprod (2).jpeg"
-    }
-  ],
-  "mainImg": [
-    {
-      "id": 1,
-      "url": "https://lp2.hm.com/hmgoepprod?set=quality%5B79%5D%2Csource%5B%2Ffa%2F69%2Ffa69b710e4a0124447d6afff1ecfd6e62ff5f6cf.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5B%5D%2Ctype%5BLOOKBOOK%5D%2Cres%5Bm%5D%2Chmver%5B1%5D&call=url[file:/product/main]"
-    },
-    {
-      "id": 2,
-      "url": "https://lp2.hm.com/hmgoepprod?set=quality%5B79%5D%2Csource%5B%2F59%2F5b%2F595bbea6f545c24d7b7858d990cbf5e290b66ba2.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5B%5D%2Ctype%5BLOOKBOOK%5D%2Cres%5Bm%5D%2Chmver%5B1%5D&call=url[file:/product/main]"
-    }
-  ],
-  "subImg": [
-    {
-      "id": 1,
-      "url": "https://lp2.hm.com/hmgoepprod?set=quality%5B79%5D%2Csource%5B%2F89%2F2e%2F892e3e5609b2b43070b2c686f61690a138e5199b.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5B%5D%2Ctype%5BLOOKBOOK%5D%2Cres%5Bm%5D%2Chmver%5B1%5D&call=url[file:/product/main]"
-    },
-    {
-      "id": 2,
-      "url": "https://lp2.hm.com/hmgoepprod?set=quality%5B79%5D%2Csource%5B%2F87%2Ff7%2F87f754628dc56944dcb53f4f78bbf24a26f64807.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5B%5D%2Ctype%5BLOOKBOOK%5D%2Cres%5Bm%5D%2Chmver%5B1%5D&call=url[file:/product/main]"
-    },
-    {
-      "id": 3,
-      "url": "https://lp2.hm.com/hmgoepprod?set=quality%5B79%5D%2Csource%5B%2Fa8%2F3a%2Fa83ade25e20c5c1d846bfdf005189f3421d39ec9.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5B%5D%2Ctype%5BDESCRIPTIVESTILLLIFE%5D%2Cres%5Bm%5D%2Chmver%5B2%5D&call=url[file:/product/main]"
-    },
-    {
-      "id": 4,
-      "url": "https://lp2.hm.com/hmgoepprod?set=quality%5B79%5D%2Csource%5B%2F32%2F3b%2F323b189800dcc4a001cd108ce392d21142f02437.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5B%5D%2Ctype%5BDESCRIPTIVEDETAIL%5D%2Cres%5Bm%5D%2Chmver%5B2%5D&call=url[file:/product/main]"
-    },
-    {
-      "id": 5,
-      "url": "https://lp2.hm.com/hmgoepprod?set=quality%5B79%5D%2Csource%5B%2F9c%2F17%2F9c1754c8900ba250137882f70ba7756c69f13154.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5B%5D%2Ctype%5BDESCRIPTIVEDETAIL%5D%2Cres%5Bm%5D%2Chmver%5B2%5D&call=url[file:/product/main]"
-    }
-  ]
+  "is_new": true,
+  "is_conscious": false
 }

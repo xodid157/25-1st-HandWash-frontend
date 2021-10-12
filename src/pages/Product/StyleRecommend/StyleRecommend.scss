@@ -32,6 +32,10 @@
         font-size: 1.5em;
         color: white;
 
+        &.red {
+          color: red;
+        }
+
         &:hover {
           color: red;
         }

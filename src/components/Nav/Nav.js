@@ -1,5 +1,5 @@
 import React from 'react';
-import { SERVICES_LIST, CATEGORIES_LIST, USER_MENU } from './data';
+import { SERVICES_LIST, USER_MENU } from './data';
 import './Nav.scss';
 
 class Nav extends React.Component {
@@ -28,9 +28,9 @@ class Nav extends React.Component {
         </h1>
 
         <ul className="menu">
-          {CATEGORIES_LIST.map((category, idx) => (
+          {/* {CATEGORIES_LIST.map((category, idx) => (
             <li key={idx}>{category}</li>
-          ))}
+          ))} */}
         </ul>
 
         <form>

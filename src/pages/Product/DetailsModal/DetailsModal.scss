@@ -1,0 +1,105 @@
+.detailsModal {
+  .openSide {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    top: 0%;
+    right: -500px;
+    width: 500px;
+    height: 100%;
+    background-color: white;
+    transition-duration: 0.5s;
+    z-index: 1;
+
+    .titleBox {
+      padding: 1.5em;
+
+      .title {
+        padding: 18px 32px 19px;
+        font-size: 1em;
+      }
+
+      button {
+        position: absolute;
+        top: 3.5%;
+        right: 5%;
+        width: 24px;
+        height: 24px;
+        border: 0;
+        background-color: white;
+
+        .close {
+          opacity: 0.8;
+        }
+
+        .close:before,
+        .close:after {
+          position: absolute;
+          top: -8px;
+          content: ' ';
+          height: 24px;
+          width: 1px;
+          background-color: #000;
+        }
+        .close:before {
+          transform: rotate(45deg);
+        }
+        .close:after {
+          transform: rotate(-45deg);
+        }
+      }
+    }
+    .contentBox {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      padding: 0 2em;
+      margin-top: 1em;
+
+      p {
+        padding: 0;
+        font-size: 0.9em;
+        padding-bottom: 0.7em;
+      }
+
+      span {
+        font-size: 0.8em;
+        padding-bottom: 2em;
+        font-weight: 100;
+      }
+
+      .treat {
+        line-height: 1em;
+        padding-bottom: 1.6em;
+
+        p {
+          padding-bottom: 0.7em;
+        }
+
+        span {
+          padding: 0;
+        }
+      }
+    }
+
+    .new {
+      display: none;
+    }
+
+    .trueConscious {
+      padding-bottom: 1.6em;
+    }
+
+    .conscious {
+      display: none;
+
+      span {
+        padding: 0;
+      }
+    }
+  }
+  .closeSide {
+    transform: translate(-500px);
+  }
+}
