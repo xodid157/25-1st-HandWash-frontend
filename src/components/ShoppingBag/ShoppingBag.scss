@@ -1,0 +1,31 @@
+.shoppingBagInfo {
+  position: fixed;
+  right: 1.2%;
+  top: 6.5%;
+  width: 375px;
+  z-index: 10;
+  background: white;
+
+  .infoContents {
+    padding: 2.05em 1.5em;
+
+    .infoHeading {
+      padding-bottom: 2.05em;
+      border-bottom: 1px solid #d0d0d0;
+    }
+
+    .infoPrice {
+      display: flex;
+      justify-content: space-between;
+      padding: 1.5em 0;
+      border-bottom: 1px solid #222;
+      font-size: 0.85em;
+    }
+
+    .infoTotal {
+      display: flex;
+      justify-content: space-between;
+      padding-top: 0.5em;
+    }
+  }
+}

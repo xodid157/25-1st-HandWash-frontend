@@ -29,8 +29,6 @@
     }
 
     .userMenu {
-      position: relative;
-
       li {
         display: flex;
         align-items: center;
@@ -40,53 +38,53 @@
           font-size: 1.5em;
         }
       }
+    }
 
-      .userInfo {
-        position: fixed;
+    .userInfo {
+      position: fixed;
+      right: 1.2%;
+      top: 5%;
+      z-index: 10;
+
+      .userMenuLogin {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        position: absolute;
+        min-width: 250px;
+        top: 25px;
         right: 3%;
-        top: 9%;
+        box-shadow: 0 2px 4px 0 #0000001f;
         z-index: 10;
+        background: #faf9f8;
 
-        .userMenuLogin {
-          display: flex;
-          align-items: center;
-          flex-direction: column;
-          position: absolute;
-          min-width: 250px;
-          top: 100%;
-          right: 3%;
-          box-shadow: 0 2px 4px 0 #0000001f;
-          z-index: 10;
-          background: #faf9f8;
+        li {
+          width: 80%;
+          margin: 0.85em 0;
+          font-size: 0.85em;
+          color: #222;
+        }
 
-          li {
-            width: 80%;
-            margin: 0.85em 0;
-            font-size: 0.85em;
-            color: #222;
+        li:first-child {
+          margin: 1.4em;
+
+          button {
+            padding: 1em;
+            width: 100%;
+            border: none;
+            color: white;
+            background: #222;
           }
 
-          li:first-child {
-            margin: 1.4em;
-
-            button {
-              padding: 1em;
-              width: 100%;
-              border: none;
-              color: white;
-              background: #222;
-            }
-
-            button:hover {
-              background: #707070;
-            }
+          button:hover {
+            background: #707070;
           }
+        }
 
-          .goMember {
-            font-size: 0.7em;
-            color: #707070;
-            text-decoration: none;
-          }
+        .goMember {
+          font-size: 0.7em;
+          color: #707070;
+          text-decoration: none;
         }
       }
     }

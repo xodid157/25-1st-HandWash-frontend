@@ -1,5 +1,6 @@
 import React from 'react';
 import Login from '../Login/Login';
+import ShoppingBag from '../ShoppingBag/ShoppingBag';
 import { SERVICES_LIST, MAIN_MENU_LIST } from './data';
 import './Nav.scss';
 
@@ -11,7 +12,8 @@ class Nav extends React.Component {
         category_list: [{}],
       },
 
-      isUserMenuHover: false,
+      isUserMenuLogin: false,
+      isUserMenuShoppingBag: false,
     };
   }
 
@@ -37,12 +39,18 @@ class Nav extends React.Component {
 
   userMenuHoverChange = () => {
     this.setState({
-      isUserMenuHover: !this.state.isUserMenuHover,
+      isUserMenuLogin: !this.state.isUserMenuLogin,
+    });
+  };
+
+  userMenuHoverShopping = () => {
+    this.setState({
+      isUserMenuShoppingBag: !this.state.isUserMenuShoppingBag,
     });
   };
 
   render() {
-    const { categoryList, isUserMenuHover } = this.state;
+    const { categoryList, isUserMenuLogin, isUserMenuShoppingBag } = this.state;
 
     return (
       <nav className="navContainer">
@@ -68,12 +76,14 @@ class Nav extends React.Component {
               <i className="fas fa-heart" />
               즐겨찾기
             </li>
-            <li>
+            <li onMouseEnter={this.userMenuHoverShopping}>
               <i className="fas fa-shopping-bag" />
               쇼핑백
             </li>
-            {isUserMenuHover && <Login />}
           </ul>
+
+          {isUserMenuLogin && <Login />}
+          {isUserMenuShoppingBag && <ShoppingBag />}
         </div>
 
         <h1 className="logo">
