@@ -2,8 +2,7 @@ import React from 'react';
 
 class Slist extends React.Component {
   render() {
-    const { menu,smenu } = this.props;
-    console.log(menu);
+    const { menu } = this.props;
     return (
       <li>
         <span>{menu}</span>
