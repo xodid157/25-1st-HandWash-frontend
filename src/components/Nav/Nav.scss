@@ -118,10 +118,13 @@
   }
 
   .subMenu {
-    @include flexCenter;
+    display: flex;
+    align-content: center;
+    justify-content: space-evenly;
     flex-direction: row;
     position: absolute;
     width: 100%;
+    padding-top: 2.4em;
     text-align: center;
     background: red;
     color: white;

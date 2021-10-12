@@ -13,8 +13,8 @@ export const MAIN_MENU_LIST = [
   '지속가능성',
 ];
 
-// export const USER_MENU = [
-//   { id: 1, type: 'fa-user', txt: '로그인' },
-//   { id: 2, type: 'fa-heart', txt: '즐겨찾기' },
-//   { id: 3, type: 'fa-shopping-bag', txt: '쇼핑백' },
-// ];
+export const USER_MENU = [
+  { id: 1, type: 'fa-user', txt: '로그인' },
+  { id: 2, type: 'fa-heart', txt: '즐겨찾기' },
+  { id: 3, type: 'fa-shopping-bag', txt: '쇼핑백' },
+];

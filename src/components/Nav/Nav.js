@@ -1,7 +1,7 @@
 import React from 'react';
 import Login from '../Login/Login';
 import ShoppingBag from '../ShoppingBag/ShoppingBag';
-import { SERVICES_LIST, MAIN_MENU_LIST } from './data';
+import { SERVICES_LIST, MAIN_MENU_LIST, USER_MENU } from './data';
 import './Nav.scss';
 
 class Nav extends React.Component {
@@ -10,8 +10,7 @@ class Nav extends React.Component {
     this.state = {
       categoryList: {},
 
-      isUserMenuLogin: false,
-      isUserMenuShoppingBag: false,
+      isUserMenu: 0,
     };
   }
 
@@ -41,12 +40,6 @@ class Nav extends React.Component {
     });
   };
 
-  userMenuHoverShopping = () => {
-    this.setState({
-      isUserMenuShoppingBag: !this.state.isUserMenuShoppingBag,
-    });
-  };
-
   render() {
     const { categoryList, isUserMenuLogin, isUserMenuShoppingBag } = this.state;
 
@@ -66,27 +59,31 @@ class Nav extends React.Component {
           </ul>
 
           <ul className="userMenu">
-            {/* {USER_MENU.map((userMenu, idx) => (
-              <li key={idx}>
+            {USER_MENU.map((userMenu, idx) => (
+              <li key={idx} onMouseOver={this.userMenuHoverChange}>
                 <i className={`fas ${userMenu.type}`} />
                 <span>{userMenu.txt}</span>
               </li>
-            ))} */}
-            <li onMouseEnter={this.userMenuHoverChange}>
+            ))}
+
+            {isUserMenuLogin && <Login />}
+            {isUserMenuShoppingBag && <ShoppingBag />}
+            {/* <li onMouseEnter={this.userMenuHoverChange}>
               <i className="fas fa-user" />
               로그인
-              {isUserMenuLogin && <Login />}
             </li>
             <li>
               <i className="fas fa-heart" />
               즐겨찾기
             </li>
-            {/*onMouseLeave*/}
-            <li onMouseEnter={this.userMenuHoverShopping}>
+
+            <li
+              onMouseOver={this.userMenuHoverShopping}
+              onMouseLeave={!this.userMenuHoverShopping}
+            >
               <i className="fas fa-shopping-bag" />
               쇼핑백
-              {isUserMenuShoppingBag && <ShoppingBag />}
-            </li>
+            </li> */}
           </ul>
         </div>
 
@@ -107,8 +104,8 @@ class Nav extends React.Component {
 
           <ul className="subMenu">
             {categoryList.category_list?.map(category => {
-              return category.main_category?.map(subCategory => {
-                return <li>{subCategory.name}</li>;
+              return category.main_category?.map(twoDepth => {
+                return <li>{twoDepth.name}</li>;
               });
             })}
 
@@ -123,7 +120,7 @@ class Nav extends React.Component {
             }) } */}
           </ul>
 
-          <ul>
+          {/* <ul>
             {categoryList.category_list?.map(category => {
               return category.main_category?.map(sub_category => {
                 return sub_category?.map(test => {
@@ -131,7 +128,7 @@ class Nav extends React.Component {
                 });
               });
             })}
-          </ul>
+          </ul> */}
         </div>
 
         <form>
