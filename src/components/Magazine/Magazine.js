@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
-class Magazin extends Component {
+class Magazine extends Component {
   render() {
     const { heading, cardLink } = this.props;
     return (
-      <div className="magazinCard">
+      <div className="magazineCard">
         <Link to="/">
           <img src="/images/magazin_card_img.jpeg" alt="magazinImg" />
         </Link>
-        <div className="magazinCardContents">
+        <div className="magazineCardContents">
           <p className="vignette">INSIDE H&#x0026;W</p>
           <p className="heading">{heading}</p>
 
@@ -22,4 +22,4 @@ class Magazin extends Component {
   }
 }
 
-export default Magazin;
+export default Magazine;
