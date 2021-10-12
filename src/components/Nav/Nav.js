@@ -1,7 +1,7 @@
 import React from 'react';
 import Login from '../Login/Login';
 import ShoppingBag from '../ShoppingBag/ShoppingBag';
-import { SERVICES_LIST, MAIN_MENU_LIST, USER_MENU } from './data';
+import { SERVICES_LIST, MAIN_MENU_LIST } from './data';
 import './Nav.scss';
 
 class Nav extends React.Component {
@@ -10,7 +10,8 @@ class Nav extends React.Component {
     this.state = {
       categoryList: {},
 
-      isUserMenu: 0,
+      isUserMenuLogin: false,
+      isUserMenuShoppingBag: false,
     };
   }
 
@@ -40,9 +41,15 @@ class Nav extends React.Component {
     });
   };
 
+  userMenuHoverShopping = () => {
+    this.setState({
+      isUserMenuShoppingBag: !this.state.isUserMenuShoppingBag,
+    });
+  };
+
   render() {
     const { categoryList, isUserMenuLogin, isUserMenuShoppingBag } = this.state;
-
+    console.log(isUserMenuLogin, isUserMenuShoppingBag);
     // console.log(categoryList?.category_list.main_category.name);
 
     // console.log(
@@ -59,31 +66,32 @@ class Nav extends React.Component {
           </ul>
 
           <ul className="userMenu">
-            {USER_MENU.map((userMenu, idx) => (
-              <li key={idx} onMouseOver={this.userMenuHoverChange}>
+            {/* {USER_MENU.map((userMenu, idx) => (
+              <li key={idx}>
                 <i className={`fas ${userMenu.type}`} />
                 <span>{userMenu.txt}</span>
               </li>
-            ))}
-
-            {isUserMenuLogin && <Login />}
-            {isUserMenuShoppingBag && <ShoppingBag />}
-            {/* <li onMouseEnter={this.userMenuHoverChange}>
+            ))} */}
+            <li
+              onMouseEnter={this.userMenuHoverChange}
+              onMouseLeave={this.userMenuHoverChange}
+            >
               <i className="fas fa-user" />
               로그인
+              {isUserMenuLogin && <Login />}
             </li>
             <li>
               <i className="fas fa-heart" />
               즐겨찾기
             </li>
-
             <li
-              onMouseOver={this.userMenuHoverShopping}
-              onMouseLeave={!this.userMenuHoverShopping}
+              onMouseEnter={this.userMenuHoverShopping}
+              onMouseLeave={this.userMenuHoverShopping}
             >
               <i className="fas fa-shopping-bag" />
               쇼핑백
-            </li> */}
+              {isUserMenuShoppingBag && <ShoppingBag />}
+            </li>
           </ul>
         </div>
 
