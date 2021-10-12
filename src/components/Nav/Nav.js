@@ -116,27 +116,17 @@ class Nav extends React.Component {
                 return <li>{twoDepth.name}</li>;
               });
             })}
-
-            {/* {categoryList.category_list?.map(category => {
-              return category.main_category?.map(subCategory => {
-                return <li>{subCategory.name}</li>;
-              });
-            })} */}
-
-            {/* {categoryList.category_list.map(category => {
-              return {categoryList.category_list.map}
-            }) } */}
           </ul>
 
-          {/* <ul>
+          <ul>
             {categoryList.category_list?.map(category => {
-              return category.main_category?.map(sub_category => {
-                return sub_category?.map(test => {
-                  return <li>{test.name}</li>;
+              return category.main_category?.map(sub => {
+                return sub.sub_category.map(sub => {
+                  return <li>{sub.name}</li>;
                 });
               });
             })}
-          </ul> */}
+          </ul>
         </div>
 
         <form>
