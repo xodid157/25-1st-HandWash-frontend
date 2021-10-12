@@ -2,16 +2,25 @@
   display: flex;
   flex-direction: column;
   width: 24.8%;
-  height: 60%;
+  // height: 60%;
   padding-bottom: 0.5rem;
 
   .itemImg {
+    width: 100%;
+    height: 60%;
     position: relative;
     margin-bottom: 0.5rem;
 
+    a {
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+    }
+
     a > img {
       width: 100%;
-      height: auto;
+      height: 100%;
+      object-fit: cover;
     }
 
     .imgInPrice {
@@ -45,6 +54,7 @@
   }
   .itemText {
     padding-bottom: 1rem;
+    // height: 35%;
   }
 
   .notConcious {

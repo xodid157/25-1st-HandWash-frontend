@@ -5,13 +5,15 @@ import './ListBar.scss';
 
 class Listbar extends React.Component {
   render() {
-    const { bigname, sname } = this.props;
+    const { bigname, sname, onClickFilter } = this.props;
     return (
       <li className="listBar">
         <Biglistname>{bigname}</Biglistname>
-        <ul className="sListWrapper">
+        <ul onClick={onClickFilter} className="sListWrapper">
           {sname.map((name, index) => (
-            <Slistname key={index}>{name}</Slistname>
+            <Slistname onClick={onclick} key={index}>
+              {name}
+            </Slistname>
           ))}
         </ul>
       </li>

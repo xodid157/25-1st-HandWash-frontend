@@ -19,12 +19,12 @@ class Item extends React.Component {
   };
 
   render() {
-    const { name, price, img, color, is_new, is_conscious } = this.props;
+    const { id, name, price, img, color, is_new, is_conscious } = this.props;
     const { likeBtn } = this.state;
     return (
       <li className="item">
         <div className="itemImg">
-          <Link to="#">
+          <Link to={`/products/${id}`}>
             <img src={img} alt={name} />
           </Link>
           {/* <div className="imgInPrice">
@@ -44,13 +44,13 @@ class Item extends React.Component {
           <div className="itemName">
             <Link to="#">{name}</Link>
           </div>
-          <div className="itemprice">{price}</div>
+          <div className="itemprice">{`W${price}`}</div>
           <div className="itemColor">
             {color.map((color, index) => (
               <Colorchip key={index} color={color} />
             ))}
           </div>
-          <div className="newItem">{is_new === false && '신제품'}</div>
+          <div className="newItem">{is_new === true && '신제품'}</div>
         </div>
       </li>
     );

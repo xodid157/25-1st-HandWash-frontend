@@ -2,73 +2,75 @@
   {
     "id": 1,
     "name": "리브니트 울 블랜드 드레스",
-    "price": "W77,000",
-    "colors": ["black", "white"],
+    "price": "27,000",
+    "color": ["black", "white"],
+
     "img": "images/1111.jpeg",
-    "is_new": 1,
-    "is_concious": 0
+
+    "is_new": true,
+    "is_conscious": true
   },
   {
-    "id": 1,
+    "id": 2,
     "name": "리브니트 울 블랜드 드레스",
-    "price": "W77,000",
-    "colors": ["black"],
+    "price": "107,000",
+    "color": ["black"],
     "img": "images/1111.jpeg",
-    "is_new": 1,
-    "is_concious": 1
+    "is_new": true,
+    "is_conscious": false
   },
   {
-    "id": 1,
+    "id": 3,
     "name": "리브니트 울 블랜드 드레스",
-    "price": "W77,000",
-    "colors": [],
+    "price": "47,000",
+    "color": [],
     "img": "images/1111.jpeg",
-    "is_new": 0,
-    "is_concious": 1
+    "is_new": true,
+    "is_conscious": true
   },
   {
-    "id": 1,
+    "id": 4,
     "name": "리브니트 울 블랜드 드레스",
-    "price": "W77,000",
-    "colors": ["gray", "white", "navy"],
+    "price": "10,000",
+    "color": ["gray", "white", "navy"],
     "img": "images/1111.jpeg",
-    "is_new": 1,
-    "is_concious": 0
+    "is_new": false,
+    "is_conscious": true
   },
   {
-    "id": 1,
+    "id": 5,
     "name": "리브니트 울 블랜드 드레스",
-    "price": "W77,000",
-    "colors": ["black", "gray", "white", "navy"],
+    "price": "7,000",
+    "color": ["black", "gray", "white", "navy"],
     "img": "images/1111.jpeg",
-    "is_new": 1,
-    "is_concious": 1
+    "is_new": true,
+    "is_conscious": true
   },
   {
-    "id": 1,
+    "id": 6,
     "name": "리브니트 울 블랜드 드레스",
-    "price": "W77,000",
-    "colors": ["navy"],
+    "price": "27,000",
+    "color": ["navy"],
     "img": "images/1111.jpeg",
-    "is_new": 0,
-    "is_concious": 1
+    "is_new": false,
+    "is_conscious": false
   },
   {
-    "id": 1,
+    "id": 7,
     "name": "리브니트 울 블랜드 드레스",
-    "price": "W77,000",
-    "colors": ["gray", "white"],
+    "price": "17,000",
+    "color": ["gray", "white"],
     "img": "images/1111.jpeg",
-    "is_new": 1,
-    "is_concious": 1
+    "is_new": true,
+    "is_conscious": true
   },
   {
-    "id": 1,
+    "id": 8,
     "name": "리브니트 울 블랜드 드레스",
-    "price": "W77,000",
-    "colors": [],
+    "price": "37,000",
+    "color": [],
     "img": "images/1111.jpeg",
-    "is_new": 1,
-    "is_concious": 1
+    "is_new": true,
+    "is_conscious": false
   }
 ]

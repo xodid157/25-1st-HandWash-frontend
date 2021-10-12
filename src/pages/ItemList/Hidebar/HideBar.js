@@ -1,15 +1,16 @@
 import React from 'react';
 import HideBarMenu from './hideBarMenu';
-import FILTER_LIST from '../FILTERLIST';
+import filterlist from '../Mock/filterlist';
 import './HideBar.scss';
 
 class HideBar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      filterList: FILTER_LIST,
+      filterList: filterlist,
     };
   }
+
   render() {
     const { isSidebar } = this.props;
     const { filterList } = this.state;

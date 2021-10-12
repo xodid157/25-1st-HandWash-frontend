@@ -2,6 +2,7 @@
   float: left;
   margin-right: 0.7rem;
   font-size: 0.9rem;
+  cursor: pointer;
 
   .bigListName {
     display: block;
@@ -10,6 +11,10 @@
 
   .sListWrapper {
     display: none;
+    // visibility: hidden;
+    transition: height 0.5s ease-in-out;
+    background-color: white;
+    height: 0%;
 
     .sListName {
       padding: 1rem 0.7rem;
@@ -24,6 +29,8 @@
   &:hover {
     .sListWrapper {
       background-color: white;
+      // visibility: visible;
+      height: 100%;
       display: block;
     }
   }
