@@ -4,17 +4,19 @@ import Login from './pages/Login/Login';
 import Signup from './pages/Signup/Signup';
 import Main from './pages/Main/Main';
 import Nav from './components/Nav/Nav';
+import Footer from './components/footer/Footer';
 
 class Routes extends React.Component {
   render() {
     return (
       <Router>
+        <Nav />
         <Switch>
           <Route exact path="/main" component={Main} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/signup" component={Signup} />
-          <Route exact path="/nav" component={Nav} />
         </Switch>
+        <Footer />
       </Router>
     );
   }
