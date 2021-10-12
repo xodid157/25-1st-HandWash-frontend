@@ -34,9 +34,49 @@ class BirthInput extends React.Component {
           <span>일</span>
         </div>
         <p className="birthCoupon">H&amp;W이 생일 쿠폰을 드립니다</p>
+        {/* {BIRTH_INPUT.map(inputName => {
+          return (
+            <div key={inputName.id} className="birthInput">
+              <input
+                className={inputName.titlename}
+                name={inputName.subname}
+                placeholder={inputName.place}
+                maxLength={inputName.length}
+                onChange={this.props.handleInput}
+              />
+              <span>{inputName.name}</span>
+            </div>
+          );
+        })} */}
       </div>
     );
   }
 }
 
+// const BIRTH_INPUT = [
+//   {
+//     id: 1,
+//     titlename: 'yearInput',
+//     subname: 'year',
+//     place: '----',
+//     length: '4',
+//     name: '년',
+//   },
+//   {
+//     id: 2,
+//     titlename: 'dayInput',
+//     subname: 'month',
+//     place: '--',
+//     length: '2',
+//     name: '월',
+//   },
+//   {
+//     id: 3,
+//     titlename: 'dayInput',
+//     subname: 'day',
+//     place: '--',
+//     length: '2',
+//     name: '일',
+//   },
+// ];
 export default BirthInput;

@@ -61,6 +61,18 @@
       font-size: 0.8em;
     }
 
+    .inputOff {
+      .emailInput {
+        width: 100%;
+        padding: 1.2em 1em;
+        border: 0.1em solid red;
+      }
+      .passwordInput {
+        width: 100%;
+        padding: 1.2em 1em;
+        border: 0.1em solid red;
+      }
+    }
     .emailName {
       width: 100%;
       .emailTitle {

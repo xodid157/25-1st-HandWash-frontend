@@ -16,6 +16,7 @@ class Signup extends React.Component {
       year: '',
       month: '',
       day: '',
+      gender: '',
       ischeck1: '',
       ischeck2: '',
       ischeck3: '',
@@ -40,29 +41,31 @@ class Signup extends React.Component {
   //     });
   // }
   goToMain = e => {
-    // const { ischeck1, ischeck2, ischeck3 } = this.state;
-    // if ((ischeck1, ischeck2, ischeck3 === 'on')) {
-    //   this.props.history.push('/main');
-    // } else if ((ischeck1, ischeck2, ischeck3 === 'off')) {
-    //   alert('*표시된 필드는 필수 항목입니다.');
-    // }
-    const { email, password, year, month, day } = this.state;
-    fetch('http://172.30.1.4:8000/users/signup', {
+    const { email, password, year, month, day, lastname, firstname } =
+      this.state;
+    fetch('http://10.58.2.128:8000/users/signup', {
       method: 'POST',
       body: JSON.stringify({
         email: email,
         password: password,
-        birth: year + '-' + month + '-' + day, //여기 백엔드랑 할 때 안되면 쪼갠거 확인
+        birth: year + '-' + month + '-' + day,
+        lastname: lastname,
+        firstname: firstname,
       }),
     })
       .then(res => res.json())
       .then(res => {
         console.log(res.token);
-        if (res.token) {
-          localStorage.setItem('token', res.token);
-          this.props.history.push('/main');
-        }
+        this.props.history.push('/main');
       });
+  };
+  checkcondition = () => {
+    const { ischeck1, ischeck2, ischeck3 } = this.state;
+    if ((ischeck1, ischeck2, ischeck3 === 'on')) {
+      return this.goToMain;
+    } else if ((ischeck1, ischeck2, ischeck3 === 'off')) {
+      alert('*표시된 필드는 필수 항목입니다.');
+    }
   };
   changeList = e => {
     this.setState({
@@ -70,13 +73,15 @@ class Signup extends React.Component {
     });
   };
   render() {
-    console.log('체크', this.state.year);
+    console.log('체크', this.state.ischeck1);
     return (
       <div className="signUp">
         <div className="signUpContainer" onChange={this.handleInput}>
-          <button className="outButton">
-            <i className="fal fa-times"></i>
-          </button>
+          <Link to="/main">
+            <button className="outButton">
+              <i className="fal fa-times"></i>
+            </button>
+          </Link>
           <p className="loginTitle">멤버십 가입하기</p>
           <p className="loginSubTitle">
             다양한 할인 혜택과 이벤트,보너스 쿠폰을 놓치지 마세요

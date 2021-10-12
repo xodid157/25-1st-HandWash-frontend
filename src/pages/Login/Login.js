@@ -21,7 +21,7 @@ class Login extends React.Component {
   };
 
   goToMain = e => {
-    fetch('http://172.30.1.4:8000/users/signin', {
+    fetch('http://10.58.2.128:8000/users/signin', {
       method: 'POST',
       body: JSON.stringify({
         email: this.state.email,
@@ -35,24 +35,31 @@ class Login extends React.Component {
           this.props.history.push('/main');
         } else if (!res.token) {
           alert('아이디, 비밀번호를 확인해주세요');
-          //이 부분에 이메일 패스워드 조건 걸어주는 건가?
         }
       });
   };
-  // 조건에 따라 로그인 버튼 활성화 만들어야됨
-  // const { email, password } = this.state;
-  // email.includes('@') && password.length >= 8
-  //   ? this.props.history.push('/main')
-  //   : alert('다시 확인해 주세요');
+
+  logInCondition = () => {
+    const { email, password } = this.state;
+    if (email.includes('@') && password.length >= 8) {
+      return this.goToMain;
+    } else {
+      return 'inputOff';
+    }
+  };
 
   render() {
+    const { email, password } = this.state;
+    const isValid = email.includes('@') && password.length >= 8;
     console.log(this.state.password);
     return (
       <div className="login">
         <div className="loginContainer">
-          <button className="closeButton">
-            <i className="fal fa-times"></i>
-          </button>
+          <Link to="/main">
+            <button className="closeButton">
+              <i className="fal fa-times"></i>
+            </button>
+          </Link>
           <p className="loginTitle">로그인</p>
           <p className="loginSubTitle">
             다양한 할인 혜택과 이벤트,보너스 쿠폰을 놓치지 마세요
@@ -61,7 +68,10 @@ class Login extends React.Component {
             <i className="fas fa-comment"></i> &nbsp;카카오로 로그인
           </button>
           <p className="or">또는</p>
-          <LoginInput handleInput={this.handleInput} />
+          <LoginInput
+            handleInput={this.handleInput}
+            className={isValid ? 'inputOn' : 'inputOff'}
+          />
           <div className="loginState">
             <div className="checkBox">
               <input type="checkbox" name="loginCheck" />
