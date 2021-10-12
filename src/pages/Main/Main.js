@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Magazin from '../../components/Magazine/Magazine';
+import Magazine from '../../components/Magazine/Magazine';
 import Campaign from '../../components/Campaign/Campaign';
 import Trend from '../../components/Trend/Trend';
 import './Main.scss';
@@ -10,18 +10,18 @@ class Main extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      magazinList: [],
+      magazineList: [],
       trendList: [],
       campaignList: [],
     };
   }
 
   componentDidMount() {
-    fetch('data/magazinData.json')
-      .then(magazin => magazin.json())
+    fetch('data/magazineData.json')
+      .then(magazine => magazine.json())
       .then(data =>
         this.setState({
-          magazinList: data,
+          magazineList: data,
         })
       );
 
@@ -43,7 +43,7 @@ class Main extends React.Component {
   }
 
   render() {
-    const { magazinList, trendList, campaignList } = this.state;
+    const { magazineList, trendList, campaignList } = this.state;
     return (
       <>
         <main>
@@ -101,13 +101,13 @@ class Main extends React.Component {
             READ H&#x0026;W MAGAZINE
           </Link>
 
-          <div className="magazinCardList">
-            {magazinList.map((magazin, idx) => {
+          <div className="magazineCardList">
+            {magazineList.map((magazine, idx) => {
               return (
-                <Magazin
+                <Magazine
                   key={idx}
-                  heading={magazin.heading}
-                  cardLink={magazin.cardLink}
+                  heading={magazine.heading}
+                  cardLink={magazine.cardLink}
                 />
               );
             })}
