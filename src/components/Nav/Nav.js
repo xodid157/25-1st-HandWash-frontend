@@ -8,9 +8,7 @@ class Nav extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      categoryList: {
-        category_list: [{}],
-      },
+      categoryList: {},
 
       isUserMenuLogin: false,
       isUserMenuShoppingBag: false,
@@ -52,7 +50,12 @@ class Nav extends React.Component {
   render() {
     const { categoryList, isUserMenuLogin, isUserMenuShoppingBag } = this.state;
 
-    console.log(categoryList.category_list[0].name);
+    // console.log(categoryList?.category_list.main_category.name);
+
+    // console.log(
+    //   categoryList.category_list?.[0].main_category?.[0]?.sub_category
+    // );
+
     return (
       <nav className="navContainer">
         <div className="menuServices">
@@ -72,19 +75,19 @@ class Nav extends React.Component {
             <li onMouseEnter={this.userMenuHoverChange}>
               <i className="fas fa-user" />
               로그인
+              {isUserMenuLogin && <Login />}
             </li>
             <li>
               <i className="fas fa-heart" />
               즐겨찾기
             </li>
+            {/*onMouseLeave*/}
             <li onMouseEnter={this.userMenuHoverShopping}>
               <i className="fas fa-shopping-bag" />
               쇼핑백
+              {isUserMenuShoppingBag && <ShoppingBag />}
             </li>
           </ul>
-
-          {isUserMenuLogin && <Login />}
-          {isUserMenuShoppingBag && <ShoppingBag />}
         </div>
 
         <h1 className="logo">
@@ -93,7 +96,7 @@ class Nav extends React.Component {
 
         <div>
           <ul className="menu">
-            {categoryList.category_list.map((category, idx) => {
+            {categoryList.category_list?.map((category, idx) => {
               return <li key={idx}>{category.name}</li>;
             })}
 
@@ -103,8 +106,30 @@ class Nav extends React.Component {
           </ul>
 
           <ul className="subMenu">
-            {categoryList.category_list.main_category?.map((subMenu, idx) => {
-              return <li key={idx}>{subMenu.name}</li>;
+            {categoryList.category_list?.map(category => {
+              return category.main_category?.map(subCategory => {
+                return <li>{subCategory.name}</li>;
+              });
+            })}
+
+            {/* {categoryList.category_list?.map(category => {
+              return category.main_category?.map(subCategory => {
+                return <li>{subCategory.name}</li>;
+              });
+            })} */}
+
+            {/* {categoryList.category_list.map(category => {
+              return {categoryList.category_list.map}
+            }) } */}
+          </ul>
+
+          <ul>
+            {categoryList.category_list?.map(category => {
+              return category.main_category?.map(sub_category => {
+                return sub_category?.map(test => {
+                  return <li>{test.name}</li>;
+                });
+              });
             })}
           </ul>
         </div>
