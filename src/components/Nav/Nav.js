@@ -52,6 +52,7 @@ class Nav extends React.Component {
   render() {
     const { categoryList, isUserMenuLogin, isUserMenuShoppingBag } = this.state;
 
+    console.log(categoryList.category_list[0].name);
     return (
       <nav className="navContainer">
         <div className="menuServices">
