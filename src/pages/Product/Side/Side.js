@@ -5,7 +5,6 @@ import './Side.scss';
 // import { Link } from 'react-router-dom';
 
 class Side extends React.Component {
-  componentDidMount() {}
   goToColor = id => {
     this.props.history.push(`product/${id}`);
   };
@@ -26,12 +25,12 @@ class Side extends React.Component {
             <span>{product.color?.[0].color}</span>
           </div>
           <ul className="productColorImg">
-            {product.color?.map(url => (
-              <li key={url.id}>
+            {product.color?.map(content => (
+              <li key={content.id}>
                 <img
                   alt="colors"
-                  src={url.image}
-                  onClick={() => this.goToColor(url.id)}
+                  src={content.image}
+                  onClick={() => this.goToColor(content.id)}
                 />
               </li>
             ))}
