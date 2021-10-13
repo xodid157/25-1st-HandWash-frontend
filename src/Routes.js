@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import Main from './pages/Main/Main';
 import Nav from './components/Nav/Nav';
-import ItemList from './pages/ItemList/Itemlist';
+import Footer from './components/footer/Footer';
 
 class Routes extends React.Component {
   render() {
@@ -11,9 +11,9 @@ class Routes extends React.Component {
       <Router>
         <Nav />
         <Switch>
-          <Route exact path="/main" component={ItemList} />
-          <Route exact path="/nav" component={Nav} />
+          <Route exact path="/main" component={Main} />
         </Switch>
+        <Footer />
       </Router>
     );
   }
