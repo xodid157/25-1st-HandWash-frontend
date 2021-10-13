@@ -1,3 +1,8 @@
+// .cart {
+//   display: flex;
+//   justify-content: center;
+//   max-width: 1188px;
+
 .basketTitle {
   display: flex;
   justify-content: center;
@@ -6,24 +11,44 @@
 }
 .basketContainer {
   display: flex;
-  justify-content: center;
+  // justify-content: center;
+
   width: 100%;
-  padding: 5em;
+  padding: 5em 20em;
   //여기서 메인이랑 사이드 두 덩이로
+
   .shoppingBasket {
     display: flex;
     width: 100%;
     border: 1px solid blue;
 
     .basketList {
-      width: 100%;
-
-      img {
-        height: 10em;
-      }
-
-      .itemName {
+      //리스트에 추가될창
+      // width: 100%;
+      .addItem {
+        //이미지랑 정보 들어가는 것
         display: flex;
+
+        .itemImg {
+          margin-right: 1.5em;
+          height: 10em;
+        }
+        .itemInfo {
+          .itemTag {
+            flex-direction: column;
+            span {
+              font-size: 0.81em;
+            }
+            .price {
+              font-size: 0.81em;
+              font-weight: 400;
+            }
+          }
+        }
+
+        .itemName {
+          display: flex;
+        }
       }
     }
   }
@@ -32,3 +57,4 @@
     border: 1px solid red;
   }
 }
+// }
