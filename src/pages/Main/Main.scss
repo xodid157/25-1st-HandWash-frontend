@@ -14,7 +14,9 @@ main {
   }
 
   .trendImgContent {
-    @include flexCenter;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     margin: 0 auto;
 
     .fa-arrow-left {
@@ -29,8 +31,9 @@ main {
       display: flex;
 
       li {
+        margin: 0 1.2em;
+
         img {
-          margin: 0 0.55em;
           border-radius: 50%;
         }
 

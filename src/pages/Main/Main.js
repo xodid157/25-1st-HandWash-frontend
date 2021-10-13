@@ -11,7 +11,10 @@ class Main extends React.Component {
     super(props);
     this.state = {
       magazineList: [],
+
       trendList: [],
+      trendNumber: 0,
+
       campaignList: [],
     };
   }
@@ -42,6 +45,16 @@ class Main extends React.Component {
       );
   }
 
+  nextBtn = () => {
+    const { trendList, trendNumber } = this.state;
+    if (trendList === trendNumber) {
+      trendList + 1;
+    }
+    this.setState({
+      trendList: trendList + 1,
+    });
+  };
+
   render() {
     const { magazineList, trendList, campaignList } = this.state;
     return (
@@ -51,7 +64,7 @@ class Main extends React.Component {
             <h3 className="trendTitle">최신 트렌드</h3>
 
             <div className="trendImgContent">
-              <i className="fas fa-arrow-left"></i>
+              <i className="fas fa-arrow-left" onClick={this.nextBtn}></i>
               <ul className="trendImg">
                 {trendList.map((trend, idx) => {
                   return (
