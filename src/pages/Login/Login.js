@@ -80,7 +80,7 @@ class Login extends React.Component {
             <span className="lostPassword">비밀번호를 잊으셨나요?</span>
           </div>
           <div className="mainButton">
-            <button className="loginButton" onClick={this.goToMain}>
+            <button className="loginButton" onClick={this.logInCondition}>
               <p>로그인</p>
             </button>
             <Link to="/signup">

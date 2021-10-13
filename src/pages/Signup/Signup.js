@@ -34,14 +34,6 @@ class Signup extends React.Component {
       [name]: value,
     });
   };
-  // 목데이터 연습 함수
-  // componentDidMount() {
-  //   fetch('http://localhost:3000/data/SignupData.json')
-  //     .then(res => res.json())
-  //     .then(res => {
-  //       console.log(res);
-  //     });
-  // }
   goToMain = e => {
     const {
       email,
@@ -116,7 +108,6 @@ class Signup extends React.Component {
             <span className="benefits">
               정보 추가하고 더 큰 혜택을 받으세요
             </span>
-            {/* 이후 + 클릭시 +, span색 빨간색으로 변경 */}
             <i className="fal fa-plus"></i>
           </button>
           {this.state.isInfo && (
