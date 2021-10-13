@@ -1,71 +1,105 @@
-// .cart {
-//   display: flex;
-//   justify-content: center;
-//   max-width: 1188px;
-
-.basketTitle {
-  display: flex;
-  justify-content: center;
-  // width: 100%;
-  font-size: 3rem;
-}
-.basketContainer {
-  display: flex;
-  // justify-content: center;
-
+.cart {
   width: 100%;
-  padding: 5em 20em;
-  //여기서 메인이랑 사이드 두 덩이로
 
-  .shoppingBasket {
+  .basketTitle {
     display: flex;
+    justify-content: center;
     width: 100%;
-    border: 1px solid blue;
+    font-size: 3rem;
+  }
+  .basketContainer {
+    display: flex;
+    // justify-content: center;
 
-    .basketList {
-      //리스트에 추가될창
-      // width: 100%;
-      .addItem {
-        //이미지랑 정보 들어가는 것
-        position: relative;
-        display: flex;
+    width: 100%;
+    padding: 5em 20em;
+    //여기서 메인이랑 사이드 두 덩이로
 
-        // .far fa-trash-alt {
-        //   position: absolute;
-        //   display: flex;
-        //   left: 0;
-        // }
-        .itemImg {
-          margin-right: 1.5em;
-          height: 10em;
-        }
-        .itemInfo {
-          // flex-direction: column;
-          .itemTag {
-            flex-direction: column;
-            font-size: 0.81em;
+    .shoppingBasket {
+      display: flex;
+      width: 100%;
+      border: 1px solid blue;
 
-            .price {
-              // font-size: 0.81em;
-              font-weight: 500;
+      .basketList {
+        //리스트에 추가될창
+        // width: 100%;
+        .addItem {
+          //이미지랑 정보 들어가는 것
+          position: relative;
+          display: flex;
+
+          .trash {
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            right: 0;
+            width: 48px;
+            height: 48px;
+            border: none;
+            background-color: #fff;
+
+            .far fa-trash-alt {
+              size: 20px;
             }
           }
 
-          .itemInfoList {
-            margin: 2em 0;
-            font-size: 0.69em;
+          .itemImg {
+            margin-right: 1.5em;
+            height: 10em;
           }
+          .itemInfo {
+            // flex-direction: column;
+            .itemTag {
+              flex-direction: column;
+              font-size: 0.81em;
+              padding-top: 1em;
+              .price {
+                // font-size: 0.81em;
+                font-weight: 500;
+                margin-top: 0.6em;
+              }
+            }
 
-          .addHarth {
-            width: 60px;
+            .itemInfoList {
+              display: flex;
+              flex-wrap: wrap;
+              margin: 2em 0;
+              margin-right: 4em;
+              font-size: 0.69em;
+
+              li {
+                flex: 1 1 50%;
+                margin-bottom: 0.3em;
+
+                span {
+                  flex: 1 1 20%;
+                }
+              }
+            }
+
+            .addHarth {
+              margin-right: 0.5em;
+              width: 60px;
+              height: 50px;
+              border: 1px solid black;
+              background-color: #fff;
+            }
+
+            .count {
+              margin-right: 0.5em;
+              width: 80px;
+              height: 50px;
+              border: 1px solid #d0d0d0;
+              background-color: #fff;
+            }
           }
         }
       }
     }
-  }
-  .cartSide {
-    width: 50%;
-    border: 1px solid red;
+    .cartSide {
+      width: 55%;
+      border: 1px solid red;
+    }
   }
 }
-// }

@@ -1,6 +1,13 @@
 import React from 'react';
 import './Basket.scss';
 class Basket extends React.Component {
+  constructor() {
+    super();
+    this.setState = {
+      item: '',
+      list: [],
+    };
+  }
   render() {
     return (
       <div className="cart">
@@ -10,7 +17,9 @@ class Basket extends React.Component {
           <main className="shoppingBasket">
             <ul className="basketList">
               <li className="addItem">
-                {/* <i className="far fa-trash-alt"></i> */}
+                <button className="trash">
+                  <i className="far fa-trash-alt"></i>
+                </button>
                 <img
                   src="https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=795&q=80
 "
@@ -18,10 +27,10 @@ class Basket extends React.Component {
                   className="itemImg"
                 ></img>
                 <span className="itemInfo">
-                  <span className="itemTag">
+                  <div className="itemTag">
                     <p>A라인 쇼트 드레스</p>
                     <p className="price">₩ 29,990</p>
-                  </span>
+                  </div>
                   {/* 나중에 중괄호 한다음 데이터 값을 받을거임 */}
 
                   <ul className="itemInfoList">
