@@ -1,0 +1,51 @@
+.itemColor {
+  a {
+    margin-right: 0.1rem;
+
+    div {
+      width: 0.5rem;
+      height: 0.5rem;
+      border-radius: 50%;
+
+      &.블랙 {
+        background-color: black;
+      }
+
+      &.차콜 {
+        background-color: rgb(136, 135, 135);
+      }
+
+      &.화이트 {
+        background-color: bisque;
+      }
+
+      &.스카이블루 {
+        background-color: rgb(154, 225, 228);
+      }
+      &.그린 {
+        background-color: rgb(29, 82, 22);
+      }
+      &.브라운 {
+        background-color: rgb(71, 44, 39);
+      }
+      &.오렌지 {
+        background-color: rgb(255, 166, 0);
+      }
+      &.핑크 {
+        background-color: rgb(202, 110, 171);
+      }
+      &.베이지 {
+        background-color: rgb(124, 99, 71);
+      }
+      &.네이비 {
+        background-color: rgb(28, 24, 77);
+      }
+      &.레드 {
+        background-color: rgb(161, 60, 60);
+      }
+      &.옐로우 {
+        background-color: rgb(219, 211, 88);
+      }
+    }
+  }
+}
