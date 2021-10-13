@@ -26,13 +26,11 @@ class Nav extends React.Component {
         <h1 className="logo">
           H <span className="small">&#x0026;</span> W
         </h1>
-
         <ul className="menu">
           {/* {CATEGORIES_LIST.map((category, idx) => (
             <li key={idx}>{category}</li>
           ))} */}
         </ul>
-
         <form>
           <button>
             <i className="fas fa-search" />

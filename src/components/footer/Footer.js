@@ -5,7 +5,7 @@ import './Footer.scss';
 class Footer extends Component {
   render() {
     return (
-      <footer>
+      <footer className="footer">
         <div className="footerIcons">
           <a href="https://velog.io/@maxkmh" target="_blank" rel="noreferrer">
             <i className="fas fa-dumbbell"></i>
