@@ -46,7 +46,7 @@ class Main extends React.Component {
     const { magazineList, trendList, campaignList } = this.state;
     return (
       <>
-        <main>
+        <main className="main">
           <div className="trendContent">
             <h3 className="trendTitle">최신 트렌드</h3>
 
