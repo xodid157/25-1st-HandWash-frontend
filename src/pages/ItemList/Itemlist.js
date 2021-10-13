@@ -67,7 +67,7 @@ class ItemList extends React.Component {
 
     this.setState({
       selectFilter: [...selectFilter, filterText],
-      selected: filterText,
+      // selected: filterText,
     });
 
     const xy = selectFilter

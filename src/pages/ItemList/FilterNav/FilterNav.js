@@ -23,6 +23,7 @@ class FilterNav extends React.Component {
             {navlist.map((list, index) => (
               <Listbar
                 key={index}
+                index={list.id}
                 bigname={list.bigname}
                 sname={list.sname}
                 onClickFilter={onClickFilter}

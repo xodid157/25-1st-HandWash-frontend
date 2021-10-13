@@ -6,7 +6,7 @@ import './ListBar.scss';
 class Listbar extends React.Component {
   render() {
     const { bigname, sname, onClickFilter } = this.props;
-    console.log(bigname);
+    console.log(this.props.index);
     return (
       <li className="listBar">
         <Biglistname>{bigname}</Biglistname>
