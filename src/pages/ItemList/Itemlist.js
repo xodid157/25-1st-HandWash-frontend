@@ -63,7 +63,7 @@ class ItemList extends React.Component {
 
   onClickFilter = e => {
     const filterText = e.target.innerText;
-    const { selectFilter, selected } = this.state;
+    const { selectFilter } = this.state;
 
     this.setState({
       selectFilter: [...selectFilter, filterText],
