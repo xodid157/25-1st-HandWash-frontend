@@ -27,27 +27,38 @@
       // width: 100%;
       .addItem {
         //이미지랑 정보 들어가는 것
+        position: relative;
         display: flex;
 
+        // .far fa-trash-alt {
+        //   position: absolute;
+        //   display: flex;
+        //   left: 0;
+        // }
         .itemImg {
           margin-right: 1.5em;
           height: 10em;
         }
         .itemInfo {
+          // flex-direction: column;
           .itemTag {
             flex-direction: column;
-            span {
-              font-size: 0.81em;
-            }
+            font-size: 0.81em;
+
             .price {
-              font-size: 0.81em;
-              font-weight: 400;
+              // font-size: 0.81em;
+              font-weight: 500;
             }
           }
-        }
 
-        .itemName {
-          display: flex;
+          .itemInfoList {
+            margin: 2em 0;
+            font-size: 0.69em;
+          }
+
+          .addHarth {
+            width: 60px;
+          }
         }
       }
     }
