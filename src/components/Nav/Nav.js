@@ -1,6 +1,7 @@
 import React from 'react';
 import Login from '../Login/Login';
 import ShoppingBag from '../ShoppingBag/ShoppingBag';
+import Depth from '../Depth/Depth';
 import { SERVICES_LIST, MAIN_MENU_LIST } from './data';
 import './Nav.scss';
 
@@ -9,30 +10,10 @@ class Nav extends React.Component {
     super(props);
     this.state = {
       categoryList: {},
-
       isUserMenuLogin: false,
       isUserMenuShoppingBag: false,
+      isDepthMenu: false,
     };
-  }
-
-  componentDidMount() {
-    // fetch('http://172.30.1.12:8000/products/categories', {
-    //   method: 'GET',
-    // })
-    //   .then(res => res.json())
-    //   .then(category => {
-    //     this.setState({
-    //       categoryList: category,
-    //     });
-    //   });
-
-    fetch('data/navListData.json')
-      .then(res => res.json())
-      .then(category => {
-        this.setState({
-          categoryList: category,
-        });
-      });
   }
 
   userMenuHoverChange = () => {
@@ -48,13 +29,7 @@ class Nav extends React.Component {
   };
 
   render() {
-    const { categoryList, isUserMenuLogin, isUserMenuShoppingBag } = this.state;
-    console.log(isUserMenuLogin, isUserMenuShoppingBag);
-    // console.log(categoryList?.category_list.main_category.name);
-
-    // console.log(
-    //   categoryList.category_list?.[0].main_category?.[0]?.sub_category
-    // );
+    const { isUserMenuLogin, isUserMenuShoppingBag } = this.state;
 
     return (
       <nav className="navContainer">
@@ -66,12 +41,6 @@ class Nav extends React.Component {
           </ul>
 
           <ul className="userMenu">
-            {/* {USER_MENU.map((userMenu, idx) => (
-              <li key={idx}>
-                <i className={`fas ${userMenu.type}`} />
-                <span>{userMenu.txt}</span>
-              </li>
-            ))} */}
             <li
               onMouseEnter={this.userMenuHoverChange}
               onMouseLeave={this.userMenuHoverChange}
@@ -100,33 +69,7 @@ class Nav extends React.Component {
         </h1>
 
         <div>
-          <ul className="menu">
-            {categoryList.category_list?.map((category, idx) => {
-              return <li key={idx}>{category.name}</li>;
-            })}
-
-            {MAIN_MENU_LIST.map((mainMenu, idx) => {
-              return <li key={idx}>{mainMenu}</li>;
-            })}
-          </ul>
-
-          <ul className="subMenu">
-            {categoryList.category_list?.map(category => {
-              return category.main_category?.map(twoDepth => {
-                return <li>{twoDepth.name}</li>;
-              });
-            })}
-          </ul>
-
-          <ul>
-            {categoryList.category_list?.map(category => {
-              return category.main_category?.map(sub => {
-                return sub.sub_category.map(sub => {
-                  return <li>{sub.name}</li>;
-                });
-              });
-            })}
-          </ul>
+          <Depth />
         </div>
 
         <form>

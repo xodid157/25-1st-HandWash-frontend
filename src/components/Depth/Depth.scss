@@ -1,0 +1,20 @@
+@import '../../styles/variables.scss';
+
+.menuDepth {
+  padding-top: 2.4em;
+
+  .twoDepth {
+    @include flexCenter;
+
+    margin-bottom: 0.8em;
+
+    li {
+      margin-right: 2em;
+    }
+  }
+
+  .threeDepth {
+    display: flex;
+    flex-direction: row;
+  }
+}
