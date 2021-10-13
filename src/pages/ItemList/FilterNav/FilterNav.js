@@ -22,7 +22,7 @@ class FilterNav extends React.Component {
           <ul className="navi">
             {navlist.map((list, index) => (
               <Listbar
-                key={index}
+                key={list.id}
                 index={list.id}
                 bigname={list.bigname}
                 sname={list.sname}
@@ -60,7 +60,7 @@ class Filter extends React.Component {
         <span>{selectFilter}</span>
         <i
           data-index={index}
-          onClick={deleteFilter}
+          onClick={() => deleteFilter(selectFilter)}
           className="fas fa-times"
         ></i>
       </div>

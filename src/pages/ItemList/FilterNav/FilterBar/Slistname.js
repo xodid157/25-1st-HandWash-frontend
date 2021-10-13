@@ -2,9 +2,9 @@ import React from 'react';
 
 class Slistname extends React.Component {
   render() {
-    const { children } = this.props;
+    const { onClickFilter, children } = this.props;
     return (
-      <li className="sListName">
+      <li onClick={onClickFilter} className="sListName">
         <span>{children}</span>
       </li>
     );

@@ -51,18 +51,29 @@ class ItemList extends React.Component {
   };
 
   componentDidMount() {
-    fetch('data/itemLists.json')
-      // fetch('http://10.58.4.132:8000/products/')
+    // fetch('data/itemLists.json')
+    fetch('http://10.58.4.132:8000/products?gender=1')
       .then(res => res.json())
       .then(data => {
-        this.setState({ itemlist: data });
+        this.setState({ itemlist: data.products });
       });
+  }
+
+  componentDidUpdate() {
+    const { selectFilter } = this.state;
+
+    const filteredData = selectFilter
+      .map(filterName => `${this.findFilterUl(filterName)}=${filterName}&`)
+      .join('')
+      .slice(0, -1);
+
+    console.log(`http://10.58.102.9:8000/products?${filteredData}`);
   }
 
   showMoreItem = () => {};
 
   onClickFilter = e => {
-    const filterText = e.target.innerText;
+    const filterText = e.currentTarget.innerText;
     const { selectFilter } = this.state;
 
     this.setState({
@@ -70,18 +81,11 @@ class ItemList extends React.Component {
       // selected: filterText,
     });
 
-    const xy = selectFilter
-      .map(filterName => `?${this.findFilterUl(filterName)}=${filterName}&`)
-      .join('')
-      .slice(0, -1);
-
-    console.log(xy);
-
     // const yy = `${this.findFilterUl(selected)}=${selected}&`;
 
     // console.log(yy.slice(0, -1));
 
-    // fetch(`${APi}/products/?${xy}`)
+    // fetch(`${API}/products?${xy}`)
     //   .then(res => res.json())
     //   .then(data => {
     //     this.setState({
@@ -90,13 +94,13 @@ class ItemList extends React.Component {
     //   });
   };
 
-  deleteFilter = e => {
+  deleteFilter = selected => {
     const { selectFilter } = this.state;
 
     this.setState({
       selectFilter: selectFilter.filter(select => {
-        console.log(select, e.target.dataset.index, e);
-        return select.key !== e.target.id;
+        console.log(select);
+        return select !== selected;
       }),
     });
   };
