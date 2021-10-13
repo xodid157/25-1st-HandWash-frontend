@@ -3,6 +3,9 @@ import React from 'react';
 class Basketitem extends React.Component {
   render() {
     return (
+      // <li className="itemBox">
+      //   <span className="itemId"> 미친 {this.props.item}</span>
+      // </li>
       <li className="addItem">
         <button className="trash">
           <i className="far fa-trash-alt"></i>
@@ -18,8 +21,6 @@ class Basketitem extends React.Component {
             <p>A라인 쇼트 드레스</p>
             <p className="price">₩ 29,990</p>
           </div>
-          {/* 나중에 중괄호 한다음 데이터 값을 받을거임 */}
-
           <ul className="itemInfoList">
             <li>
               <span>상품 번호:</span>
