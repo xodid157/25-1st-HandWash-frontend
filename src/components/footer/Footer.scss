@@ -6,11 +6,11 @@
     format('truetype');
 }
 
-footer:not(.logo) {
+.footer:not(.logo) {
   font-size: 0.85em;
 }
 
-footer {
+.footer {
   @include flexCenter;
   flex-direction: column;
   padding: 3.4em 0;

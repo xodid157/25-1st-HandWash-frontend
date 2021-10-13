@@ -24,7 +24,7 @@ class Item extends React.Component {
     return (
       <li className="item">
         <div className="itemImg">
-          <Link to={`/products/${id}`}>
+          <Link to={`/product/${id}`}>
             <img src={img} alt={name} />
           </Link>
           {/* <div className="imgInPrice">
@@ -42,7 +42,7 @@ class Item extends React.Component {
             {is_conscious === true && 'Concious'}
           </div>
           <div className="itemName">
-            <Link to={`/products/${id}`}>{name}</Link>
+            <Link to={`/product/${id}`}>{name}</Link>
           </div>
           <div className="itemprice">{`W${price}`}</div>
           <div className="itemColor">
