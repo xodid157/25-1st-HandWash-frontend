@@ -40,7 +40,7 @@ class FilterNav extends React.Component {
           {selectFilter.map((selectFilter, index) => (
             <Filter
               key={index}
-              id={index}
+              index={index}
               selectFilter={selectFilter}
               deleteFilter={deleteFilter}
             />
@@ -53,13 +53,18 @@ class FilterNav extends React.Component {
 
 class Filter extends React.Component {
   render() {
-    const { selectFilter, deleteFilter } = this.props;
+    const { selectFilter, deleteFilter, index } = this.props;
     return (
       <div>
         <span>{selectFilter}</span>
-        <i onClick={deleteFilter} className="fas fa-times"></i>
+        <i
+          data-index={index}
+          onClick={deleteFilter}
+          className="fas fa-times"
+        ></i>
       </div>
     );
   }
 }
+
 export default FilterNav;

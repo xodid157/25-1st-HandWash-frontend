@@ -42,7 +42,7 @@ class Item extends React.Component {
             {is_conscious === true && 'Concious'}
           </div>
           <div className="itemName">
-            <Link to="#">{name}</Link>
+            <Link to={`/products/${id}`}>{name}</Link>
           </div>
           <div className="itemprice">{`W${price}`}</div>
           <div className="itemColor">

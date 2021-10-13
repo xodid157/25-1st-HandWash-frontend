@@ -3,17 +3,17 @@ import Item from '../../../components/Item/Item';
 
 class Items extends React.Component {
   render() {
+    const { itemlist } = this.props;
     return (
       <>
         <ul className="items">
-          {this.props.itemlist.map(item => (
+          {itemlist.map(item => (
             <Item
               key={item.id}
               id={item.id}
               name={item.name}
               price={item.price}
-              img={item.img}
-              // img={item.main_image}
+              img={item.image}
               color={item.color}
               is_new={item.is_new}
               is_conscious={item.is_conscious}
