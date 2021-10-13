@@ -11,7 +11,6 @@ class Side extends React.Component {
   };
   render() {
     const { product, openSize, isSizeModal, closeModal } = this.props;
-    console.log(product.color?.[0].id);
     return (
       <article className="side">
         {isSizeModal && <SizeModal product={product} closeModal={closeModal} />}
