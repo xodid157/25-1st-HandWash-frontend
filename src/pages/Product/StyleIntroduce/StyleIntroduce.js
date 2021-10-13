@@ -20,19 +20,19 @@ class StyleIntroduce extends React.Component {
               <li>
                 <img
                   alt="instar"
-                  src="http://localhost:3000/images/Product/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202021-10-07%20%EC%98%A4%EC%A0%84%201.37.16.png"
+                  src="https://cdn.pixabay.com/photo/2017/08/01/08/29/woman-2563491_1280.jpg"
                 />
               </li>
               <li>
                 <img
                   alt="instar"
-                  src="http://localhost:3000/images/Product/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202021-10-07%20%EC%98%A4%EC%A0%84%201.37.16.png"
+                  src="https://cdn.pixabay.com/photo/2015/06/20/13/55/man-815795_1280.jpg"
                 />
               </li>
               <li>
                 <img
                   alt="instar"
-                  src="http://localhost:3000/images/Product/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202021-10-07%20%EC%98%A4%EC%A0%84%201.37.16.png"
+                  src="https://cdn.pixabay.com/photo/2021/05/13/18/18/fashion-6251535_1280.jpg"
                 />
               </li>
             </ul>
