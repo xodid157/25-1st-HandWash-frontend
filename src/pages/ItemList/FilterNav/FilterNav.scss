@@ -1,11 +1,12 @@
 .navv {
+  margin-bottom: 3rem;
   .navFilter {
     display: flex;
     justify-content: space-between;
     flex-direction: column;
     position: absolute;
     top: 12.5rem;
-    width: 70%;
+    width: 80%;
     z-index: 1000;
 
     .navi {
@@ -17,6 +18,30 @@
 
       .hii {
         cursor: pointer;
+      }
+    }
+  }
+  .navFilterList {
+    display: flex;
+    justify-content: flex-start;
+
+    div {
+      margin-top: 3rem;
+      margin-right: 1rem;
+      padding: 0.9rem 1rem;
+      background-color: rgb(253, 247, 238);
+      font-size: 0.9rem;
+      font-weight: 400;
+
+      span {
+        margin-right: 1rem;
+      }
+
+      i {
+        font-weight: 300;
+        &:hover {
+          cursor: pointer;
+        }
       }
     }
   }

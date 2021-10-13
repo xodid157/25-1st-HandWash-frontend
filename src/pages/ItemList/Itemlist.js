@@ -11,9 +11,29 @@ class ItemList extends React.Component {
     this.state = {
       itemlist: [],
       isSidebar: false,
-      filter: [],
+      selectFilter: [],
+      fff: '',
     };
   }
+
+  xx = filter => {
+    if (filter === '추천' || '최신' || '낮은가격' || '높은가격') {
+      return '정렬기준';
+    } else if (filter === 'conscious') {
+      return 'CONSCIOUS';
+    } else if (filter === 'XS' || 'S' || 'M' || 'L') {
+      return '사이즈';
+    } else if (
+      filter === '퍼플' ||
+      '그레이' ||
+      '레드' ||
+      '그린' ||
+      '베이지' ||
+      '블랙'
+    ) {
+      return '컬러';
+    }
+  };
 
   componentDidMount() {
     fetch('data/itemLists.json')
@@ -25,12 +45,24 @@ class ItemList extends React.Component {
 
   onClickFilter = e => {
     const filterText = e.target.innerText;
-    const { filter } = this.state;
+    const { selectFilter, fff } = this.state;
 
     this.setState({
-      filter: [...filter, filterText],
+      selectFilter: [...selectFilter, filterText],
+      fff: filterText,
     });
-    console.log(filter);
+
+    const yy = `${this.xx(fff)}=${fff}&`;
+
+    console.log(yy);
+  };
+
+  deleteFilter = e => {
+    console.log(e);
+    const { selectFilter } = this.state;
+    this.setState({
+      selectFilter: selectFilter.filter(select => select.key !== e.target.key),
+    });
   };
 
   handleSideBar = () => {
@@ -41,7 +73,7 @@ class ItemList extends React.Component {
   };
 
   render() {
-    const { isSidebar, itemlist } = this.state;
+    const { isSidebar, itemlist, selectFilter } = this.state;
     return (
       <>
         <HideBar isSidebar={isSidebar} />
@@ -51,6 +83,8 @@ class ItemList extends React.Component {
             <FilterNav
               handleSideBar={this.handleSideBar}
               onClickFilter={this.onClickFilter}
+              deleteFilter={this.deleteFilter}
+              selectFilter={selectFilter}
             />
             <Items itemlist={itemlist} />
           </div>

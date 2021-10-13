@@ -11,8 +11,11 @@ class FilterNav extends React.Component {
       navlist: filterlist,
     };
   }
+
   render() {
     const { navlist } = this.state;
+    const { onClickFilter, handleSideBar, selectFilter, deleteFilter } =
+      this.props;
     return (
       <div className="navv">
         <div className="navFilter">
@@ -22,21 +25,41 @@ class FilterNav extends React.Component {
                 key={index}
                 bigname={list.bigname}
                 sname={list.sname}
-                onClickFilter={this.props.onClickFilter}
+                onClickFilter={onClickFilter}
               />
             ))}
             <div>
-              <span className="hii" onClick={this.props.handleSideBar}>
+              <span className="hii" onClick={handleSideBar}>
                 모든 필터
               </span>
             </div>
           </ul>
           <FilterSideBar />
         </div>
-        <div className="navFilterList"></div>
+        <div className="navFilterList">
+          {selectFilter.map((selectFilter, index) => (
+            <Filter
+              key={index}
+              id={index}
+              selectFilter={selectFilter}
+              deleteFilter={deleteFilter}
+            />
+          ))}
+        </div>
       </div>
     );
   }
 }
 
+class Filter extends React.Component {
+  render() {
+    const { selectFilter, deleteFilter } = this.props;
+    return (
+      <div>
+        <span>{selectFilter}</span>
+        <i onClick={deleteFilter} className="fas fa-times"></i>
+      </div>
+    );
+  }
+}
 export default FilterNav;
