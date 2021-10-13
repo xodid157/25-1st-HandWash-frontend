@@ -1,0 +1,22 @@
+.basketTitle {
+  display: flex;
+  justify-content: center;
+  // width: 100%;
+  font-size: 3rem;
+}
+.basketContainer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 5em;
+  //여기서 메인이랑 사이드 두 덩이로
+  .shoppingBasket {
+    display: flex;
+    width: 100%;
+    border: 1px solid blue;
+  }
+  .cartSide {
+    width: 50%;
+    border: 1px solid red;
+  }
+}
