@@ -5,7 +5,6 @@ import Main from './pages/Main/Main';
 import Nav from './components/Nav/Nav';
 import Product from './pages/Product/Product';
 import Footer from './components/footer/Footer';
-import Product from './pages/Product/Product';
 
 class Routes extends React.Component {
   render() {
