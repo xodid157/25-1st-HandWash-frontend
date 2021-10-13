@@ -1,5 +1,9 @@
 const filterlist = [
-  { bigname: '정렬기준', sname: ['추천', '최신', '낮은가격', '높은가격'] },
+  {
+    id: 1,
+    bigname: '정렬기준',
+    sname: ['추천', '최신', '낮은가격', '높은가격'],
+  },
   { bigname: 'CONSCIOUS', sname: ['conscious'] },
   { bigname: '사이즈', sname: ['XS', 'S', 'M', 'L'] },
   {

@@ -77,7 +77,7 @@ class ItemList extends React.Component {
 
     console.log(xy);
 
-    const yy = `${this.findFilterUl(selected)}=${selected}&`;
+    // const yy = `${this.findFilterUl(selected)}=${selected}&`;
 
     // console.log(yy.slice(0, -1));
 
