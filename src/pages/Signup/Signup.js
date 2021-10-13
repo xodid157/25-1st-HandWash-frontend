@@ -23,6 +23,8 @@ class Signup extends React.Component {
       isInfo: false,
       lastname: '',
       firstname: '',
+      zipCode: '',
+      phoneNumber: '',
     };
   }
 
@@ -41,16 +43,29 @@ class Signup extends React.Component {
   //     });
   // }
   goToMain = e => {
-    const { email, password, year, month, day, lastname, firstname } =
-      this.state;
+    const {
+      email,
+      password,
+      year,
+      month,
+      day,
+      lastname,
+      firstname,
+      gender,
+      zipCode,
+      phoneNumber,
+    } = this.state;
     fetch('http://10.58.2.128:8000/users/signup', {
       method: 'POST',
       body: JSON.stringify({
         email: email,
         password: password,
         birth: year + '-' + month + '-' + day,
-        lastname: lastname,
-        firstname: firstname,
+        last_name: lastname,
+        first_name: firstname,
+        gender: gender,
+        zip_code: zipCode,
+        phone_number: phoneNumber,
       }),
     })
       .then(res => res.json())

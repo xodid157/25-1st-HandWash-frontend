@@ -47,11 +47,19 @@ class AddInformation extends React.Component {
           </div>
           <div className="inputBox">
             <p className="inputTitle">우편 번호</p>
-            <input className="infoInput" name="zipCode" />
+            <input
+              className="infoInput"
+              name="zipCode"
+              onChange={this.props.handleInput}
+            />
           </div>
           <div className="inputBox">
             <p className="inputTitle">전화 번호</p>
-            <input className="infoInput" name="phoneNumber" />
+            <input
+              className="infoInput"
+              name="phoneNumber"
+              onChange={this.props.handleInput}
+            />
           </div>
           {/* {ADD_INFO.map(inputName => {
             return (
