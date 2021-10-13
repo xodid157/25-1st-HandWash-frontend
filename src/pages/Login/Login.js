@@ -20,7 +20,7 @@ class Login extends React.Component {
     });
   };
 
-  goToMain = e => {
+  goToMain = () => {
     const { email, password } = this.state;
     fetch('http://10.58.2.128:8000/users/signin', {
       method: 'POST',
@@ -43,9 +43,7 @@ class Login extends React.Component {
   logInCondition = e => {
     const { email, password } = this.state;
     if (email.includes('@') && password.length >= 8) {
-      return this.goToMain;
-    } else {
-      return alert('input창 바꾸는거 구현해'); //이거 클래스 네임으로 부를 수 있음?
+      this.goToMain();
     }
   };
 
