@@ -22,7 +22,7 @@ class Product extends React.Component {
   }
 
   componentDidMount() {
-    fetch(`http://10.58.4.132:8000/products/${this.props.match.params.id}`, {
+    fetch('./data/Product/product.json', {
       method: 'GET',
     })
       .then(res => res.json())

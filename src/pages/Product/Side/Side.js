@@ -6,8 +6,13 @@ import './Side.scss';
 
 class Side extends React.Component {
   goToColor = id => {
-    this.props.history.push(`product/${id}`);
+    this.props.history.push(`/product/${id}`);
   };
+  // componentDidUpdate() {
+  //   this.goToColor = id => {
+  //     this.props.history.push(`/product/${id}`);
+  //   };
+  // }
   render() {
     const { product, openSize, isSizeModal, closeModal } = this.props;
     return (
@@ -27,11 +32,14 @@ class Side extends React.Component {
           <ul className="productColorImg">
             {product.color?.map(content => (
               <li key={content.id}>
+                {/* <Link to={`/products/${content?.id}`}> */}
+                {/* <Link to={this.goToColor}> */}
                 <img
                   alt="colors"
                   src={content.image}
                   onClick={() => this.goToColor(content.id)}
                 />
+                {/* </Link> */}
               </li>
             ))}
           </ul>
