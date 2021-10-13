@@ -17,18 +17,18 @@ class ItemList extends React.Component {
   }
 
   xx = filter => {
-    if (filter === '추천' || '최신' || '낮은가격' || '높은가격') {
+    if (filter === '추천' && '최신' && '낮은가격' && '높은가격') {
       return '정렬기준';
     } else if (filter === 'conscious') {
       return 'CONSCIOUS';
-    } else if (filter === 'XS' || 'S' || 'M' || 'L') {
+    } else if (filter === 'XS' && 'S' && 'M' && 'L') {
       return '사이즈';
     } else if (
-      filter === '퍼플' ||
-      '그레이' ||
-      '레드' ||
-      '그린' ||
-      '베이지' ||
+      filter === '퍼플' &&
+      '그레이' &&
+      '레드' &&
+      '그린' &&
+      '베이지' &&
       '블랙'
     ) {
       return '컬러';
