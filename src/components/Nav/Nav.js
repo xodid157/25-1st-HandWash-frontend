@@ -1,6 +1,6 @@
 import React from 'react';
 import { SERVICES_LIST, USER_MENU } from './data';
-import '../Nav/Nav.scss';
+import './Nav.scss';
 
 class Nav extends React.Component {
   render() {
@@ -26,12 +26,6 @@ class Nav extends React.Component {
         <h1 className="logo">
           H <span className="small">&#x0026;</span> W
         </h1>
-
-        <ul className="menu">
-          {/* {CATEGORIES_LIST.map((category, idx) => (
-            <li key={idx}>{category}</li>
-          ))} */}
-        </ul>
 
         <form>
           <button>
