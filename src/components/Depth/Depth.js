@@ -57,6 +57,7 @@ class Depth extends Component {
           {categoryList.category_list[0] === true ? (
             <span>{categoryList.category_list[0]}</span>
           ) : null}
+          
           <ul className="twoDepth">
             {categoryList.category_list?.map(category => {
               return category.main_category?.map(twoDepth => {
