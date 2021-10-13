@@ -1,4 +1,5 @@
 import React from 'react';
+import './StyleIntroduce.scss';
 
 class StyleIntroduce extends React.Component {
   render() {
@@ -19,19 +20,19 @@ class StyleIntroduce extends React.Component {
               <li>
                 <img
                   alt="instar"
-                  src="./images/Product/스크린샷 2021-10-07 오전 1.37.16.png"
+                  src="https://cdn.pixabay.com/photo/2017/08/01/08/29/woman-2563491_1280.jpg"
                 />
               </li>
               <li>
                 <img
                   alt="instar"
-                  src="./images/Product/스크린샷 2021-10-07 오전 1.37.16.png"
+                  src="https://cdn.pixabay.com/photo/2015/06/20/13/55/man-815795_1280.jpg"
                 />
               </li>
               <li>
                 <img
                   alt="instar"
-                  src="./images/Product/스크린샷 2021-10-07 오전 1.37.16.png"
+                  src="https://cdn.pixabay.com/photo/2021/05/13/18/18/fashion-6251535_1280.jpg"
                 />
               </li>
             </ul>

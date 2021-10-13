@@ -1,17 +1,19 @@
 import React from 'react';
+import './ContentInfo.scss';
 
 class ContentInfo extends React.Component {
   render() {
+    const { openModal, openDetail } = this.props;
     return (
       <article className="contentInfo">
         <ul>
           <li>
-            <button type="button">
+            <button type="button" onClick={openDetail}>
               <span>세부정보</span>
             </button>
           </li>
           <li>
-            <button type="button">
+            <button type="button" onClick={openModal}>
               <span>배송 및 결제</span>
             </button>
           </li>
