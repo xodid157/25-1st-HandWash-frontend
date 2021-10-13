@@ -21,11 +21,12 @@ class Login extends React.Component {
   };
 
   goToMain = e => {
+    const { email, password } = this.state;
     fetch('http://10.58.2.128:8000/users/signin', {
       method: 'POST',
       body: JSON.stringify({
-        email: this.state.email,
-        password: this.state.password,
+        email: email,
+        password: password,
       }),
     })
       .then(res => res.json())
@@ -39,19 +40,18 @@ class Login extends React.Component {
       });
   };
 
-  logInCondition = () => {
+  logInCondition = e => {
     const { email, password } = this.state;
     if (email.includes('@') && password.length >= 8) {
       return this.goToMain;
     } else {
-      return 'inputOff';
+      return alert('input창 바꾸는거 구현해'); //이거 클래스 네임으로 부를 수 있음?
     }
   };
 
   render() {
-    const { email, password } = this.state;
-    const isValid = email.includes('@') && password.length >= 8;
-    console.log(this.state.password);
+    // const { email, password } = this.state;
+    // const isValid = email.includes('@') && password.length >= 8;
     return (
       <div className="login">
         <div className="loginContainer">
@@ -70,7 +70,7 @@ class Login extends React.Component {
           <p className="or">또는</p>
           <LoginInput
             handleInput={this.handleInput}
-            className={isValid ? 'inputOn' : 'inputOff'}
+            // className={isValid ? '' : 'inputOff'}
           />
           <div className="loginState">
             <div className="checkBox">

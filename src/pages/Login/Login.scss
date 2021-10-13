@@ -1,8 +1,8 @@
 .login {
-  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100%;
   background-color: rgb(250, 249, 248);
 
   .loginContainer {
@@ -16,11 +16,11 @@
     border: 1px solid #d0d0d0;
 
     .closeButton {
-      display: flex;
       position: absolute;
+      display: flex;
+      justify-content: flex-end;
       top: 1.2em;
       right: 1.2em;
-      justify-content: flex-end;
       border: 0;
       outline: 0;
       background-color: transparent;
@@ -52,8 +52,8 @@
       margin: 1em 0;
       border: 0;
       outline: none;
-      background-color: #fee500;
       cursor: pointer;
+      background-color: #fee500;
     }
 
     .or {
