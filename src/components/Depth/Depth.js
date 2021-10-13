@@ -29,19 +29,20 @@ class Depth extends Component {
           categoryList: category,
         });
       });
-
-    // dropDownHover = () => {
-    //   this.setState({
-    //     dropDown: !this.state.dropDown,
-    //   });
-    // };
   }
 
+  dropDownHover = () => {
+    this.setState({
+      dropDown: !this.state.dropDown,
+    });
+  };
+
   render() {
-    const { categoryList } = this.state;
+    const { categoryList, dropDown } = this.state;
+    console.log(this.state.dropDown, 'test');
 
     return (
-      <div className="menuContents">
+      <div className="menuContents" onMouseEnter={this.dropDownHover}>
         <ul className="menu">
           {categoryList.category_list?.map(category => {
             return <li key={category.id}>{category.name}</li>;
@@ -53,33 +54,24 @@ class Depth extends Component {
         </ul>
 
         <div className="menuDepth">
+          {categoryList.category_list[0] === true ? (
+            <span>{categoryList.category_list[0]}</span>
+          ) : null}
           <ul className="twoDepth">
             {categoryList.category_list?.map(category => {
               return category.main_category?.map(twoDepth => {
                 return <li key={twoDepth.id}>{twoDepth.name}</li>;
               });
             })}
-            {/* {categoryList.category_list?.map(() => {
-              if (dropDown === true) {
-                {
-                  categoryList.category_list?.map(category => {
-                    return category.main_category?.map(twoDepth => {
-                      return <li key={twoDepth.id}>{twoDepth.name}</li>;
-                    });
-                  });
-                }
-              }
-            })} */}
           </ul>
 
           <ul className="threeDepth">
-            {categoryList.category_list[0].main_category[0].map(category => {
-              console.log(category);
-              // return category.main_category?.map(sub => {
-              //   return sub.sub_category.map(sub => {
-              //     return <li key={sub.id}>{sub.name}</li>;
-              //   });
-              // });
+            {categoryList.category_list?.map(category => {
+              return category.main_category?.map(sub => {
+                return sub.sub_category.map(sub => {
+                  return <li key={sub.id}>{sub.name}</li>;
+                });
+              });
             })}
           </ul>
         </div>
