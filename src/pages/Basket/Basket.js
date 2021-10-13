@@ -11,9 +11,11 @@ class Basket extends React.Component {
           <main className="shoppingBasket">
             <ul className="basketList">
               <li>
-                <div className="itemImage">
-                  <img></img>
-                </div>
+                <img
+                  src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80
+"
+                  alt="반팔"
+                ></img>
                 <div className="itemName">
                   <span>A라인 쇼트 드레스</span>
                   <span>₩ 29,990</span>
