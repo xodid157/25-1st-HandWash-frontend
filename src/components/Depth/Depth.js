@@ -8,6 +8,7 @@ class Depth extends Component {
     this.state = {
       categoryList: {},
       dropDown: false,
+      dropDownList: 0,
     };
   }
 
@@ -31,33 +32,62 @@ class Depth extends Component {
       });
   }
 
-  dropDownHover = () => {
+  dropDownHover = id => {
     this.setState({
       dropDown: !this.state.dropDown,
+
+      //이렇게 해도 돼요 👇??
+      dropDownList: id,
     });
   };
 
   render() {
-    const { categoryList, dropDown } = this.state;
-    console.log(this.state.dropDown, 'test');
+    const { categoryList, depth, dropDown } = this.state;
+    console.log(this.state.dropDownList);
 
     return (
-      <div className="menuContents" onMouseEnter={this.dropDownHover}>
+      <div className="menuContents">
         <ul className="menu">
           {categoryList.category_list?.map(category => {
-            return <li key={category.id}>{category.name}</li>;
+            return (
+              <>
+                <li
+                  className="depthMenu"
+                  key={category.id}
+                  onMouseEnter={() => this.dropDownHover(category.id)}
+                >
+                  {category.name}
+                </li>
+                <ul className="twoDepth">
+                  {category.main_category?.map(twoDepth => {
+                    const { dropDown } = this.state;
+                    return (
+                      dropDown && <li key={twoDepth.id}>{twoDepth.name}</li>
+                    );
+                  })}
+                </ul>
+              </>
+            );
           })}
 
           {MAIN_MENU_LIST.map((mainMenu, idx) => {
-            return <li key={idx}>{mainMenu}</li>;
+            return (
+              <li key={idx} className="mockDataDepth">
+                {mainMenu}
+              </li>
+            );
           })}
         </ul>
 
-        <div className="menuDepth">
-          {categoryList.category_list[0] === true ? (
-            <span>{categoryList.category_list[0]}</span>
-          ) : null}
-          
+        {/* <ul className="twoDepth">
+          {categoryList.category_list?.map(category => {
+            return category.main_category?.map(twoDepth => {
+              return <li key={twoDepth.id}>{twoDepth.name}</li>;
+            });
+          })}
+        </ul> */}
+
+        {/* <div className="menuDepth">
           <ul className="twoDepth">
             {categoryList.category_list?.map(category => {
               return category.main_category?.map(twoDepth => {
@@ -75,7 +105,7 @@ class Depth extends Component {
               });
             })}
           </ul>
-        </div>
+        </div> */}
       </div>
     );
   }

@@ -1,20 +1,37 @@
 @import '../../styles/variables.scss';
 
-.menuDepth {
-  padding-top: 2.4em;
+.menuContents {
+  .menu {
+    @include flexCenter;
+    position: relative;
+    margin-top: 1em;
+
+    .depthMenu,
+    .mockDataDepth {
+      margin-left: 1em;
+    }
+  }
 
   .twoDepth {
     @include flexCenter;
+    position: absolute;
+    top: 44.8px;
 
+    margin-top: 1em;
     margin-bottom: 0.8em;
+    background-color: red;
 
     li {
       margin-right: 2em;
     }
   }
 
-  .threeDepth {
-    display: flex;
-    flex-direction: row;
+  .menuDepth {
+    padding-top: 2.4em;
+
+    .threeDepth {
+      display: flex;
+      flex-direction: row;
+    }
   }
 }

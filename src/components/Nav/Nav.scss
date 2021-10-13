@@ -102,34 +102,6 @@
     }
   }
 
-  .menu {
-    @include flexCenter;
-    position: relative;
-    margin-top: 1.7em;
-    font-size: 1em;
-
-    li {
-      margin-right: 1.2em;
-    }
-
-    li:last-child {
-      margin-right: 0;
-    }
-  }
-
-  .subMenu {
-    display: flex;
-    align-content: center;
-    justify-content: space-evenly;
-    flex-direction: row;
-    position: absolute;
-    width: 100%;
-    padding-top: 2.4em;
-    text-align: center;
-    background: red;
-    color: white;
-  }
-
   form {
     position: absolute;
     top: 5em;
