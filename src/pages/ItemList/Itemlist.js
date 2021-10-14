@@ -18,50 +18,39 @@ class ItemList extends React.Component {
   }
 
   findFilterUl = filter => {
-    if (
-      '추천' === filter ||
-      '최신' === filter ||
-      '낮은가격' === filter ||
-      '높은가격' === filter
-    ) {
-      return 'sort';
-    } else if (filter === 'conscious') {
-      return 'conscious';
-    } else if (
-      filter === 'XS' ||
-      filter === 'S' ||
-      filter === 'M' ||
-      filter === 'L'
-    ) {
-      return 'size';
-    } else if (
-      filter === '블랙' ||
-      filter === '화이트' ||
-      filter === '레드' ||
-      filter === '블루' ||
-      filter === '차콜' ||
-      filter === '스카이블루' ||
-      filter === '옐로우' ||
-      filter === '브라운' ||
-      filter === '네이비' ||
-      filter === '그린'
-    ) {
-      return 'color';
-    }
+    const filters = [
+      { text: '추천', type: 'sort' },
+      { text: '최신', type: 'sort' },
+      { text: '낮은가격', type: 'sort' },
+      { text: '높은가격', type: 'sort' },
+      { text: 'conscious', type: 'conscious' },
+      { text: 'XS', type: 'size' },
+      { text: 'S', type: 'size' },
+      { text: 'M', type: 'size' },
+      { text: 'L', type: 'size' },
+      { text: '화이트', type: 'color' },
+      { text: '레드', type: 'color' },
+      { text: '블루', type: 'color' },
+      { text: '차콜', type: 'color' },
+      { text: '스카이블루', type: 'color' },
+      { text: '옐로우', type: 'color' },
+      { text: '브라운', type: 'color' },
+      { text: '네이비', type: 'color' },
+      { text: '그린', type: 'color' },
+    ];
+
+    return filters.find(f => f.text === filter).type;
   };
 
   changeFilterName = filter => {
-    if (filter === '낮은가격') {
-      return 'ascPrice';
-    } else if (filter === '높은가격') {
-      return 'descPrice';
-    } else if (filter === '최신') {
-      return 'recent';
-    } else if (filter === 'conscious') {
-      return 'True';
-    } else {
-      return filter;
-    }
+    const filterTable = {
+      낮은가격: 'ascPrice',
+      높은가격: 'descPrice',
+      최신: 'recent',
+      conscious: 'True',
+    };
+
+    return filterTable[filter] ?? filter;
   };
 
   componentDidMount() {
