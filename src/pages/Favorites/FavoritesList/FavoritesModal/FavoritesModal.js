@@ -2,7 +2,8 @@ import React from 'react';
 import './FavoritesModal.scss';
 class FavoritesModal extends React.Component {
   render() {
-    const { handleSizeModal } = this.props;
+    const { handleSizeModal, sizes } = this.props;
+    console.log(this.props);
     return (
       <section className="favoritesModal">
         <div className="sizeModal">
@@ -19,33 +20,13 @@ class FavoritesModal extends React.Component {
             <i className="fas fa-angle-up"></i>
           </div>
           <ul className="sizeContent">
-            {/* {product.size?.map(content => (
+            {sizes.map(content => (
               <li key={content}>
                 <button>
                   <span>{content}</span>
                 </button>
               </li>
-            ))} */}
-            <li>
-              <button>
-                <span>S</span>
-              </button>
-            </li>
-            <li>
-              <button>
-                <span>M</span>
-              </button>
-            </li>
-            <li>
-              <button>
-                <span>L</span>
-              </button>
-            </li>
-            <li>
-              <button>
-                <span>XL</span>
-              </button>
-            </li>
+            ))}
           </ul>
         </div>
       </section>

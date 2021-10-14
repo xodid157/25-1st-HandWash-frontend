@@ -52,7 +52,7 @@ class ItemList extends React.Component {
 
   componentDidMount() {
     // fetch('data/itemLists.json')
-    fetch('http://10.58.4.132:8000/products?gender=1')
+    fetch('http://10.58.4.132:8000/products?gender=2')
       .then(res => res.json())
       .then(data => {
         this.setState({ itemlist: data.products });

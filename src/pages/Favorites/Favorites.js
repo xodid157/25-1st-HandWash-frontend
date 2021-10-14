@@ -7,13 +7,16 @@ class Favorites extends React.Component {
     super(props);
     this.state = {
       favoritesList: [],
-      isSizeModal: false,
     };
   }
 
   componentDidMount() {
-    fetch('./data/Product/product.json', {
+    fetch('./data/Favorites/favoritesData.json', {
+      // fetch('http://10.58.7.112:8000/likes/like', {
       method: 'GET',
+      headers: {
+        Authorization: localStorage.getItem('token'),
+      },
     })
       .then(res => res.json())
       .then(result => {
@@ -23,21 +26,12 @@ class Favorites extends React.Component {
       });
   }
 
-  handleSizeModal = () => {
-    const { isSizeModal } = this.state;
-    this.setState({
-      isSizeModal: !isSizeModal,
-    });
-  };
-
   render() {
-    const { isSizeModal } = this.state;
+    console.log(this.state.favoritesList);
+    const { isSizeModal, favoritesList } = this.state;
+    // console.log(favoritesList[0]?.sizes);
     return (
       <section className="favorites">
-        <div
-          className={isSizeModal ? 'black' : ''}
-          onClick={this.closeModal}
-        ></div>
         <div className="favoritContentBox">
           <div className="title">
             <span className="titleText">즐겨찾기</span>
@@ -47,26 +41,21 @@ class Favorites extends React.Component {
           </div>
           <div className="contentBox">
             <ul className="listBox">
-              <FavoritesList
-                handleSizeModal={this.handleSizeModal}
-                isSizeModal={isSizeModal}
-              />
-              <FavoritesList
-                handleSizeModal={this.handleSizeModal}
-                isSizeModal={isSizeModal}
-              />
-              <FavoritesList
-                handleSizeModal={this.handleSizeModal}
-                isSizeModal={isSizeModal}
-              />
-              <FavoritesList
-                handleSizeModal={this.handleSizeModal}
-                isSizeModal={isSizeModal}
-              />
-              <FavoritesList
-                handleSizeModal={this.handleSizeModal}
-                isSizeModal={isSizeModal}
-              />
+              {favoritesList.map((content, index) => (
+                <FavoritesList
+                  key={index}
+                  handleSizeModal={this.handleSizeModal}
+                  isSizeModal={isSizeModal}
+                  id={content.product_id}
+                  image={content.image}
+                  is_conscious={content.is_conscious}
+                  name={content.name}
+                  price={content.price}
+                  is_new={content.is_new}
+                  color={content.color}
+                  sizes={content.sizes}
+                />
+              ))}
             </ul>
           </div>
         </div>
