@@ -1,18 +1,20 @@
 import React from 'react';
+import './Basket.scss';
 
 class Basketitem extends React.Component {
   render() {
-    const { key, name, price, img, size, color } = this.props;
+    console.log(this.props.price);
+    const { key, name, price, img, size, color, total } = this.props;
     return (
       <li className="addItem">
         <button className="trash">
           <i className="far fa-trash-alt"></i>
         </button>
-        <img src={img} className="itemImg" />
+        <img className="itemImg" alt="aa" src={img} />
         <span className="itemInfo">
           <div className="itemTag">
             <p>{name}</p>
-            <p className="price">{price}</p>
+            <p className="price">₩ {price}</p>
           </div>
           <ul className="itemInfoList">
             <li>
@@ -29,18 +31,19 @@ class Basketitem extends React.Component {
             </li>
             <li>
               <span>합계:</span>
-              <span>{price}</span>
+              <span>{total}</span>
             </li>
           </ul>
-
-          <button className="addHarth">
-            <i className="far fa-heart"></i>
-          </button>
-          <select className="count" name="count">
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-          </select>
+          <div className="addBox">
+            <button className="addHarth" onClick={this.props.goCart}>
+              <i className="far fa-heart"></i>
+            </button>
+            <select className="count" name="count">
+              {/* <option>1</option>
+            <option>2</option> */}
+              <option>3</option>
+            </select>
+          </div>
         </span>
       </li>
     );

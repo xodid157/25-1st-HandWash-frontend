@@ -1,0 +1,179 @@
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background-color: rgb(250, 249, 248);
+
+  .loginContainer {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 700px;
+    width: 500px;
+    padding: 3em;
+    border: 1px solid #d0d0d0;
+
+    .closeButton {
+      display: flex;
+      position: absolute;
+      justify-content: flex-end;
+      top: 1.2em;
+      right: 1.2em;
+      border: 0;
+      outline: 0;
+      background-color: transparent;
+      cursor: pointer;
+
+      i {
+        //폰트어썸 아이콘 크기 ? , 위치 오른쪽 위로
+        font-size: 2.5em;
+      }
+    }
+    .loginTitle {
+      display: flex;
+      justify-content: center;
+      align-content: center;
+      font-size: 1.3em;
+      padding: 0.8em;
+    }
+
+    .loginSubTitle {
+      display: flex; //일단 그냥 쓴거
+      justify-content: center;
+      margin-bottom: 2em;
+      font-size: 0.85em;
+    }
+
+    .kakaoLogin {
+      width: 100%;
+      padding: 1.4em 9em;
+      margin: 1em 0;
+      border: 0;
+      outline: none;
+      background-color: #fee500;
+      cursor: pointer;
+    }
+
+    .or {
+      margin: 0.5em 0;
+      font-size: 0.8em;
+    }
+
+    .inputOff {
+      .emailInput {
+        width: 100%;
+        padding: 1.2em 1em;
+        border: 0.1em solid red;
+      }
+      .passwordInput {
+        width: 100%;
+        padding: 1.2em 1em;
+        border: 0.1em solid red;
+      }
+    }
+    .emailName {
+      width: 100%;
+      .emailTitle {
+        margin: 0.8em 0;
+        font-size: 0.9em;
+
+        span {
+          color: red;
+        }
+      }
+
+      .emailInput {
+        width: 100%;
+        padding: 1.2em 1em;
+        border: 0.1em solid #d0d0d0;
+      }
+    }
+
+    .passwordInput {
+      width: 100%;
+
+      .passwordTitle {
+        margin: 0.8em 0;
+        font-size: 0.9em;
+
+        span {
+          color: red;
+        }
+      }
+      .passwordInput {
+        width: 100%;
+        padding: 1.2em 1em;
+        border: 0.1em solid #d0d0d0;
+      }
+    }
+
+    .loginState {
+      display: flex;
+      justify-content: space-between; //여기 왜 이래 ㅁㅊ 좀 가생이로 가라
+      align-items: center;
+      width: 100%;
+      margin: 1em;
+
+      .checkBox {
+        display: inline;
+        width: 10em;
+
+        .loginStateCheck {
+          font-size: 0.9em;
+        }
+      }
+      .lostPassword {
+        font-size: 0.9em;
+      }
+      .lostPassword:hover {
+        text-decoration: underline;
+      }
+    }
+    .mainButton {
+      .loginButton {
+        width: 100%;
+        padding: 1em 9em;
+        margin: 1em 0;
+        border: 0;
+        outline: none;
+        background-color: #222;
+        cursor: pointer;
+
+        p {
+          color: white;
+          padding: 0.25em;
+        }
+      }
+      .loginButton:hover {
+        opacity: 0.7;
+      }
+    }
+    .goToSignUp {
+      width: 100%;
+      padding: 1em 9em;
+      // margin: 1em 0;
+      border: 0.1em solid black;
+      background-color: transparent;
+      outline: none;
+      cursor: pointer;
+    }
+
+    .goToSignUp:hover {
+      opacity: 0.7;
+    }
+
+    .membership {
+      text-decoration: none;
+      color: #222;
+      margin: 1em;
+      font-size: 0.9em;
+      cursor: pointer;
+    }
+    .membership:hover {
+      text-decoration: underline;
+    }
+  }
+}
+//패딩,마진,폰트 사이즈만  em  가로세로 %

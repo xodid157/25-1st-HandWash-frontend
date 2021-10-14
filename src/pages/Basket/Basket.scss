@@ -5,14 +5,15 @@
     display: flex;
     justify-content: center;
     width: 100%;
-    font-size: 3rem;
+    font-size: 2.5rem;
+    font-weight: 400;
   }
   .basketContainer {
     display: flex;
     // justify-content: center;
 
     width: 100%;
-    padding: 5em 20em;
+    padding: 3em 15em;
     //여기서 메인이랑 사이드 두 덩이로
 
     .shoppingBasket {
@@ -21,12 +22,13 @@
       // border: 1px solid blue;
 
       .basketList {
-        //리스트에 추가될창
-        // width: 100%;
+        width: 100%;
+        // border: 1px solid red;
+
         .addItem {
-          //이미지랑 정보 들어가는 것
           position: relative;
           display: flex;
+          margin-bottom: 1.5em;
 
           .trash {
             position: absolute;
@@ -34,29 +36,34 @@
             justify-content: center;
             align-items: center;
             right: 0;
-            width: 48px;
-            height: 48px;
+            width: 60px;
+            height: 30px;
             border: none;
-            background-color: #fff;
+            background-color: transparent;
 
             .far fa-trash-alt {
-              size: 20px;
+              size: 15px;
             }
           }
 
           .itemImg {
-            margin-right: 1.5em;
+            margin-right: 1em;
             height: 10em;
+            width: 10em;
+            object-fit: cover;
           }
           .itemInfo {
             // flex-direction: column;
             .itemTag {
               flex-direction: column;
               font-size: 0.81em;
-              padding-top: 1em;
+              padding: 1em 0;
+              font-weight: 300;
+
               .price {
                 // font-size: 0.81em;
-                font-weight: 500;
+                font-weight: 400;
+                font-size: 1em;
                 margin-top: 0.6em;
               }
             }
@@ -64,34 +71,44 @@
             .itemInfoList {
               display: flex;
               flex-wrap: wrap;
-              margin: 2em 0;
+              margin: 0.8em 0;
               margin-right: 4em;
-              font-size: 0.69em;
+              font-size: 0.75em;
 
               li {
                 flex: 1 1 50%;
                 margin-bottom: 0.3em;
+                font-weight: 300;
 
                 span {
                   flex: 1 1 20%;
                 }
               }
             }
+            .addBox {
+              display: flex;
+              align-items: center;
 
-            .addHarth {
-              margin-right: 0.5em;
-              width: 60px;
-              height: 50px;
-              border: 1px solid black;
-              background-color: #fff;
-            }
+              .addHarth {
+                margin-right: 0.5em;
+                width: 55px;
+                height: 45px;
+                border: 1px solid black;
+                background-color: #fff;
+              }
+              .addHarth:hover {
+                color: red;
+              }
 
-            .count {
-              margin-right: 0.5em;
-              width: 80px;
-              height: 50px;
-              border: 1px solid #d0d0d0;
-              background-color: #fff;
+              .count {
+                margin-right: 0.5em;
+                width: 70px;
+                height: 45px;
+                font-weight: 300;
+                font-size: 0.5em;
+                border: 1px solid #d0d0d0;
+                background-color: #fff;
+              }
             }
           }
         }
@@ -99,7 +116,7 @@
     }
     .cartSide {
       width: 55%;
-      border: 1px solid red;
+      // border: 1px solid red;
     }
   }
 }
