@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import FavoritesModal from './FavoritesModal/FavoritesModal';
 import './FavoritesList.scss';
 
@@ -19,7 +20,7 @@ class FavoritesList extends React.Component {
 
   render() {
     const {
-      product_id,
+      id,
       image,
       is_conscious,
       name,
@@ -27,20 +28,24 @@ class FavoritesList extends React.Component {
       is_new,
       color,
       sizes,
+      goCart,
+      handleCarts,
+      deleteFavoites,
     } = this.props;
 
     const { isSizeModal } = this.state;
-    // console.log(sizes);
     return (
       <li className="favoritcontent">
         <div
           className={isSizeModal ? 'black' : ''}
-          onClick={this.closeModal}
+          onClick={this.handleSizeModal}
         ></div>
         <div>
           <div className="delete">
-            <img alt="listImg" src={image} />
-            <i className="far fa-trash-alt"></i>
+            <Link to={`/product/${id}`}>
+              <img alt="listImg" src={image} />
+            </Link>
+            <i className="far fa-trash-alt" onClick={deleteFavoites}></i>
           </div>
           <div className="contentText">
             <span className="conscious">
@@ -58,12 +63,14 @@ class FavoritesList extends React.Component {
                 <FavoritesModal
                   handleSizeModal={this.handleSizeModal}
                   sizes={sizes}
+                  handleCarts={handleCarts}
+                  id={id}
                 />
               )}
               <span className="sizeText">사이즈 선택</span>
               <i className="fas fa-angle-down"></i>
             </button>
-            <button className="order">
+            <button className="order" onClick={goCart}>
               <span>담기</span>
             </button>
           </div>

@@ -1,12 +1,13 @@
 import React from 'react';
 import './FavoritesModal.scss';
+
 class FavoritesModal extends React.Component {
   render() {
-    const { handleSizeModal, sizes } = this.props;
-    console.log(this.props);
+    const { handleSizeModal, sizes, handleCarts, id } = this.props;
+    console.log(sizes);
     return (
       <section className="favoritesModal">
-        <div className="sizeModal">
+        <div className="sizesModal">
           <div className="sizeGuide">
             <button className="guideButton">
               <span>사이즈 가이드</span>
@@ -20,13 +21,15 @@ class FavoritesModal extends React.Component {
             <i className="fas fa-angle-up"></i>
           </div>
           <ul className="sizeContent">
-            {sizes.map(content => (
-              <li key={content}>
-                <button>
-                  <span>{content}</span>
-                </button>
-              </li>
-            ))}
+            {sizes.map(content => {
+              return (
+                <li key={content}>
+                  <button onClick={() => handleCarts(content, id)}>
+                    <span>{content}</span>
+                  </button>
+                </li>
+              );
+            })}
           </ul>
         </div>
       </section>

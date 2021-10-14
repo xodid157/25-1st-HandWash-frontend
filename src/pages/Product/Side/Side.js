@@ -2,12 +2,12 @@ import React from 'react';
 import { withRouter } from 'react-router';
 import SizeModal from './SizeModal/SizeModal';
 import './Side.scss';
-// import { Link } from 'react-router-dom';
 
 class Side extends React.Component {
   goToColor = id => {
-    this.props.history.push(`product/${id}`);
+    this.props.history.push(`/product/${id}`);
   };
+
   render() {
     const { product, openSize, isSizeModal, closeModal } = this.props;
     return (
