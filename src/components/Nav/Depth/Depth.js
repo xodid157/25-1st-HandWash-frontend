@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { MAIN_MENU_LIST } from '../data';
+import Category from './Category';
 import './Depth.scss';
 
 class Depth extends Component {
@@ -13,9 +14,8 @@ class Depth extends Component {
   }
 
   componentDidMount() {
-    fetch('http://10.58.4.132:8000/products/categories', {
-      method: 'GET',
-    })
+    // fetch('http://10.58.4.132:8000/products/categories')
+    fetch('data/navListData.json')
       .then(res => res.json())
       .then(category => {
         this.setState({
@@ -37,40 +37,16 @@ class Depth extends Component {
     return (
       <div className="menuContents">
         <ul className="menu">
-          {categoryList.category_list?.map((category, idx) => {
+          {categoryList.category_list?.map(category => {
             return (
-              <>
-                <li
-                  className="depthMenu"
-                  key={category.id}
-                  onMouseEnter={() => this.dropDownHover(category.id)}
-                >
-                  {category.name}
-                  {dropDownList - 1 === idx && (
-                    <ul className="twoDepth">
-                      {category.main_category?.map(twoDepth => {
-                        return (
-                          dropDown && (
-                            <li key={twoDepth.id}>
-                              {twoDepth.name}
-                              <ul>
-                                {twoDepth.sub_category.map(threeDepth => {
-                                  console.log(threeDepth);
-                                  return (
-                                    <li key={threeDepth.id}>
-                                      {threeDepth.name}
-                                    </li>
-                                  );
-                                })}
-                              </ul>
-                            </li>
-                          )
-                        );
-                      })}
-                    </ul>
-                  )}
-                </li>
-              </>
+              <Category
+                key={category.id}
+                idx={category.id}
+                category={category}
+                dropDown={dropDown}
+                dropDownList={dropDownList}
+                dropDownHover={this.dropDownHover}
+              />
             );
           })}
 
@@ -82,34 +58,6 @@ class Depth extends Component {
             );
           })}
         </ul>
-
-        {/* <ul className="twoDepth">
-          {categoryList.category_list?.map(category => {
-            return category.main_category?.map(twoDepth => {
-              return <li key={twoDepth.id}>{twoDepth.name}</li>;
-            });
-          })}
-        </ul> */}
-
-        {/* <div className="menuDepth">
-          <ul className="twoDepth">
-            {categoryList.category_list?.map(category => {
-              return category.main_category?.map(twoDepth => {
-                return <li key={twoDepth.id}>{twoDepth.name}</li>;
-              });
-            })}
-          </ul>
-
-          <ul className="threeDepth">
-            {categoryList.category_list?.map(category => {
-              return category.main_category?.map(sub => {
-                return sub.sub_category.map(sub => {
-                  return <li key={sub.id}>{sub.name}</li>;
-                });
-              });
-            })}
-          </ul>
-        </div> */}
       </div>
     );
   }
