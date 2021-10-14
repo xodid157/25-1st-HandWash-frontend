@@ -6,7 +6,7 @@ class Category extends Component {
     const { category, idx, dropDown, dropDownList, dropDownHover } = this.props;
     const { name, main_category } = category;
     const isDropDownActive = dropDownList === idx;
-    console.log(dropDownList, isDropDownActive, idx);
+
     return (
       <li
         className="depthMenu"
