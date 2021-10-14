@@ -90,15 +90,18 @@
     }
   }
 
-  .logo {
-    text-align: center;
-    font-size: 3.2em;
-    font-family: 'South African';
-    letter-spacing: -2.5px;
-    color: #e50510;
+  .logoLink {
+    text-decoration: none;
+    .logo {
+      text-align: center;
+      font-size: 3.2em;
+      font-family: 'South African';
+      letter-spacing: -2.5px;
+      color: #e50510;
 
-    .small {
-      font-size: 0.6em;
+      .small {
+        font-size: 0.6em;
+      }
     }
   }
 
