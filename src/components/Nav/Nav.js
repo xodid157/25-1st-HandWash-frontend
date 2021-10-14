@@ -1,6 +1,6 @@
 import React from 'react';
 import Login from '../Login/Login';
-import ShoppingBag from '../ShoppingBag/ShoppingBag';
+import ShoppingBag from './ShoppingBag/ShoppingBag';
 import Depth from './Depth/Depth';
 import { SERVICES_LIST } from './data';
 import './Nav.scss';

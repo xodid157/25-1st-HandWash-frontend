@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { MAIN_MENU_LIST } from '../';
+import { MAIN_MENU_LIST } from '../data';
 import './Depth.scss';
 
 class Depth extends Component {
