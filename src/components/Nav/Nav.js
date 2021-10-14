@@ -1,36 +1,77 @@
 import React from 'react';
-import { SERVICES_LIST, USER_MENU } from './data';
+import Login from '../Login/Login';
+import ShoppingBag from './ShoppingBag/ShoppingBag';
+import Depth from './Depth/Depth';
+import { SERVICES_LIST } from './data';
 import './Nav.scss';
 
 class Nav extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      categoryList: {},
+      isUserMenuLogin: false,
+      isUserMenuShoppingBag: false,
+      isDepthMenu: false,
+    };
+  }
+
+  userMenuHoverChange = () => {
+    this.setState({
+      isUserMenuLogin: !this.state.isUserMenuLogin,
+    });
+  };
+
+  userMenuHoverShopping = () => {
+    this.setState({
+      isUserMenuShoppingBag: !this.state.isUserMenuShoppingBag,
+    });
+  };
+
   render() {
+    const { isUserMenuLogin, isUserMenuShoppingBag } = this.state;
+
     return (
       <nav className="navContainer">
         <div className="menuServices">
-          <ul>
+          <ul className="menuServicesList">
             {SERVICES_LIST.map((el, idx) => (
               <li key={idx}>{el}</li>
             ))}
           </ul>
 
           <ul className="userMenu">
-            {USER_MENU.map((menu, idx) => (
-              <li key={idx}>
-                <i className={`fas ${menu.type}`} />
-                <span>{menu.txt}</span>
-              </li>
-            ))}
+            <li
+              onMouseEnter={this.userMenuHoverChange}
+              onMouseLeave={this.userMenuHoverChange}
+            >
+              <i className="fas fa-user" />
+              로그인
+              {isUserMenuLogin && <Login />}
+            </li>
+            <li>
+              <i className="fas fa-heart" />
+              즐겨찾기
+            </li>
+            <li
+              onMouseEnter={this.userMenuHoverShopping}
+              onMouseLeave={this.userMenuHoverShopping}
+            >
+              <i className="fas fa-shopping-bag" />
+              쇼핑백
+              {isUserMenuShoppingBag && <ShoppingBag />}
+            </li>
           </ul>
         </div>
 
         <h1 className="logo">
           H <span className="small">&#x0026;</span> W
         </h1>
-        <ul className="menu">
-          {/* {CATEGORIES_LIST.map((category, idx) => (
-            <li key={idx}>{category}</li>
-          ))} */}
-        </ul>
+
+        <div>
+          <Depth />
+        </div>
+
         <form>
           <button>
             <i className="fas fa-search" />
