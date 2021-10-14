@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Magazine from '../../components/Magazine/Magazine';
-import Campaign from '../../components/Campaign/Campaign';
-import Trend from '../../components/Trend/Trend';
+import Magazine from './Magazine/Magazine';
+import Campaign from './Campaign/Campaign';
+import Trend from './Trend';
+
 import './Main.scss';
-import '../../components/Magazine/Magazine.scss';
 
 class Main extends React.Component {
   constructor(props) {
@@ -13,6 +13,8 @@ class Main extends React.Component {
       magazineList: [],
       trendList: [],
       campaignList: [],
+
+      imgSpot: 0,
     };
   }
 
@@ -42,17 +44,33 @@ class Main extends React.Component {
       );
   }
 
+  imgCaroselBtn = imgSpotNumber => {
+    const { trendList } = this.state;
+    if (trendList.length - 5 <= imgSpotNumber) imgSpotNumber = 0;
+    if (imgSpotNumber < 0) imgSpotNumber = trendList.length - 6;
+    this.setState({
+      imgSpot: imgSpotNumber,
+    });
+  };
+
   render() {
-    const { magazineList, trendList, campaignList } = this.state;
+    const { magazineList, trendList, campaignList, imgSpot } = this.state;
+    const CONTENT_WIDTH = 120.131;
+
     return (
       <>
-        <main>
+        <main className="main">
           <div className="trendContent">
             <h3 className="trendTitle">최신 트렌드</h3>
 
-            <div className="trendImgContent">
-              <i className="fas fa-arrow-left"></i>
-              <ul className="trendImg">
+            <div className="trendCarousel">
+              <ul
+                className="trendImgContainer"
+                style={{
+                  transform: `translateX(
+                ${imgSpot * -CONTENT_WIDTH}px`,
+                }}
+              >
                 {trendList.map((trend, idx) => {
                   return (
                     <Trend
@@ -63,7 +81,17 @@ class Main extends React.Component {
                   );
                 })}
               </ul>
-              <i className="fas fa-arrow-right"></i>
+
+              <div className="trendBtn">
+                <i
+                  className="fas fa-arrow-left"
+                  onClick={() => this.imgCaroselBtn(imgSpot - 1)}
+                ></i>
+                <i
+                  className="fas fa-arrow-right"
+                  onClick={() => this.imgCaroselBtn(imgSpot + 1)}
+                ></i>
+              </div>
             </div>
 
             <section>
