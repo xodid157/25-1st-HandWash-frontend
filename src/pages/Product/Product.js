@@ -18,12 +18,14 @@ class Product extends React.Component {
       parcelModal: false,
       isSizeModal: false,
       isHeart: false,
+      product_id: '',
+      size: '',
     };
   }
 
   componentDidMount() {
-    // fetch('./data/Product/product.json', {
-    fetch(`http://10.58.4.132:8000/products/${this.props.match.params.id}`, {
+    fetch('./data/Product/product.json', {
+      // fetch(`http://10.58.4.132:8000/products/${this.props.match.params.id}`, {
       method: 'GET',
     })
       .then(res => res.json())
@@ -34,8 +36,9 @@ class Product extends React.Component {
       });
   }
   openSize = () => {
+    const { isSizeModal } = this.state;
     this.setState({
-      isSizeModal: true,
+      isSizeModal: !isSizeModal,
     });
   };
 
@@ -63,6 +66,28 @@ class Product extends React.Component {
     });
   };
 
+  goCart = () => {
+    const { product_id, size } = this.state;
+    fetch('http://10.58.4.132:8000/carts', {
+      method: 'POST',
+      headers: {
+        Authorization:
+          'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.x31UKAwNRZ5yxDR4VBMMf4M-_r60wtVVIMBwKd7xGRM',
+      },
+      body: JSON.stringify({
+        product_id: product_id,
+        size: size,
+      }),
+    });
+  };
+
+  handleCarts = (content, id) => {
+    this.setState({
+      size: content,
+      product_id: id,
+    });
+  };
+
   render() {
     const { parcelModal, product, detailsModal, isSizeModal, isHeart } =
       this.state;
@@ -75,6 +100,8 @@ class Product extends React.Component {
             openSize={this.openSize}
             isSizeModal={isSizeModal}
             closeModal={this.closeModal}
+            goCart={this.goCart}
+            handleCarts={this.handleCarts}
           />
           <div
             className={

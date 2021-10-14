@@ -9,7 +9,7 @@ class Side extends React.Component {
   };
 
   render() {
-    const { product, openSize, isSizeModal, closeModal } = this.props;
+    const { product, openSize, isSizeModal, closeModal, goCart } = this.props;
     return (
       <article className="side">
         {isSizeModal && <SizeModal product={product} closeModal={closeModal} />}
@@ -42,7 +42,7 @@ class Side extends React.Component {
             </button>
           </div>
           <div className="order">
-            <button type="button" onClick={openSize}>
+            <button type="button" onClick={goCart}>
               <i className="fas fa-shopping-bag"></i>
               <span>담기</span>
             </button>

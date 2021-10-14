@@ -18,7 +18,7 @@ class SizeModal extends React.Component {
             <span>사이즈 선택</span>
             <i className="fas fa-angle-up"></i>
           </div>
-          <ul className="sizeContent">
+          <ul className="sizeContent" onClick={closeModal}>
             {product.size?.map(content => (
               <li key={content}>
                 <button>
