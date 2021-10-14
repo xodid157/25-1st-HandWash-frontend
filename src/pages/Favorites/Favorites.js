@@ -59,16 +59,6 @@ class Favorites extends React.Component {
     });
   };
 
-  //     .then(res => res.json())
-  //     .then(result => {
-  //       if (result.message === 'SUCCESS') {
-  //         this.setState({
-
-  //         })
-  //       }
-  //     });
-  // };
-
   handleCarts = (content, id) => {
     this.setState({
       size: content,
