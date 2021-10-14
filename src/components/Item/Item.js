@@ -1,7 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Colorchip from './ColorChip/Colorchip';
+// import API from '../../config';
 import './Item.scss';
+
+// const TOKEN = localStorage.getItem('token');
 
 class Item extends React.Component {
   constructor(props) {
@@ -13,9 +16,25 @@ class Item extends React.Component {
 
   handleLikeBtn = () => {
     const { likeBtn } = this.state;
+    const { id } = this.props;
     this.setState({
       likeBtn: !likeBtn,
     });
+
+    fetch('http://10.58.7.112:8000/likes/like', {
+      method: 'POST',
+      headers: {
+        Authorization:
+          'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NX0._pI6VNaa7StYMSyZ3AeMh3c5SQ1b6VH-5O73rTmz3l4',
+      },
+      body: JSON.stringify({ product_id: id }),
+    })
+      .then(res => res.json())
+      .then(res => {
+        if (res.message === 'SUCCESS') {
+          alert('즐겨찾기에 추가되었습니다.');
+        }
+      });
   };
 
   render() {
@@ -30,6 +49,7 @@ class Item extends React.Component {
           {/* <div className="imgInPrice">
             <p>{price}</p>
           </div> */}
+
           <i
             onClick={this.handleLikeBtn}
             className={`fas fa-heart fa-2x ${likeBtn ? 'likeBtn' : ''}`}

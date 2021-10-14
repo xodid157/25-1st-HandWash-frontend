@@ -1,13 +1,18 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router';
 import { Link } from 'react-router-dom';
 
 class Login extends Component {
+  goToLogin = () => {
+    this.props.history.push('/login');
+  };
+
   render() {
     return (
       <div className="userInfo">
         <ul className="userMenuLogin">
           <li>
-            <button>로그인</button>
+            <button onClick={this.goToLogin}>로그인</button>
           </li>
           <li>내 계정</li>
           <li>멤버십 정보</li>
@@ -22,4 +27,4 @@ class Login extends Component {
   }
 }
 
-export default Login;
+export default withRouter(Login);
