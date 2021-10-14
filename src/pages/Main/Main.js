@@ -4,6 +4,7 @@ import Magazine from '../../components/Magazine/Magazine';
 import Campaign from '../../components/Campaign/Campaign';
 import Trend from '../../components/Trend/Trend';
 import './Main.scss';
+import '../../components/Trend/Trend.scss';
 import '../../components/Magazine/Magazine.scss';
 
 class Main extends React.Component {
@@ -45,26 +46,17 @@ class Main extends React.Component {
       );
   }
 
-  nextBtn = () => {
-    const { trendList, trendNumber } = this.state;
-    if (trendList === trendNumber) {
-      trendList + 1;
-    }
-    this.setState({
-      trendList: trendList + 1,
-    });
-  };
+  nextBtn = () => {};
 
   render() {
     const { magazineList, trendList, campaignList } = this.state;
     return (
       <>
-        <main>
+        <main className="main">
           <div className="trendContent">
             <h3 className="trendTitle">최신 트렌드</h3>
 
             <div className="trendImgContent">
-              <i className="fas fa-arrow-left" onClick={this.nextBtn}></i>
               <ul className="trendImg">
                 {trendList.map((trend, idx) => {
                   return (
@@ -76,7 +68,11 @@ class Main extends React.Component {
                   );
                 })}
               </ul>
-              <i className="fas fa-arrow-right"></i>
+
+              <div className="trendBtn">
+                <i className="fas fa-arrow-left" onClick={this.nextBtn}></i>
+                <i className="fas fa-arrow-right"></i>
+              </div>
             </div>
 
             <section>

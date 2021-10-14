@@ -1,60 +1,11 @@
 @import '../../styles/variables.scss';
 
-main {
+.main {
   display: flex;
   flex-direction: column;
   max-width: 1008px;
   margin: 0 auto;
   overflow: hidden;
-
-  .trendTitle {
-    padding: 1.5em 0;
-    font-size: 1.5em;
-    text-align: center;
-  }
-
-  .trendImgContent {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0 auto;
-
-    .fa-arrow-left {
-      margin-right: 1.2em;
-    }
-
-    .fa-arrow-right {
-      margin-left: 1.2em;
-    }
-
-    .trendImg {
-      display: flex;
-
-      li {
-        margin: 0 1.2em;
-
-        img {
-          border-radius: 50%;
-        }
-
-        .categoryTitleContent {
-          display: flex;
-          flex-direction: column;
-          margin: 0.5em 0;
-          text-align: center;
-
-          p {
-            font-size: 0.7em;
-          }
-
-          .category {
-            margin-bottom: 0.4em;
-            color: #707070;
-          }
-        }
-      }
-    }
-  }
 
   .campaignLayout {
     margin: 1.5em 0;
