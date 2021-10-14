@@ -13,7 +13,7 @@ class Main extends React.Component {
       trendList: [],
       campaignList: [],
 
-      trendImgSpot: 0,
+      imgSpot: 0,
     };
   }
 
@@ -43,16 +43,33 @@ class Main extends React.Component {
       );
   }
 
+  imgCaroselBtn = imgSpotNumber => {
+    const { trendList } = this.state;
+    if (trendList.length - 5 <= imgSpotNumber) imgSpotNumber = 0;
+    if (imgSpotNumber < 0) imgSpotNumber = trendList.length - 6;
+    this.setState({
+      imgSpot: imgSpotNumber,
+    });
+  };
+
   render() {
-    const { magazineList, trendList, campaignList } = this.state;
+    const { magazineList, trendList, campaignList, imgSpot } = this.state;
+    const CONTENT_WIDTH = 120.131;
+
     return (
       <>
         <main className="main">
           <div className="trendContent">
             <h3 className="trendTitle">최신 트렌드</h3>
 
-            <div className="trendImgContent">
-              <ul className="trendImg">
+            <div className="trendCarousel">
+              <ul
+                className="trendImgContainer"
+                style={{
+                  transform: `translateX(
+                ${imgSpot * -CONTENT_WIDTH}px`,
+                }}
+              >
                 {trendList.map((trend, idx) => {
                   return (
                     <Trend
@@ -65,8 +82,14 @@ class Main extends React.Component {
               </ul>
 
               <div className="trendBtn">
-                <i className="fas fa-arrow-left" onClick={this.nextBtn}></i>
-                <i className="fas fa-arrow-right"></i>
+                <i
+                  className="fas fa-arrow-left"
+                  onClick={() => this.imgCaroselBtn(imgSpot - 1)}
+                ></i>
+                <i
+                  className="fas fa-arrow-right"
+                  onClick={() => this.imgCaroselBtn(imgSpot + 1)}
+                ></i>
               </div>
             </div>
 
