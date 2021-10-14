@@ -4,19 +4,16 @@ import Magazine from '../../components/Magazine/Magazine';
 import Campaign from '../../components/Campaign/Campaign';
 import Trend from '../../components/Trend/Trend';
 import './Main.scss';
-import '../../components/Trend/Trend.scss';
-import '../../components/Magazine/Magazine.scss';
 
 class Main extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       magazineList: [],
-
       trendList: [],
-      trendNumber: 0,
-
       campaignList: [],
+
+      trendImgSpot: 0,
     };
   }
 
@@ -45,8 +42,6 @@ class Main extends React.Component {
         })
       );
   }
-
-  nextBtn = () => {};
 
   render() {
     const { magazineList, trendList, campaignList } = this.state;
