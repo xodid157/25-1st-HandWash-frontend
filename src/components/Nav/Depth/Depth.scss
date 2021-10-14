@@ -5,18 +5,23 @@
     @include flexCenter;
     position: relative;
     margin-top: 1em;
+    z-index: 9999999;
 
     .depthMenu,
     .mockDataDepth {
       margin-left: 1em;
     }
+
+    .depthMenu:first-child {
+      margin-left: 0;
+    }
   }
 
   .twoDepth {
-    @include flexCenter;
-    position: absolute;
-    top: 44.8px;
+    display: flex;
+    width: 100%;
 
+    top: 44.8px;
     margin-top: 1em;
     margin-bottom: 0.8em;
     background-color: red;
@@ -31,7 +36,6 @@
 
     .threeDepth {
       display: flex;
-      flex-direction: row;
     }
   }
 }

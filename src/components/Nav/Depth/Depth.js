@@ -13,17 +13,9 @@ class Depth extends Component {
   }
 
   componentDidMount() {
-    // fetch('http://172.30.1.12:8000/products/categories', {
-    //   method: 'GET',
-    // })
-    //   .then(res => res.json())
-    //   .then(category => {
-    //     this.setState({
-    //       categoryList: category,
-    //     });
-    //   });
-
-    fetch('data/navListData.json')
+    fetch('http://10.58.4.132:8000/products/categories', {
+      method: 'GET',
+    })
       .then(res => res.json())
       .then(category => {
         this.setState({
@@ -35,20 +27,17 @@ class Depth extends Component {
   dropDownHover = id => {
     this.setState({
       dropDown: !this.state.dropDown,
-
-      //이렇게 해도 돼요 👇??
       dropDownList: id,
     });
   };
 
   render() {
-    const { categoryList, depth, dropDown } = this.state;
-    console.log(this.state.dropDownList);
+    const { categoryList, dropDown, dropDownList } = this.state;
 
     return (
       <div className="menuContents">
         <ul className="menu">
-          {categoryList.category_list?.map(category => {
+          {categoryList.category_list?.map((category, idx) => {
             return (
               <>
                 <li
@@ -57,15 +46,30 @@ class Depth extends Component {
                   onMouseEnter={() => this.dropDownHover(category.id)}
                 >
                   {category.name}
+                  {dropDownList - 1 === idx && (
+                    <ul className="twoDepth">
+                      {category.main_category?.map(twoDepth => {
+                        return (
+                          dropDown && (
+                            <li key={twoDepth.id}>
+                              {twoDepth.name}
+                              <ul>
+                                {twoDepth.sub_category.map(threeDepth => {
+                                  console.log(threeDepth);
+                                  return (
+                                    <li key={threeDepth.id}>
+                                      {threeDepth.name}
+                                    </li>
+                                  );
+                                })}
+                              </ul>
+                            </li>
+                          )
+                        );
+                      })}
+                    </ul>
+                  )}
                 </li>
-                <ul className="twoDepth">
-                  {category.main_category?.map(twoDepth => {
-                    const { dropDown } = this.state;
-                    return (
-                      dropDown && <li key={twoDepth.id}>{twoDepth.name}</li>
-                    );
-                  })}
-                </ul>
               </>
             );
           })}

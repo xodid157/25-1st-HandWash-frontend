@@ -16,6 +16,16 @@ class Nav extends React.Component {
     };
   }
 
+  componentDidMount() {
+    fetch('data/magazineData.json')
+      .then(magazine => magazine.json())
+      .then(data =>
+        this.setState({
+          magazineList: data,
+        })
+      );
+  }
+
   userMenuHoverChange = () => {
     this.setState({
       isUserMenuLogin: !this.state.isUserMenuLogin,
