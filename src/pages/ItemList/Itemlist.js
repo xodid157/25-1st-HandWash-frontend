@@ -3,6 +3,7 @@ import HideBar from './Hidebar/HideBar';
 import FilterNav from './FilterNav/FilterNav';
 import Header from './Header/Header';
 import Items from './Items/Items';
+import API from '../../config';
 import './Itemlist.scss';
 
 class ItemList extends React.Component {
@@ -16,7 +17,6 @@ class ItemList extends React.Component {
     };
   }
 
-  //  더 간단한 방법???? 너무복잡해
   findFilterUl = filter => {
     if (
       '추천' === filter ||
@@ -66,7 +66,7 @@ class ItemList extends React.Component {
 
   componentDidMount() {
     // fetch('data/itemLists.json')
-    fetch('http://10.58.4.132:8000/products?')
+    fetch(`${API.products}?`)
       .then(res => res.json())
       .then(data => {
         this.setState({ itemlist: data.products });
@@ -86,14 +86,8 @@ class ItemList extends React.Component {
       .join('')
       .slice(0, -1);
 
-    console.log(
-      `http://10.58.4.132:8000/products?${filteredData}${
-        filteredData && '&'
-      }${page}`
-    );
-
     if (prevState.selectFilter !== this.state.selectFilter) {
-      fetch(`http://10.58.4.132:8000/products?${filteredData}&${page}`)
+      fetch(`${API.products}?${filteredData}&${page}`)
         .then(res => res.json())
         .then(data => {
           this.setState({ itemlist: data.products });
@@ -109,7 +103,7 @@ class ItemList extends React.Component {
 
     // this.props.history.push(`${page}`);
 
-    fetch(`http://10.58.4.132:8000/products?${page}`)
+    fetch(`${API.products}?${page}`)
       .then(res => res.json())
       .then(data => {
         this.setState({ itemlist: data.products });
@@ -144,7 +138,7 @@ class ItemList extends React.Component {
 
   render() {
     const { isSidebar, itemlist, selectFilter, limit } = this.state;
-    console.log(this.state.itemlist);
+
     return (
       <>
         <HideBar isSidebar={isSidebar} />
@@ -156,6 +150,7 @@ class ItemList extends React.Component {
               onClickFilter={this.onClickFilter}
               deleteFilter={this.deleteFilter}
               selectFilter={selectFilter}
+              total={itemlist.length}
             />
             <Items
               itemlist={itemlist}

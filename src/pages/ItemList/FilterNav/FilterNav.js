@@ -14,7 +14,7 @@ class FilterNav extends React.Component {
 
   render() {
     const { navlist } = this.state;
-    const { onClickFilter, handleSideBar, selectFilter, deleteFilter } =
+    const { onClickFilter, handleSideBar, selectFilter, deleteFilter, total } =
       this.props;
     return (
       <div className="navv">
@@ -33,7 +33,7 @@ class FilterNav extends React.Component {
               <span onClick={handleSideBar}>모든 필터</span>
             </div>
           </ul>
-          <FilterSideBar />
+          <FilterSideBar total={total} />
         </div>
         <div className="navFilterList">
           {selectFilter.map((selectFilter, index) => (

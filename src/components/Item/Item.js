@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Colorchip from './ColorChip/Colorchip';
+import API from '../../config';
 import './Item.scss';
 
 class Item extends React.Component {
@@ -13,8 +14,14 @@ class Item extends React.Component {
 
   handleLikeBtn = () => {
     const { likeBtn } = this.state;
+    const { id } = this.props;
     this.setState({
       likeBtn: !likeBtn,
+    });
+
+    fetch(API.like, {
+      method: 'POST',
+      body: { id: id },
     });
   };
 
@@ -30,6 +37,7 @@ class Item extends React.Component {
           {/* <div className="imgInPrice">
             <p>{price}</p>
           </div> */}
+
           <i
             onClick={this.handleLikeBtn}
             className={`fas fa-heart fa-2x ${likeBtn ? 'likeBtn' : ''}`}
