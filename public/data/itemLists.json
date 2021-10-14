@@ -1,0 +1,76 @@
+[
+  {
+    "id": 1,
+    "name": "리브니트 울 블랜드 드레스",
+    "price": "27,000",
+    "color": ["black", "white"],
+
+    "image": "https://cdn.pixabay.com/photo/2017/11/11/15/52/young-man-2939344_1280.jpg,https://cdn.pixabay.com/photo/2016/03/25/09/04/t-shirt-1278404_1280.jpg",
+
+    "is_new": true,
+    "is_conscious": true
+  },
+  {
+    "id": 2,
+    "name": "리브니트 울 블랜드 드레스",
+    "price": "107,000",
+    "color": ["black"],
+    "image": "images/1111.jpeg",
+    "is_new": true,
+    "is_conscious": false
+  },
+  {
+    "id": 3,
+    "name": "리브니트 울 블랜드 드레스",
+    "price": "47,000",
+    "color": [],
+    "image": "images/1111.jpeg",
+    "is_new": true,
+    "is_conscious": true
+  },
+  {
+    "id": 4,
+    "name": "리브니트 울 블랜드 드레스",
+    "price": "10,000",
+    "color": ["gray", "white", "navy"],
+    "image": "images/1111.jpeg",
+    "is_new": false,
+    "is_conscious": true
+  },
+  {
+    "id": 5,
+    "name": "리브니트 울 블랜드 드레스",
+    "price": "7,000",
+    "color": ["black", "gray", "white", "navy"],
+    "image": "images/1111.jpeg",
+    "is_new": true,
+    "is_conscious": true
+  },
+  {
+    "id": 6,
+    "name": "리브니트 울 블랜드 드레스",
+    "price": "27,000",
+    "color": ["navy"],
+    "image": "images/1111.jpeg",
+    "is_new": false,
+    "is_conscious": false
+  },
+  {
+    "id": 7,
+    "name": "리브니트 울 블랜드 드레스",
+    "price": "17,000",
+    "color": ["gray", "white"],
+    "image": "images/1111.jpeg",
+    "is_new": true,
+    "is_conscious": true
+  },
+  {
+    "id": 8,
+    "name": "리브니트 울 블랜드 드레스",
+    "price": "37,000",
+    "color": [],
+    "image": "images/1111.jpeg",
+    "is_new": true,
+    "is_conscious": false
+  }
+]

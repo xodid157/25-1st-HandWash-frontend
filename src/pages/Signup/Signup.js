@@ -80,7 +80,6 @@ class Signup extends React.Component {
     });
   };
   render() {
-    console.log('체크', this.state.ischeck1);
     return (
       <div className="signUp">
         <div className="signUpContainer" onChange={this.handleInput}>
