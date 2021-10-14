@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import '../../components/Trend/Trend.scss';
 
 class Trend extends Component {
   render() {

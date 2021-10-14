@@ -1,8 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Magazine from '../../components/Magazine/Magazine';
-import Campaign from '../../components/Campaign/Campaign';
-import Trend from '../../components/Trend/Trend';
+import Magazine from './Magazine/Magazine';
+import Campaign from './Campaign/Campaign';
+import Trend from './Trend';
+
 import './Main.scss';
 
 class Main extends React.Component {

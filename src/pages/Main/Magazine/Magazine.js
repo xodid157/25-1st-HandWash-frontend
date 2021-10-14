@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import '../../components/Magazine/Magazine.scss';
+import './Magazine.scss';
 
 class Magazine extends Component {
   render() {
