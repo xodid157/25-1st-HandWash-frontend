@@ -1,0 +1,54 @@
+.styleIntroduce {
+  display: flex;
+  margin-top: 5em;
+
+  .hwStyle {
+    display: flex;
+    justify-content: center;
+    padding: 4em 2em;
+    background-color: white;
+
+    .introduceText {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      width: 30%;
+      margin-bottom: 5em;
+      padding: 3em 0;
+
+      p {
+        padding: 0.5em 0;
+        font-size: 1.75em;
+      }
+
+      span {
+        font-size: 0.813em;
+      }
+    }
+
+    .introduceInstar {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+
+      ul {
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
+
+        li {
+          width: 100%;
+          height: 100%;
+          padding: 0 0.5em;
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+      }
+    }
+  }
+}

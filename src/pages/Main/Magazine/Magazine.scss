@@ -1,0 +1,60 @@
+@import '../../../styles/variables.scss';
+
+.magazineContent {
+  width: 100%;
+  margin-top: 1.5em;
+  padding: 4em;
+  text-align: center;
+  background: #f1ebdf;
+
+  h2 {
+    line-height: 48px;
+    font-size: 2.65em;
+    font-weight: 500;
+  }
+
+  h3 {
+    margin-bottom: 0.5em;
+    font-size: 0.7em;
+  }
+
+  .magazineLink {
+    border-bottom: 1px solid #222;
+    font-size: 0.85em;
+    color: #222;
+    text-decoration: none;
+  }
+
+  .magazineLink:hover {
+    color: #707070;
+  }
+
+  .magazineCardList {
+    @include flexCenter;
+    margin-top: 3em;
+
+    .magazineCard {
+      margin: 0 1.6em 2em 0;
+      background: white;
+
+      .magazineCardContents {
+        padding: 1.25em 1.75em;
+
+        .vignette {
+          margin-bottom: 0.2em;
+          font-size: 0.85em;
+          font-weight: 200;
+        }
+      }
+
+      .cardLink {
+        padding: 1.25em 1.75em 0 1.75em;
+        font-size: 0.75em;
+
+        p {
+          margin-top: 2.55em;
+        }
+      }
+    }
+  }
+}

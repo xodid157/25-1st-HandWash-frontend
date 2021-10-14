@@ -1,0 +1,19 @@
+.navFilterRight {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  position: absolute;
+  width: 100%;
+  font-size: 0.8rem;
+  z-index: -1;
+
+  a {
+    padding-left: 1rem;
+    text-decoration: none;
+    color: black;
+  }
+
+  i {
+    font-size: 1.2rem;
+  }
+}

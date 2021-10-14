@@ -1,8 +1,12 @@
 import React from 'react';
+<<<<<<< HEAD
 import Login from '../Login/Login';
 import ShoppingBag from '../ShoppingBag/ShoppingBag';
 import Depth from '../Depth/Depth';
 import { SERVICES_LIST, MAIN_MENU_LIST } from './data';
+=======
+import { SERVICES_LIST, USER_MENU } from './data';
+>>>>>>> master
 import './Nav.scss';
 
 class Nav extends React.Component {

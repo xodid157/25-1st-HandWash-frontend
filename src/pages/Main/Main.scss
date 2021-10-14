@@ -1,2 +1,129 @@
+@import '../../styles/variables.scss';
+
 .main {
+  display: flex;
+  flex-direction: column;
+  max-width: 1008px;
+  margin: 0 auto;
+  overflow: hidden;
+
+  .trendTitle {
+    padding: 1.5em 0;
+    font-size: 1.5em;
+    text-align: center;
+  }
+
+  .trendCarousel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    width: 720px;
+    margin: 0 auto;
+    overflow: hidden;
+
+    .trendImgContainer {
+      display: flex;
+      align-content: center;
+      justify-content: center;
+      margin: 0 auto;
+      transition: 300ms;
+
+      li {
+        margin: 0 1em;
+
+        img {
+          border-radius: 50%;
+        }
+
+        .categoryTitleContent {
+          display: flex;
+          flex-direction: column;
+          margin: 0.5em 0;
+          text-align: center;
+
+          p {
+            font-size: 0.7em;
+          }
+
+          .category {
+            margin-bottom: 0.4em;
+            color: #707070;
+          }
+        }
+      }
+    }
+
+    .trendBtn {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: absolute;
+      width: 100%;
+    }
+  }
+
+  .campaignLayout {
+    margin: 1.5em 0;
+
+    .campaignContent {
+      @include flexCenter;
+      flex-direction: column;
+      position: relative;
+      text-align: center;
+      color: white;
+
+      div {
+        position: absolute;
+
+        h3 {
+          font-size: 2.65em;
+          margin-bottom: 0.35em;
+        }
+        a {
+          display: inline-block;
+          margin-top: 2em;
+          padding: 0.72em;
+          font-size: 0.7em;
+          text-decoration: none;
+          letter-spacing: 1px;
+          color: #222;
+          background: white;
+        }
+      }
+    }
+  }
+
+  .banners {
+    padding: 1.25em 3.75em;
+    text-align: center;
+    background: #f1ebdf;
+
+    h3 {
+      font-size: 1.8em;
+      color: #e50010;
+    }
+
+    p {
+      padding-top: 0.3em;
+      font-size: 0.7em;
+      color: #222;
+    }
+
+    b {
+      font-weight: 500;
+    }
+
+    a {
+      display: inline-block;
+      margin-top: 2em;
+      padding: 0.72em;
+      border: 1px solid #222;
+      font-size: 0.7em;
+      text-decoration: none;
+      letter-spacing: 1px;
+      color: #222;
+      background: #f1ebdf;
+    }
+  }
 }

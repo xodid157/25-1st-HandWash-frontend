@@ -1,0 +1,46 @@
+.list {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  padding-bottom: 5rem;
+}
+
+.itemListPage {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  height: 100%;
+  margin: 3.8rem;
+
+  .title {
+    margin: 1.5rem 0;
+    font-size: 2.8rem;
+  }
+
+  .content {
+    margin-bottom: 1rem;
+    font-size: 0.8rem;
+    font-weight: 350;
+  }
+
+  .items {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 10rem;
+    padding-bottom: 3rem;
+  }
+  .showMoreBtn {
+    position: absolute;
+    left: 43%;
+    padding: 1.5% 4%;
+    color: white;
+    border-style: none;
+    background-color: rgba(0, 0, 0, 0.877);
+  }
+  .showMoreBtn:hover {
+    background-color: rgba(0, 0, 0, 0.74);
+  }
+}

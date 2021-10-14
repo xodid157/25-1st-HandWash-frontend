@@ -1,0 +1,57 @@
+@import '../../styles/variables.scss';
+
+@font-face {
+  font-family: 'South African';
+  src: url('../../assets/font/South_African_Personal_Use.ttf')
+    format('truetype');
+}
+
+.footer:not(.logo) {
+  font-size: 0.85em;
+}
+
+.footer {
+  @include flexCenter;
+  flex-direction: column;
+  padding: 3.4em 0;
+  text-align: center;
+  line-height: 1.1;
+  color: #222;
+  background: #e4e4e4;
+
+  .footerIcons {
+    margin-bottom: 1em;
+
+    a {
+      margin: 0 0.95em;
+      font-size: 1.25em;
+      color: #222;
+    }
+  }
+
+  .more {
+    margin: 0.2em 0;
+  }
+
+  .footerSocial {
+    margin-top: 0.45em;
+    margin-bottom: 1em;
+  }
+
+  .footerLink {
+    display: block;
+    color: #222;
+    text-decoration: none;
+  }
+
+  .logo {
+    margin-top: 0.6em;
+    margin-bottom: 1.2em;
+    font-size: 2em;
+    font-family: 'South African';
+
+    .samllLogo {
+      font-size: 0.6em;
+    }
+  }
+}

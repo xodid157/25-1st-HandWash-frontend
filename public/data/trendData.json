@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "category": "남성",
+    "categoryTitle": "가디건 & 풀오버"
+  },
+  {
+    "id": 2,
+    "category": "여성",
+    "categoryTitle": "가디건 & 풀오버"
+  },
+  {
+    "id": 3,
+    "category": "ㅁ",
+    "categoryTitle": "가디건 & 풀오버"
+  },
+  {
+    "id": 4,
+    "category": "ㄴ",
+    "categoryTitle": "가디건 & 풀오버"
+  },
+  {
+    "id": 5,
+    "category": "ㄲㄲ",
+    "categoryTitle": "가디건 & 풀오버"
+  },
+  {
+    "id": 6,
+    "category": "ㅋㅋㅋㅋㅋㅋㅋ",
+    "categoryTitle": "가디건 & 풀오버"
+  },
+  {
+    "id": 7,
+    "category": "ㅁㄴㅇㄹㅁㄴㄹ",
+    "categoryTitle": "가디건 & 풀오버"
+  },
+  {
+    "id": 8,
+    "category": "여성",
+    "categoryTitle": "가디건 & 풀오버"
+  },
+  {
+    "id": 9,
+    "category": "여성",
+    "categoryTitle": "가디건 & 풀오버"
+  }
+]
