@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import LoginModal from './pages/LoginModal/LoginModal';
 import Signup from './pages/Signup/Signup';
 import Main from './pages/Main/Main';
+import Login from './components/Login/Login';
 import Basket from './pages/Basket/Basket';
 import Nav from './components/Nav/Nav';
 import Footer from './components/footer/Footer';
@@ -17,16 +18,13 @@ class Routes extends React.Component {
         <Nav />
         <Switch>
           <Route exact path="/main" component={Main} />
-<<<<<<< HEAD
           <Route exact path="/basket" component={Basket} />
           <Route exact path="/login" component={Login} />
-=======
           <Route exact path="/product/:id" component={Product} />
           <Route exact path="/product" component={Product} />
           <Route exact path="/favorites" component={Favorites} />
           <Route exact path="/itemList" component={ItemList} />
           <Route exact path="/login" component={LoginModal} />
->>>>>>> master
           <Route exact path="/signup" component={Signup} />
         </Switch>
         <Footer />

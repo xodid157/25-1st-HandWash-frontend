@@ -32,7 +32,7 @@ class Basket extends React.Component {
 
   goCart = () => {
     // const { product_id, size } = this.state;
-    fetch('http://10.58.4.132:8000/carts/', {
+    fetch('http://10.58.4.132:8000/carts/carts?cart_id=<int:cart_id>', {
       method: 'DELETE',
       headers: {
         Authorization:
