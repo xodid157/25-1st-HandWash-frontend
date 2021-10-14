@@ -3,7 +3,9 @@ import Item from '../../../components/Item/Item';
 
 class Items extends React.Component {
   render() {
-    const { itemlist } = this.props;
+    const { itemlist, showMoreItem, limit } = this.props;
+    const isBtn = itemlist.length >= limit;
+
     return (
       <>
         <ul className="items">
@@ -21,7 +23,11 @@ class Items extends React.Component {
           ))}
         </ul>
         <div>
-          <button className="showMoreBtn">더 많은 제품 보기</button>
+          {isBtn && (
+            <button onClick={() => showMoreItem()} className="showMoreBtn">
+              더 많은 제품 보기
+            </button>
+          )}
         </div>
       </>
     );
