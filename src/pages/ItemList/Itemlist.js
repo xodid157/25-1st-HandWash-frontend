@@ -37,6 +37,7 @@ class ItemList extends React.Component {
       { text: '브라운', type: 'color' },
       { text: '네이비', type: 'color' },
       { text: '그린', type: 'color' },
+      { text: '블랙', type: 'color' },
     ];
 
     return filters.find(f => f.text === filter).type;

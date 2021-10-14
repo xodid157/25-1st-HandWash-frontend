@@ -1,10 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import LoginInput from './LoginInput';
-import '../../styles/common.scss';
-import './Login.scss';
+import './LoginModal.scss';
 
-class Login extends React.Component {
+class LoginModal extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -51,7 +50,7 @@ class Login extends React.Component {
     // const { email, password } = this.state;
     // const isValid = email.includes('@') && password.length >= 8;
     return (
-      <div className="login">
+      <div className="loginModal">
         <div className="loginContainer">
           <Link to="/main">
             <button className="closeButton">
@@ -94,4 +93,4 @@ class Login extends React.Component {
   }
 }
 
-export default Login;
+export default LoginModal;
