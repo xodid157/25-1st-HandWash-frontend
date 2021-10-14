@@ -2,41 +2,34 @@ import React from 'react';
 
 class Basketitem extends React.Component {
   render() {
+    const { key, name, price, img, size, color } = this.props;
     return (
-      // <li className="itemBox">
-      //   <span className="itemId"> 미친 {this.props.item}</span>
-      // </li>
       <li className="addItem">
         <button className="trash">
           <i className="far fa-trash-alt"></i>
         </button>
-        <img
-          src="https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=795&q=80
-"
-          alt="outer"
-          className="itemImg"
-        ></img>
+        <img src={img} className="itemImg" />
         <span className="itemInfo">
           <div className="itemTag">
-            <p>A라인 쇼트 드레스</p>
-            <p className="price">₩ 29,990</p>
+            <p>{name}</p>
+            <p className="price">{price}</p>
           </div>
           <ul className="itemInfoList">
             <li>
               <span>상품 번호:</span>
-              <span>0991090004</span>
+              <span>{key}</span>
             </li>
             <li>
               <span>사이즈:</span>
-              <span>42</span>
+              <span>{size}</span>
             </li>
             <li>
               <span>컬러:</span>
-              <span>오렌지/화이트 플로럴</span>
+              <span>{color}</span>
             </li>
             <li>
               <span>합계:</span>
-              <span>₩ 29,990</span>
+              <span>{price}</span>
             </li>
           </ul>
 
