@@ -1,0 +1,238 @@
+.signUp {
+  // height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .signUpContainer {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 500px;
+    margin-top: 1.25em;
+    padding: 3em;
+    background-color: #faf9f8;
+
+    .outButton {
+      display: flex;
+      position: absolute;
+      top: 1.2em;
+      right: 1.2em;
+      justify-content: flex-end;
+      border: 0;
+      outline: 0;
+      background-color: transparent;
+      cursor: pointer;
+
+      i {
+        font-size: 2.5em;
+      }
+    }
+    .loginTitle {
+      display: flex;
+      justify-content: center;
+      align-content: center;
+      font-size: 1.25em;
+      padding: 0.8em;
+    }
+
+    .loginSubTitle {
+      display: flex; //일단 그냥 쓴거
+      justify-content: center;
+      margin-bottom: 2em;
+      font-size: 0.85em;
+    }
+
+    .kakaoLogin {
+      width: 100%;
+      padding: 1.4em 9em;
+      margin: 1em 0;
+      border: 0;
+      outline: none;
+      background-color: #fee500;
+      cursor: pointer;
+    }
+
+    .or {
+      margin: 1em 0;
+      font-size: 0.8em;
+    }
+
+    .emailTitle {
+      width: 100%;
+      margin: 0.3em 0;
+      .emailName {
+        margin: 3em 0;
+        font-size: 0.81em;
+
+        .star {
+          color: red;
+        }
+      }
+
+      .emailInput {
+        width: 100%;
+        padding: 0.88em 1em;
+        border: 0.1em solid #d0d0d0;
+      }
+    }
+
+    .passwordTitle {
+      width: 100%;
+      margin: 0.3em 0;
+
+      .passwordName {
+        margin: 0.8em 0;
+        font-size: 0.81em;
+
+        .star {
+          color: red;
+        }
+      }
+      .passwordInput {
+        width: 100%;
+        padding: 0.88em 1em;
+        border: 0.1em solid #d0d0d0;
+      }
+    }
+
+    .birthTitle {
+      width: 100%;
+      margin: 0.3em 0;
+
+      .birthName {
+        margin: 0.8em 0;
+        font-size: 0.81em;
+
+        .star {
+          color: red;
+        }
+      }
+      .birthInput {
+        width: 100%;
+        padding: 0.88em 0.5em;
+        border: 0.1em solid #d0d0d0;
+        background-color: #fff;
+
+        .yearInput {
+          width: 15%;
+          padding: 0em 0.5em;
+          border: none;
+        }
+        .dayInput {
+          width: 10%;
+          padding: 0em 0.5em;
+          border: none;
+        }
+      }
+
+      p {
+        margin: 0.8em 0;
+        font-size: 0.81em;
+      }
+
+      .birthCoupon {
+        font-size: 0.69em;
+      }
+    }
+
+    .addInformation {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      padding: 1.25em 0;
+      border: none;
+      background-color: #fff;
+      cursor: pointer;
+
+      .benefits {
+        padding-left: 1em;
+      }
+      i {
+        padding-right: 1em;
+      }
+    }
+
+    .agreementList {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      margin: 1.5em;
+
+      p {
+        font-size: 1em;
+        margin: 0.2em;
+        padding: 0.2em 0;
+      }
+
+      .agreementCheck {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .terms {
+          color: inherit;
+          font-size: 0.81em;
+        }
+
+        .checkBox {
+          display: inline;
+          width: 20em;
+          margin: 0.4em 0;
+
+          span {
+            margin-left: 0.3em;
+            font-size: 0.81em;
+
+            .star {
+              color: red;
+            }
+          }
+        }
+      }
+    }
+    .footer {
+      font-size: 0.81em;
+      padding: 1em 0;
+
+      .membership {
+        color: #222;
+        margin: 0.3em;
+        font-size: 1em;
+        cursor: pointer;
+      }
+
+      .membership:hover {
+        text-decoration: underline;
+      }
+    }
+
+    .signUpButton {
+      width: 100%;
+      padding: 1em;
+      border: 0;
+      background-color: #222;
+
+      .signButtonSubmit {
+        border: 0;
+        font-size: 0.81em;
+        padding: 0.4em;
+        color: white;
+        cursor: pointer;
+      }
+      .signButtonSubmit:hover {
+        opacity: 0.7;
+      }
+    }
+
+    .goToLogin {
+      margin-top: 1em;
+      color: inherit;
+      font-size: 0.81em;
+    }
+  }
+}
+//패딩,마진,폰트 사이즈만  em  가로세로 %
