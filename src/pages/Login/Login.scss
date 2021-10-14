@@ -16,8 +16,8 @@
     border: 1px solid #d0d0d0;
 
     .closeButton {
-      position: absolute;
       display: flex;
+      position: absolute;
       justify-content: flex-end;
       top: 1.2em;
       right: 1.2em;
@@ -52,8 +52,8 @@
       margin: 1em 0;
       border: 0;
       outline: none;
-      cursor: pointer;
       background-color: #fee500;
+      cursor: pointer;
     }
 
     .or {
