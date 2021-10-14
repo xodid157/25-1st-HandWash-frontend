@@ -25,10 +25,3 @@ const filterlist = [
 ];
 
 export default filterlist;
-
-// const IP='';
-// export const API ={
-//   CategoryView:`http://${IP}/products/categories`,
-//   ProductListView:`http://${IP}/products/`,
-//   ProductDetailView:`http://${IP}/products/`,
-// }

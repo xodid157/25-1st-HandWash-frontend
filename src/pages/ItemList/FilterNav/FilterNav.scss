@@ -1,5 +1,6 @@
 .navv {
   margin-bottom: 3rem;
+
   .navFilter {
     display: flex;
     justify-content: space-between;
@@ -16,8 +17,15 @@
         font-size: 0.9rem;
       }
 
-      .hii {
+      .allFilter {
+        position: absolute;
+        left: 22rem;
         cursor: pointer;
+
+        span {
+          font-size: 1rem;
+          font-weight: 400;
+        }
       }
     }
   }
@@ -26,7 +34,7 @@
     justify-content: flex-start;
 
     div {
-      margin-top: 3rem;
+      // margin-top: 3rem;
       margin-right: 1rem;
       padding: 0.9rem 1rem;
       background-color: rgb(253, 247, 238);
