@@ -26,9 +26,7 @@
   .items {
     position: relative;
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
     margin-bottom: 10rem;
     padding-bottom: 3rem;
   }
@@ -39,6 +37,7 @@
     color: white;
     border-style: none;
     background-color: rgba(0, 0, 0, 0.877);
+    cursor: pointer;
   }
   .showMoreBtn:hover {
     background-color: rgba(0, 0, 0, 0.74);

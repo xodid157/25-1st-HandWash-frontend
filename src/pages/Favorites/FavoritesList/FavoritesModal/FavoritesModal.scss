@@ -1,0 +1,97 @@
+.favoritesModal {
+  .sizesModal {
+    position: absolute;
+    z-index: 9999;
+    width: 100%;
+    top: -7em;
+    right: 0%;
+    transition-duration: 0.5s;
+
+    .sizeGuide {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.7em;
+
+      .guideButton {
+        padding: 0.8em 2em;
+        border: 0;
+        border-radius: 100px;
+        background-color: white;
+
+        &:hover {
+          background-color: #f4eddd;
+        }
+        span {
+          font-size: 0.9em;
+        }
+      }
+      .close {
+        width: 30px;
+        height: 30px;
+        border-radius: 100%;
+        border: 0;
+        background-color: white;
+
+        &:hover {
+          background-color: #f4eddd;
+        }
+      }
+
+      .close:before,
+      .close:after {
+        position: absolute;
+        top: 12px;
+        content: ' ';
+        height: 16px;
+        width: 1px;
+        background-color: #000;
+      }
+      .close:before {
+        transform: rotate(45deg);
+      }
+      .close:after {
+        transform: rotate(-45deg);
+      }
+    }
+    .sizeTitle {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.2em 0.938em;
+      background-color: white;
+      border-bottom: 1px solid #d0d0d0;
+
+      span {
+        font-size: 0.9em;
+      }
+    }
+    .sizeContent {
+      display: flex;
+      flex-direction: column;
+      margin: 0 0 4px;
+      font-size: 13px;
+      line-height: 20px;
+      background-color: white;
+      overflow: scroll;
+      max-height: 200px;
+
+      li {
+        width: 100%;
+      }
+
+      button {
+        display: flex;
+        justify-content: flex-start;
+        background-color: white;
+        border: 0;
+        width: 100%;
+        padding: 1.4em 2em;
+
+        &:hover {
+          background-color: #f4eddd;
+        }
+      }
+    }
+  }
+}

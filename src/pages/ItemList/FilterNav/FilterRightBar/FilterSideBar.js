@@ -4,9 +4,10 @@ import './FilterSideBar.scss';
 
 class FilterSideBar extends React.Component {
   render() {
+    const { total } = this.props;
     return (
       <div className="navFilterRight">
-        <div className="itemListNum">1234아이템</div>
+        <div className="itemListNum">{total}개 아이템</div>
         <div>
           <Link to="#">모델</Link>
         </div>
