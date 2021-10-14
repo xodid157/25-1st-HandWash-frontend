@@ -2,7 +2,7 @@ import React from 'react';
 import './SizeModal.scss';
 class SizeModal extends React.Component {
   render() {
-    const { product, closeModal } = this.props;
+    const { product, closeModal, id, handleCarts } = this.props;
     return (
       <section className="sizeBox">
         <div className="sizeModal">
@@ -20,8 +20,8 @@ class SizeModal extends React.Component {
           </div>
           <ul className="sizeContent">
             {product.size?.map(content => (
-              <li key={content}>
-                <button>
+              <li key={content} onClick={closeModal}>
+                <button onClick={() => handleCarts(content, id)}>
                   <span>{content}</span>
                 </button>
               </li>
