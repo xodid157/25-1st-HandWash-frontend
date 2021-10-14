@@ -1,0 +1,52 @@
+[
+  {
+    "product_id": 45,
+    "image": "https://images.unsplash.com/photo-1576858688752-d7d4dbd6686a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1031&q=80",
+    "is_conscious": false,
+    "name": "펠트 햇",
+    "price": "39,900",
+    "is_new": true,
+    "color": "블랙",
+    "sizes": ["Free"]
+  },
+  {
+    "product_id": 35,
+    "image": "https://images.unsplash.com/photo-1591357037205-166318b51afd?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjh8fHNoaXJ0c3xlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+    "is_conscious": false,
+    "name": "레귤러핏 옥스퍼드 셔츠",
+    "price": "19,900",
+    "is_new": false,
+    "color": "베이지",
+    "sizes": ["M", "L", "XL"]
+  },
+  {
+    "product_id": 25,
+    "image": "https://cdn.pixabay.com/photo/2016/04/19/16/29/model-1338995_1280.jpg",
+    "is_conscious": true,
+    "name": "슬림 데님 쇼츠",
+    "price": "49,900",
+    "is_new": false,
+    "color": "스카이블루",
+    "sizes": ["XXS", "XS"]
+  },
+  {
+    "product_id": 15,
+    "image": "https://cdn.pixabay.com/photo/2016/03/03/17/34/jeans-1234687_1280.jpg",
+    "is_conscious": false,
+    "name": "90s 스트레이트 하이웨이스트 진",
+    "price": "39,900",
+    "is_new": true,
+    "color": "중청",
+    "sizes": ["24", "26", "27"]
+  },
+  {
+    "product_id": 15,
+    "image": "https://cdn.pixabay.com/photo/2016/03/03/17/34/jeans-1234687_1280.jpg",
+    "is_conscious": false,
+    "name": "90s 스트레이트 하이웨이스트 진",
+    "price": "39,900",
+    "is_new": true,
+    "color": "중청",
+    "sizes": ["24", "26", "27"]
+  }
+]
