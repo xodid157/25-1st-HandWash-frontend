@@ -25,7 +25,7 @@ class Product extends React.Component {
 
   componentDidMount() {
     // fetch('./data/Product/product.json', {
-    fetch(`http://10.58.4.132:8000/products/${this.props.match.params.id}`, {
+    fetch(`http://10.58.3.102:8000/products/${this.props.match.params.id}`, {
       method: 'GET',
     })
       .then(res => res.json())
@@ -38,7 +38,7 @@ class Product extends React.Component {
 
   goCart = () => {
     const { product_id, size } = this.state;
-    fetch('http://10.58.4.132:8000/carts', {
+    fetch('http://10.58.3.102:8000/carts', {
       method: 'POST',
       headers: {
         Authorization:
