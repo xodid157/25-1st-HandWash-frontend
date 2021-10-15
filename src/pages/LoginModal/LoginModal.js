@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import LoginInput from './LoginInput';
+import LoginError from './Loginerror';
 import './LoginModal.scss';
 
 class LoginModal extends React.Component {
@@ -9,6 +10,7 @@ class LoginModal extends React.Component {
     this.state = {
       email: '',
       password: '',
+      isInput: false,
     };
   }
 
@@ -46,12 +48,17 @@ class LoginModal extends React.Component {
     const { email, password } = this.state;
     if (email.includes('@') && password.length >= 8) {
       this.goToMain();
+    } else {
+      alert('입력창을 확인해 주세요');
     }
   };
 
+  changeList = e => {
+    this.setState({
+      isInput: !this.state.isInput,
+    });
+  };
   render() {
-    // const { email, password } = this.state;
-    // const isValid = email.includes('@') && password.length >= 8;
     return (
       <div className="loginModal">
         <div className="loginContainer">
@@ -68,10 +75,8 @@ class LoginModal extends React.Component {
             <i className="fas fa-comment"></i> &nbsp;카카오로 로그인
           </button>
           <p className="or">또는</p>
-          <LoginInput
-            handleInput={this.handleInput}
-            // className={isValid ? '' : 'inputOff'}
-          />
+          {this.state.isInput && <LoginError handleInput={this.handleInput} />}
+          {this.state.isInput !== <LoginInput handleInput={this.handleInput} />}
           <div className="loginState">
             <div className="checkBox">
               <input type="checkbox" name="loginCheck" />

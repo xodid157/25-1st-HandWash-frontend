@@ -110,6 +110,54 @@
       }
     }
 
+    .errorlEmail {
+      width: 100%;
+
+      .emailTitle {
+        margin: 0.8em 0;
+        font-size: 0.9em;
+        color: #d6001c;
+        span {
+          color: #d6001c;
+        }
+      }
+
+      .errorText {
+        font-size: 0.8em;
+        color: #d6001c;
+      }
+      .emailInput {
+        width: 100%;
+        padding: 1.2em 1em;
+        border: 0.1em solid #d6001c;
+      }
+    }
+
+    .errorPassword {
+      width: 100%;
+
+      .passwordTitle {
+        margin: 0.8em 0;
+        font-size: 0.9em;
+        color: #d6001c;
+
+        span {
+          color: #d6001c;
+        }
+      }
+
+      .errorText {
+        font-size: 0.8em;
+        color: #d6001c;
+      }
+
+      .passwordInput {
+        width: 100%;
+        padding: 1.2em 1em;
+        border: 0.1em solid #d6001c;
+      }
+    }
+
     .loginState {
       display: flex;
       justify-content: space-between; //여기 왜 이래 ㅁㅊ 좀 가생이로 가라

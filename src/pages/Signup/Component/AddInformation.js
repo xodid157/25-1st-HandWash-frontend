@@ -2,13 +2,6 @@ import React from 'react';
 import './AddInformation.scss';
 
 class AddInformation extends React.Component {
-  // constructor() {
-  //   super();
-  //   this.state = {
-  //     email: '',
-  //     password: '',
-  //   };
-  // }
   render() {
     return (
       <div className="information">
