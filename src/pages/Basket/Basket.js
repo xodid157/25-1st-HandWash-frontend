@@ -38,10 +38,10 @@ class Basket extends React.Component {
         Authorization:
           'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.x31UKAwNRZ5yxDR4VBMMf4M-_r60wtVVIMBwKd7xGRM',
       },
-      body: JSON.stringify({
-        product_id: 35,
-        size: 'M',
-      }),
+      // body: JSON.stringify({
+      //   product_id: 35,
+      //   size: 'M',
+      // }),
     });
   };
 
@@ -74,7 +74,6 @@ class Basket extends React.Component {
               {itemlist.product_list?.map(item => {
                 return (
                   <Basketitem
-                    // handleInput={this.goCart}
                     img={item.image}
                     key={item.product_id}
                     name={item.name}

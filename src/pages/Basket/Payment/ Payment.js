@@ -26,7 +26,6 @@ class Payment extends React.Component {
             <span>배송</span>
             <span>{deliveryFee}</span>
           </div>
-          {/* <div className="line"></div> */}
           <div className="합계">
             <span>합계</span>
             <span>₩ {total} </span>
