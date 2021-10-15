@@ -10,7 +10,7 @@ class LoginModal extends React.Component {
     this.state = {
       email: '',
       password: '',
-      isInput: false,
+      // isInput: false,
     };
   }
 
@@ -23,7 +23,7 @@ class LoginModal extends React.Component {
 
   goToMain = () => {
     const { email, password } = this.state;
-    fetch('http://10.58.7.112:8000/users/signin', {
+    fetch('http://10.58.2.238:8000/users/signin', {
       method: 'POST',
       headers: {
         Authorization: localStorage.getItem('token'),
@@ -58,6 +58,15 @@ class LoginModal extends React.Component {
       isInput: !this.state.isInput,
     });
   };
+
+  // inputComplete = () => {
+  //   const { isInput } = this.state;
+  //   if (isInput === false) {
+  //     <LoginInput />;
+  //   } else {
+  //     this.setState({ <LoginError/> });
+  //   }
+  // };
   render() {
     return (
       <div className="loginModal">
@@ -75,8 +84,10 @@ class LoginModal extends React.Component {
             <i className="fas fa-comment"></i> &nbsp;카카오로 로그인
           </button>
           <p className="or">또는</p>
-          {this.state.isInput && <LoginError handleInput={this.handleInput} />}
-          {this.state.isInput !== <LoginInput handleInput={this.handleInput} />}
+          <LoginInput handleInput={this.handleInput} />
+
+          {/* {this.state.isInput && <LoginError handleInput={this.handleInput} />}
+          {this.state.isInput  <LoginInput handleInput={this.handleInput} />} */}
           <div className="loginState">
             <div className="checkBox">
               <input type="checkbox" name="loginCheck" />
