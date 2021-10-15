@@ -1,47 +1,62 @@
 [
   {
     "id": 1,
-    "category": "남성",
-    "categoryTitle": "가디건 & 풀오버"
+    "category": "여성",
+    "categoryTitle": "반바지",
+    "img": "/images/main/trendImg1.jpg"
   },
   {
     "id": 2,
     "category": "여성",
-    "categoryTitle": "가디건 & 풀오버"
+    "categoryTitle": "레깅스",
+    "img": "/images/main/trendImg2.jpg"
   },
   {
     "id": 3,
-    "category": "ㅁ",
-    "categoryTitle": "가디건 & 풀오버"
+    "category": "신발",
+    "categoryTitle": "부츠",
+    "img": "/images/main/trendImg3.jpg"
   },
   {
     "id": 4,
-    "category": "ㄴ",
-    "categoryTitle": "가디건 & 풀오버"
+    "category": "아동",
+    "categoryTitle": "남아",
+    "img": "/images/main/trendImg4.jpg"
   },
   {
     "id": 5,
-    "category": "ㄲㄲ",
-    "categoryTitle": "가디건 & 풀오버"
+    "category": "아동",
+    "categoryTitle": "여아",
+    "img": "/images/main/trendImg5.jpg"
   },
   {
     "id": 6,
-    "category": "ㅋㅋㅋㅋㅋㅋㅋ",
-    "categoryTitle": "가디건 & 풀오버"
+    "category": "여성",
+    "categoryTitle": "드레스",
+    "img": "/images/main/trendImg6.jpg"
   },
   {
     "id": 7,
-    "category": "ㅁㄴㅇㄹㅁㄴㄹ",
-    "categoryTitle": "가디건 & 풀오버"
+    "category": "여성",
+    "categoryTitle": "스웨터",
+    "img": "/images/main/trendImg7.jpg"
   },
   {
     "id": 8,
     "category": "여성",
-    "categoryTitle": "가디건 & 풀오버"
+    "categoryTitle": "블라우스",
+    "img": "/images/main/trendImg8.jpg"
   },
   {
     "id": 9,
-    "category": "여성",
-    "categoryTitle": "가디건 & 풀오버"
+    "category": "남성",
+    "categoryTitle": "티셔츠",
+    "img": "/images/main/trendImg9.jpg"
+  },
+  {
+    "id": 10,
+    "category": "남성",
+    "categoryTitle": "데님",
+    "img": "/images/main/trendImg10.jpg"
   }
 ]

@@ -62,7 +62,6 @@ class Signup extends React.Component {
     })
       .then(res => res.json())
       .then(res => {
-        console.log(res.token);
         this.props.history.push('/main');
       });
   };
