@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import LoginInput from './LoginInput';
-import LoginError from './Loginerror';
+// import LoginError from './Loginerror';
 import './LoginModal.scss';
 
 class LoginModal extends React.Component {
