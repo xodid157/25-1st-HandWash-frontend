@@ -21,8 +21,8 @@ class DetailsModal extends React.Component {
               <span>{product.length}</span>
               <p>밑위 길이</p>
               <span>{product.fit}</span>
-              <p>스타일</p>
-              <span></span>
+              {/* <p>스타일</p>
+              <span></span> */}
               <p>구성</p>
               <span>{product.configuration}</span>
               <p>취급 방법</p>

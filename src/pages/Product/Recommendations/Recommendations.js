@@ -11,7 +11,7 @@ class Recommendations extends React.Component {
   }
 
   componentDidMount() {
-    fetch('./data/Product/RecommendationsContentData.json', {
+    fetch('./data/Product/recommendationsContentData.json', {
       method: 'GET',
     })
       .then(res => res.json())
@@ -24,7 +24,7 @@ class Recommendations extends React.Component {
 
   render() {
     const { RecommendationsContentList } = this.state;
-    console.log(RecommendationsContentList);
+    console.log(this.state);
     return (
       <article className="recommendations">
         <div>

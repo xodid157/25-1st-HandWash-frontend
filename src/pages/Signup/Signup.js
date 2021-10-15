@@ -35,7 +35,6 @@ class Signup extends React.Component {
       [name]: value,
     });
   };
-
   goToMain = e => {
     const {
       email,

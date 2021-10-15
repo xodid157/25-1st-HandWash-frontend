@@ -18,8 +18,7 @@ class Basket extends React.Component {
     fetch(API.cart, {
       method: 'GET',
       headers: {
-        Authorization:
-          'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.x31UKAwNRZ5yxDR4VBMMf4M-_r60wtVVIMBwKd7xGRM',
+        Authorization: localStorage.getItem('token'),
       },
     })
       .then(res => res.json())
@@ -35,10 +34,6 @@ class Basket extends React.Component {
     const { id } = this.state;
     fetch(`${API.cart}/${id}`, {
       method: 'DELETE',
-      headers: {
-        Authorization:
-          'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.x31UKAwNRZ5yxDR4VBMMf4M-_r60wtVVIMBwKd7xGRM',
-      },
       // body: JSON.stringify({
       //   product_id: 35,
       //   size: 'M',

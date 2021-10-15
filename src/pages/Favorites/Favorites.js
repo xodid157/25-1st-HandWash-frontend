@@ -74,7 +74,7 @@ class Favorites extends React.Component {
   };
 
   render() {
-    const { isSizeModal, favoritesList } = this.state;
+    const { isSizeModal, favoritesList, size } = this.state;
     return (
       <section className="favorites">
         <div className="favoritContentBox">
@@ -102,6 +102,7 @@ class Favorites extends React.Component {
                   goCart={this.goCart}
                   handleCarts={this.handleCarts}
                   deleteFavoites={this.deleteFavoites}
+                  size={size}
                 />
               ))}
             </ul>

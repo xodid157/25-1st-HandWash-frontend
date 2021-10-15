@@ -42,8 +42,7 @@ class Product extends React.Component {
     fetch(API.cart, {
       method: 'POST',
       headers: {
-        Authorization:
-          'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.x31UKAwNRZ5yxDR4VBMMf4M-_r60wtVVIMBwKd7xGRM',
+        Authorization: localStorage.getItem('token'),
       },
       body: JSON.stringify({
         product_id: product_id,

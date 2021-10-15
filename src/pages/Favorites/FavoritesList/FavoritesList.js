@@ -67,7 +67,10 @@ class FavoritesList extends React.Component {
                   id={id}
                 />
               )}
-              <span className="sizeText">사이즈 선택</span>
+
+              <span className="sizeText">
+                {this.props.size === '' ? '사이즈 선택' : this.props.size}
+              </span>
               <i className="fas fa-angle-down"></i>
             </button>
             <button className="order" onClick={goCart}>

@@ -32,12 +32,12 @@ class LoginModal extends React.Component {
       .then(res => res.json())
       .then(res => {
         console.log(res);
-        // if (res.ACCESS_TOKEN) {
-        //   localStorage.setItem('token', res.ACCESS_TOKEN);
-        //   this.props.history.push('/');
-        // } else if (!res.ACCESS_TOKEN) {
-        //   // alert('아이디, 비밀번호를 확인해주세요');
-        // }
+        if (res.ACCESS_TOKEN) {
+          localStorage.setItem('token', res.ACCESS_TOKEN);
+          this.props.history.push('/');
+        } else if (!res.ACCESS_TOKEN) {
+          alert('아이디, 비밀번호를 확인해주세요');
+        }
       });
   };
 
@@ -55,7 +55,7 @@ class LoginModal extends React.Component {
     return (
       <div className="loginModal">
         <div className="loginContainer">
-          <Link to="/">
+          <Link to="/" className="close">
             <button className="closeButton">
               <i className="fal fa-times"></i>
             </button>
