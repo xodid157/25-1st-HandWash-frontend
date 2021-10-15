@@ -24,7 +24,7 @@ class LoginModal extends React.Component {
     fetch('http://10.58.7.112:8000/users/signin', {
       method: 'POST',
       headers: {
-        Authorization: localStorage.getItem('token'),
+        Authorization: localStorage.setItem('token'),
       },
       body: JSON.stringify({
         email: email,

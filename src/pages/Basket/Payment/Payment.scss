@@ -1,0 +1,103 @@
+.sidePayment {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0 auto;
+
+  .payment {
+    width: 100%;
+    padding: 32px 24px;
+    background-color: #fff;
+    // border: 1px solid blue;
+
+    p {
+      font-size: 0.81em;
+      margin-bottom: 1em;
+      line-height: 1.5em;
+    }
+
+    .saleCodeInput {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+
+      .saleCode {
+        width: 65%;
+        height: 3.8em;
+        border: 0;
+        padding: 0.5em;
+        margin-right: 0.5em;
+        outline: 0;
+        border: 1px solid black;
+      }
+      .add {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 30%;
+        background-color: transparent;
+        outline: 0;
+        border: 1px solid black;
+      }
+    }
+    .개 {
+      margin: 1em 0;
+    }
+
+    .로그인 {
+      // padding: 1.2em 11em;
+      width: 100%;
+      height: 4.2em;
+      background-color: transparent;
+      outline: 0;
+      border: 1px solid black;
+      margin-bottom: 2.5em;
+    }
+
+    .주문가격 {
+      display: flex;
+      justify-content: space-between;
+      height: 2em;
+      font-size: 0.81em;
+    }
+
+    .배송 {
+      display: flex;
+      justify-content: space-between;
+      height: 4.5em;
+      font-size: 0.81em;
+    }
+
+    .합계 {
+      display: flex;
+      justify-content: space-between;
+      height: 4.5em;
+      font-size: 1em;
+    }
+
+    .결제 {
+      width: 100%;
+      height: 4.2em;
+      color: white;
+      font-weight: 300;
+      outline: 0;
+      background-color: black;
+      border: 1px solid black;
+      margin-bottom: 1.5em;
+    }
+  }
+
+  .반품 {
+    i {
+      margin: 1em;
+    }
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 4.2em;
+    background-color: #fff;
+    outline: 0;
+    border: 0;
+    margin: 2em 0;
+  }
+}
