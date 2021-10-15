@@ -13,7 +13,7 @@ class Basket extends React.Component {
   }
 
   componentDidMount() {
-    fetch('http://10.58.4.132:8000/carts', {
+    fetch('http://10.58.3.102:8000/carts', {
       method: 'GET',
       headers: {
         Authorization:
