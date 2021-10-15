@@ -19,7 +19,11 @@ class Category extends Component {
             {main_category.map(
               subCategory =>
                 dropDown && (
-                  <SubCategory key={subCategory.id} subCategory={subCategory} />
+                  <SubCategory
+                    key={subCategory.id}
+                    subCategory={subCategory}
+                    gender={name === '남성' ? 2 : 1}
+                  />
                 )
             )}
           </ul>

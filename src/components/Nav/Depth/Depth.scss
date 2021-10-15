@@ -38,8 +38,22 @@
     .threeDepth {
       margin-top: 0.8em;
 
-      li {
+      .depthList {
         margin-top: 0.8em;
+        margin-bottom: 1em;
+
+        .depthLink {
+          color: #222;
+          text-decoration: none;
+        }
+      }
+
+      .depthList:last-child {
+        margin-bottom: 0;
+      }
+
+      .depthList:hover {
+        cursor: pointer;
       }
     }
   }
