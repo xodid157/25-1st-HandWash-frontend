@@ -53,11 +53,11 @@ class LoginModal extends React.Component {
     }
   };
 
-  changeList = e => {
-    this.setState({
-      isInput: !this.state.isInput,
-    });
-  };
+  // changeList = e => {
+  //   this.setState({
+  //     isInput: !this.state.isInput,
+  //   });
+  // };
 
   // inputComplete = () => {
   //   const { isInput } = this.state;

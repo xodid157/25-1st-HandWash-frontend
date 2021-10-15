@@ -47,7 +47,7 @@ class Signup extends React.Component {
       zipCode,
       phoneNumber,
     } = this.state;
-    fetch('http://10.58.7.112:8000/users/signup', {
+    fetch('http://10.58.2.128:8000/users/signup', {
       method: 'POST',
       body: JSON.stringify({
         email: email,
