@@ -1,37 +1,60 @@
 @import '../../../styles/variables.scss';
 
 .menuContents {
+  max-width: 100%;
+  margin: 0 auto;
+
   .menu {
+    max-width: 100%;
+    margin: 0 auto;
     @include flexCenter;
     position: relative;
     margin-top: 1em;
+    z-index: 10;
 
     .depthMenu,
     .mockDataDepth {
       margin-left: 1em;
     }
-  }
 
-  .twoDepth {
-    @include flexCenter;
-    position: absolute;
-    top: 44.8px;
-
-    margin-top: 1em;
-    margin-bottom: 0.8em;
-    background-color: red;
-
-    li {
-      margin-right: 2em;
+    .depthMenu:first-child {
+      margin-left: 0;
     }
   }
 
-  .menuDepth {
-    padding-top: 2.4em;
+  .twoDepth {
+    display: flex;
+    justify-content: space-evenly;
+    align-content: center;
+    position: absolute;
+    left: 0;
+    right: 0;
+    padding-top: 2em;
+    padding-bottom: 1em;
+    font-size: 0.85em;
+    border-bottom: 2px solid #222;
+    background: #faf8f9;
 
     .threeDepth {
-      display: flex;
-      flex-direction: row;
+      margin-top: 0.8em;
+
+      .depthList {
+        margin-top: 0.8em;
+        margin-bottom: 1em;
+
+        .depthLink {
+          color: #222;
+          text-decoration: none;
+        }
+      }
+
+      .depthList:last-child {
+        margin-bottom: 0;
+      }
+
+      .depthList:hover {
+        cursor: pointer;
+      }
     }
   }
 }

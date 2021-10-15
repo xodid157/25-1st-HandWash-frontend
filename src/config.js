@@ -4,7 +4,8 @@ const API = {
   products: `${IP}/products`,
   signin: `${IP}/users/signin`,
   signup: `${IP}/users/signup`,
-  main: `${IP}/users/signup`,
+  CategoryView: `${IP}/products/categories`,
+  cart: `${IP}/carts`,
 };
 
 export default API;

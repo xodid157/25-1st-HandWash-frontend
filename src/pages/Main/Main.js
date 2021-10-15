@@ -77,6 +77,7 @@ class Main extends React.Component {
                       key={idx}
                       category={trend.category}
                       categoryTitle={trend.categoryTitle}
+                      img={trend.img}
                     />
                   );
                 })}
@@ -102,6 +103,7 @@ class Main extends React.Component {
                     campaignTitle={campaign.campaignTitle}
                     campaignContents={campaign.campaignContents}
                     linkTitle={campaign.linkTitle}
+                    campaignImg={campaign.campaignImg}
                   />
                 );
               })}
@@ -110,11 +112,11 @@ class Main extends React.Component {
             <section>
               <div className="banners">
                 <h3>
-                  친구 <b>1</b>명 <b>= 50</b> 포인트 <br /> 뉴스레터
+                  깐부 <b>1</b>명 <b>= 50</b> 포인트 <br /> 뉴스레터
                   <b>&#x0026;APP</b> 혜택까지&#x2665;
                 </h3>
                 <p>
-                  멤버십 친구 초대 시 50 포인트 증정&#x0026;최신 소식을 가장
+                  멤버십 깐부 초대 시 50 포인트 증정&#x0026;최신 소식을 가장
                   먼저 만나보세요!
                 </p>
                 <Link to="/">로그인</Link>
@@ -136,6 +138,7 @@ class Main extends React.Component {
                   key={idx}
                   heading={magazine.heading}
                   cardLink={magazine.cardLink}
+                  magazineImg={magazine.magazineImg}
                 />
               );
             })}

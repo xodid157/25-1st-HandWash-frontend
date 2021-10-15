@@ -1,7 +1,7 @@
 import React from 'react';
 import FavoritesList from './FavoritesList/FavoritesList';
 import './Favorites.scss';
-
+import API from '../../config';
 class Favorites extends React.Component {
   constructor(props) {
     super(props);
@@ -15,7 +15,7 @@ class Favorites extends React.Component {
 
   componentDidMount() {
     // fetch('./data/Favorites/favoritesData.json', {
-    fetch('http://10.58.2.238:8000/likes/like', {
+    fetch(`${API.like}`, {
       method: 'GET',
       headers: {
         Authorization: localStorage.getItem('token'),
@@ -31,7 +31,7 @@ class Favorites extends React.Component {
 
   goCart = () => {
     const { product_id, size } = this.state;
-    fetch('http://10.58.3.102:8000/carts', {
+    fetch(API.cart, {
       method: 'POST',
       headers: {
         Authorization: localStorage.getItem('token'),
@@ -45,7 +45,7 @@ class Favorites extends React.Component {
 
   deleteFavoites = () => {
     const { product_id } = this.state;
-    fetch('http://10.58.2.238:8000/likes/like', {
+    fetch(API.like, {
       method: 'POST',
       headers: {
         Authorization: localStorage.getItem('token'),
