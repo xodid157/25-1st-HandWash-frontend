@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './StyleContent.scss';
+import './RecommendationsContent.scss';
 
-class StyleContent extends React.Component {
+class RecommendationsContent extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -20,7 +20,7 @@ class StyleContent extends React.Component {
     const { isHeart } = this.state;
     const { url, name, price, is_new, id } = this.props;
     return (
-      <li className="styleContent">
+      <li className="recommendationsContent">
         <div className="box">
           <Link to={`/product/${id}`}>
             <img alt="styleImg" src={url} />
@@ -41,4 +41,4 @@ class StyleContent extends React.Component {
   }
 }
 
-export default StyleContent;
+export default RecommendationsContent;

@@ -1,9 +1,10 @@
 import React from 'react';
-import Login from '../Login/Login';
+import Login from './Login/Login';
 import ShoppingBag from './ShoppingBag/ShoppingBag';
 import Depth from './Depth/Depth';
 import { SERVICES_LIST } from './data';
 import './Nav.scss';
+import { Link } from 'react-router-dom';
 
 class Nav extends React.Component {
   constructor(props) {
@@ -14,6 +15,16 @@ class Nav extends React.Component {
       isUserMenuShoppingBag: false,
       isDepthMenu: false,
     };
+  }
+
+  componentDidMount() {
+    fetch('data/magazineData.json')
+      .then(magazine => magazine.json())
+      .then(data =>
+        this.setState({
+          magazineList: data,
+        })
+      );
   }
 
   userMenuHoverChange = () => {
@@ -64,9 +75,11 @@ class Nav extends React.Component {
           </ul>
         </div>
 
-        <h1 className="logo">
-          H <span className="small">&#x0026;</span> W
-        </h1>
+        <Link to="/main" className="logoLink">
+          <h1 className="logo">
+            H <span className="small">&#x0026;</span> W
+          </h1>
+        </Link>
 
         <div>
           <Depth />

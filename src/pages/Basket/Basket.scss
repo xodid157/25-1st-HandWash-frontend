@@ -1,0 +1,122 @@
+.cart {
+  width: 100%;
+
+  .basketTitle {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    font-size: 2.5rem;
+    font-weight: 400;
+  }
+  .basketContainer {
+    display: flex;
+    // justify-content: center;
+
+    width: 100%;
+    padding: 3em 15em;
+    //여기서 메인이랑 사이드 두 덩이로
+
+    .shoppingBasket {
+      display: flex;
+      width: 100%;
+      // border: 1px solid blue;
+
+      .basketList {
+        width: 100%;
+        // border: 1px solid red;
+
+        .addItem {
+          position: relative;
+          display: flex;
+          margin-bottom: 1.5em;
+
+          .trash {
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            right: 0;
+            width: 60px;
+            height: 30px;
+            border: none;
+            background-color: transparent;
+
+            .far fa-trash-alt {
+              size: 15px;
+            }
+          }
+
+          .itemImg {
+            margin-right: 1em;
+            height: 10em;
+            width: 10em;
+            object-fit: cover;
+          }
+          .itemInfo {
+            // flex-direction: column;
+            .itemTag {
+              flex-direction: column;
+              font-size: 0.81em;
+              padding: 1em 0;
+              font-weight: 300;
+
+              .price {
+                // font-size: 0.81em;
+                font-weight: 400;
+                font-size: 1em;
+                margin-top: 0.6em;
+              }
+            }
+
+            .itemInfoList {
+              display: flex;
+              flex-wrap: wrap;
+              margin: 0.8em 0;
+              margin-right: 4em;
+              font-size: 0.75em;
+
+              li {
+                flex: 1 1 50%;
+                margin-bottom: 0.3em;
+                font-weight: 300;
+
+                span {
+                  flex: 1 1 20%;
+                }
+              }
+            }
+            .addBox {
+              display: flex;
+              align-items: center;
+
+              .addHarth {
+                margin-right: 0.5em;
+                width: 55px;
+                height: 45px;
+                border: 1px solid black;
+                background-color: #fff;
+              }
+              .addHarth:hover {
+                color: red;
+              }
+
+              .count {
+                margin-right: 0.5em;
+                width: 70px;
+                height: 45px;
+                font-weight: 300;
+                font-size: 0.5em;
+                border: 1px solid #d0d0d0;
+                background-color: #fff;
+              }
+            }
+          }
+        }
+      }
+    }
+    .cartSide {
+      width: 55%;
+      // border: 1px solid red;
+    }
+  }
+}

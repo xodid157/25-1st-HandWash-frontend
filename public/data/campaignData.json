@@ -3,12 +3,14 @@
     "id": 1,
     "campaignTitle": "가을 머스트 - 해브",
     "campaignContents": "멋스러운 니트, 재킷, 가디건 등 시즌 인기 아이템을 지금 만나보세요.",
-    "linkTitle": "쇼핑하기"
+    "linkTitle": "쇼핑하기",
+    "campaignImg": "/images/main/campaign_img1.jpg"
   },
   {
     "id": 2,
     "campaignTitle": "HandWash",
     "campaignContents": "Kim Minho / Seo Donghyeok / Shin hyeri / Lee Dabeen / Jeon Taeyang / Cho Yunhui",
-    "linkTitle": "지금 쇼핑하기"
+    "linkTitle": "지금 쇼핑하기",
+    "campaignImg": "/images/main/campaign_img2.jpg"
   }
 ]

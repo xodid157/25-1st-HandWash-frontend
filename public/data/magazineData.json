@@ -2,16 +2,19 @@
   {
     "id": 1,
     "heading": "공개: Edition by Jetom",
-    "cardLink": "Read The Story →"
+    "cardLink": "Read The Story →",
+    "magazineImg": "/images/main/magazine_img1.jpg"
   },
   {
     "id": 2,
     "heading": "공개: Edition by Jetom",
-    "cardLink": "Read The Story →"
+    "cardLink": "Read The Story →",
+    "magazineImg": "/images/main/magazine_img2.jpg"
   },
   {
     "id": 3,
     "heading": "공개: Edition by Jetom",
-    "cardLink": "Read The Story →"
+    "cardLink": "Read The Story →",
+    "magazineImg": "/images/main/magazine_img3.jpg"
   }
 ]

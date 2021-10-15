@@ -1,0 +1,30 @@
+[
+  {
+    "id": 15,
+    "url": "https://cdn.pixabay.com/photo/2015/09/02/13/24/man-919045_1280.jpg",
+    "name": "빈티지 가죽 자켓",
+    "price": "84,000",
+    "is_new": false
+  },
+  {
+    "id": 27,
+    "url": "https://cdn.pixabay.com/photo/2016/11/29/07/35/beach-1868132_1280.jpg",
+    "name": "빈티지 밀짚 모자",
+    "price": "36,900",
+    "is_new": true
+  },
+  {
+    "id": 47,
+    "url": "https://cdn.pixabay.com/photo/2016/11/22/10/51/girl-1848955_1280.jpg",
+    "name": "실크 오프숄더",
+    "price": "59,900",
+    "is_new": false
+  },
+  {
+    "id": 39,
+    "url": "https://cdn.pixabay.com/photo/2014/09/12/12/04/eyeglasses-442616_1280.jpg",
+    "name": "젠틀 하이선",
+    "price": "55,900",
+    "is_new": true
+  }
+]

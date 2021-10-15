@@ -4,7 +4,7 @@ import './FavoritesModal.scss';
 class FavoritesModal extends React.Component {
   render() {
     const { handleSizeModal, sizes, handleCarts, id } = this.props;
-    console.log(sizes);
+
     return (
       <section className="favoritesModal">
         <div className="sizesModal">
