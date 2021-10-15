@@ -17,7 +17,12 @@ class SubCategory extends Component {
             return (
               <li className="depthList">
                 <Link
-                  to={`/product${threeDepth.id}?sort=ascPrice&gender=${gender}`}
+                  to={{
+                    pathname: '/itemlist',
+                    state: {
+                      filterlist: `sub=${threeDepth.id}&sort=ascPrice&gender=${gender}`,
+                    },
+                  }}
                   key={threeDepth.id}
                   className="depthLink"
                 >

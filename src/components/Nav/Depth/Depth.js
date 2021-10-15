@@ -14,8 +14,8 @@ class Depth extends Component {
   }
 
   componentDidMount() {
-    // fetch('http://10.58.4.132:8000/products/categories')
-    fetch('data/navListData.json')
+    fetch('http://10.58.3.102:8000/products/categories')
+      // fetch('data/navListData.json')
       .then(res => res.json())
       .then(category => {
         this.setState({
