@@ -3,11 +3,13 @@ import './Basket.scss';
 
 class Basketitem extends React.Component {
   render() {
-    console.log(this.props.price);
     const { key, name, price, img, size, color, total } = this.props;
     return (
       <li className="addItem">
-        <button className="trash">
+        <button
+          className="trash"
+          onClick={() => this.props.handleId(this.props.cart_id)}
+        >
           <i className="far fa-trash-alt"></i>
         </button>
         <img className="itemImg" alt="aa" src={img} />
@@ -35,7 +37,7 @@ class Basketitem extends React.Component {
             </li>
           </ul>
           <div className="addBox">
-            <button className="addHarth" onClick={this.props.goCart}>
+            <button className="addHarth">
               <i className="far fa-heart"></i>
             </button>
             <select className="count" name="count">

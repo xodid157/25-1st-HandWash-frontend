@@ -9,6 +9,7 @@ class Basket extends React.Component {
     super(props);
     this.state = {
       itemlist: [],
+      id: '',
     };
   }
 
@@ -30,7 +31,8 @@ class Basket extends React.Component {
   }
 
   goCart = () => {
-    fetch('http://10.58.4.132:8000/carts/carts?cart_id=<int:cart_id>', {
+    const { id } = this.state;
+    fetch(`http://10.58.4.132:8000/carts/${id}`, {
       method: 'DELETE',
       headers: {
         Authorization:
@@ -50,11 +52,17 @@ class Basket extends React.Component {
     } else {
       alert('결제 끄읕 이제 그만 이러다 다죽어');
       this.setState({ itemlist: [] });
+      this.props.history.push('/main');
     }
   };
 
+  handleId = content => {
+    this.setState({
+      id: content,
+    });
+  };
+
   render() {
-    console.log(this.state.itemlist);
     const { itemlist } = this.state;
     return (
       <div className="cart">
@@ -66,7 +74,7 @@ class Basket extends React.Component {
               {itemlist.product_list?.map(item => {
                 return (
                   <Basketitem
-                    handleInput={this.props.goCart}
+                    // handleInput={this.goCart}
                     img={item.image}
                     key={item.product_id}
                     name={item.name}
@@ -74,6 +82,8 @@ class Basket extends React.Component {
                     size={item.size}
                     color={item.color}
                     total={item.products_price}
+                    cart_id={item.cart_id}
+                    handleId={this.handleId}
                   />
                 );
               })}

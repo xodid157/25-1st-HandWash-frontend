@@ -6,7 +6,6 @@ import './Payment.scss';
 class Payment extends React.Component {
   render() {
     const { total, deliveryFee } = this.props;
-    console.log(total);
     return (
       <div className="sidePayment">
         <article className="payment">
