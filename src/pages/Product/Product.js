@@ -22,8 +22,8 @@ class Product extends React.Component {
   }
 
   componentDidMount() {
-    // fetch('./data/Product/product.json', {
-    fetch(`http://10.58.4.132:8000/products/${this.props.match.params.id}`, {
+    fetch('./data/Product/product.json', {
+      // fetch(`http://10.58.3.102:8000/products/${this.props.match.params.id}`, {
       method: 'GET',
     })
       .then(res => res.json())
@@ -31,7 +31,8 @@ class Product extends React.Component {
         this.setState({
           product: result,
         });
-      });
+      })
+      .then(x => console.log(x));
   }
   openSize = () => {
     this.setState({
@@ -64,6 +65,7 @@ class Product extends React.Component {
   };
 
   render() {
+    console.log(this.state.product);
     const { parcelModal, product, detailsModal, isSizeModal, isHeart } =
       this.state;
     return (

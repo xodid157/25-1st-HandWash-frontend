@@ -75,8 +75,12 @@ class ItemList extends React.Component {
       )
       .join('')
       .slice(0, -1);
-
-    if (prevState.selectFilter !== this.state.selectFilter) {
+    //if조건에 필터링만 되어있어서 페이징기능이 안먹혔던거 조건추가함
+    //작동되는지는 서버연결안되서 아직 확인불가 ㅠㅠ
+    if (
+      prevState.selectFilter !== this.state.selectFilter ||
+      prevState.limit !== this.state.limit
+    ) {
       fetch(`${API.products}?${filteredData}&${page}`)
         .then(res => res.json())
         .then(data => {
@@ -87,17 +91,13 @@ class ItemList extends React.Component {
 
   showMoreItem = () => {
     const { limit } = this.state;
-
     this.setState({ limit: limit + 8 });
-    const page = `limit=${limit + 8}&offset=0`;
-
-    // this.props.history.push(`${page}`);
-
-    fetch(`${API.products}?${page}`)
-      .then(res => res.json())
-      .then(data => {
-        this.setState({ itemlist: data.products });
-      });
+    // const page = `limit=${limit + 8}&offset=0`;
+    // fetch(`${API.products}?${page}`)
+    //   .then(res => res.json())
+    //   .then(data => {
+    //     this.setState({ itemlist: data.products });
+    //   });
   };
 
   onClickFilter = e => {
