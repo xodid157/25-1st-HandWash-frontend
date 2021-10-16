@@ -8,8 +8,15 @@ class FavoritesList extends React.Component {
     super(props);
     this.state = {
       isSizeModal: false,
+      sizeText: '',
     };
   }
+
+  handleText = content => {
+    this.setState({
+      sizeText: content,
+    });
+  };
 
   handleSizeModal = () => {
     const { isSizeModal } = this.state;
@@ -65,11 +72,13 @@ class FavoritesList extends React.Component {
                   sizes={sizes}
                   handleCarts={handleCarts}
                   id={id}
+                  handleText={this.handleText}
                 />
               )}
-
               <span className="sizeText">
-                {this.props.size === '' ? '사이즈 선택' : this.props.size}
+                {this.state.sizeText === ''
+                  ? '사이즈 선택'
+                  : this.state.sizeText}
               </span>
               <i className="fas fa-angle-down"></i>
             </button>

@@ -26,7 +26,7 @@ class Product extends React.Component {
 
   componentDidMount() {
     // fetch('./data/Product/product.json', {
-    fetch(`${API.product}/${this.props.match.params.id}`, {
+    fetch(`${API.product}${this.props.match.params.id}`, {
       method: 'GET',
     })
       .then(res => res.json())
