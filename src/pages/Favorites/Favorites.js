@@ -1,7 +1,7 @@
 import React from 'react';
 import FavoritesList from './FavoritesList/FavoritesList';
 import './Favorites.scss';
-
+import API from '../../config';
 class Favorites extends React.Component {
   constructor(props) {
     super(props);
@@ -15,11 +15,10 @@ class Favorites extends React.Component {
 
   componentDidMount() {
     // fetch('./data/Favorites/favoritesData.json', {
-    fetch('http://10.58.7.112:8000/likes/like', {
+    fetch(`${API.like}`, {
       method: 'GET',
       headers: {
-        Authorization:
-          'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NX0._pI6VNaa7StYMSyZ3AeMh3c5SQ1b6VH-5O73rTmz3l4',
+        Authorization: localStorage.getItem('token'),
       },
     })
       .then(res => res.json())
@@ -32,11 +31,10 @@ class Favorites extends React.Component {
 
   goCart = () => {
     const { product_id, size } = this.state;
-    fetch('http://10.58.4.132:8000/carts', {
+    fetch(API.cart, {
       method: 'POST',
       headers: {
-        Authorization:
-          'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.x31UKAwNRZ5yxDR4VBMMf4M-_r60wtVVIMBwKd7xGRM',
+        Authorization: localStorage.getItem('token'),
       },
       body: JSON.stringify({
         product_id: product_id,
@@ -47,11 +45,10 @@ class Favorites extends React.Component {
 
   deleteFavoites = () => {
     const { product_id } = this.state;
-    fetch('http://10.58.7.112:8000/likes/like', {
+    fetch(API.like, {
       method: 'POST',
       headers: {
-        Authorization:
-          'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NX0._pI6VNaa7StYMSyZ3AeMh3c5SQ1b6VH-5O73rTmz3l4',
+        Authorization: localStorage.getItem('token'),
       },
       body: JSON.stringify({
         product_id: product_id,
@@ -67,7 +64,7 @@ class Favorites extends React.Component {
   };
 
   render() {
-    const { isSizeModal, favoritesList } = this.state;
+    const { isSizeModal, favoritesList, size } = this.state;
     return (
       <section className="favorites">
         <div className="favoritContentBox">
@@ -95,6 +92,7 @@ class Favorites extends React.Component {
                   goCart={this.goCart}
                   handleCarts={this.handleCarts}
                   deleteFavoites={this.deleteFavoites}
+                  size={size}
                 />
               ))}
             </ul>

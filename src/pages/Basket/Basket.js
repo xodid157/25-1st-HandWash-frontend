@@ -2,6 +2,7 @@ import React from 'react';
 import Basketitem from './Basketitem';
 import Payment from './Payment/ Payment';
 import { withRouter } from 'react-router';
+import API from '../../config';
 import './Basket.scss';
 
 class Basket extends React.Component {
@@ -14,11 +15,10 @@ class Basket extends React.Component {
   }
 
   componentDidMount() {
-    fetch('http://10.58.3.102:8000/carts', {
+    fetch(API.cart, {
       method: 'GET',
       headers: {
-        Authorization:
-          'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.x31UKAwNRZ5yxDR4VBMMf4M-_r60wtVVIMBwKd7xGRM',
+        Authorization: localStorage.getItem('token'),
       },
     })
       .then(res => res.json())
@@ -32,12 +32,8 @@ class Basket extends React.Component {
 
   goCart = () => {
     const { id } = this.state;
-    fetch(`http://10.58.4.132:8000/carts/${id}`, {
+    fetch(`${API.cart}/${id}`, {
       method: 'DELETE',
-      headers: {
-        Authorization:
-          'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.x31UKAwNRZ5yxDR4VBMMf4M-_r60wtVVIMBwKd7xGRM',
-      },
       // body: JSON.stringify({
       //   product_id: 35,
       //   size: 'M',
@@ -52,7 +48,7 @@ class Basket extends React.Component {
     } else {
       alert('결제 끄읕 이제 그만 이러다 다죽어');
       this.setState({ itemlist: [] });
-      this.props.history.push('/main');
+      this.props.history.push('/');
     }
   };
 

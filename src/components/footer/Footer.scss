@@ -13,6 +13,7 @@
 .footer {
   @include flexCenter;
   flex-direction: column;
+  margin-top: 50px;
   padding: 3.4em 0;
   text-align: center;
   line-height: 1.1;

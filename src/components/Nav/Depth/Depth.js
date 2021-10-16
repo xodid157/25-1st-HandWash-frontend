@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { MAIN_MENU_LIST } from '../data';
 import Category from './Category';
+import API from '../../../config';
 import './Depth.scss';
 
 class Depth extends Component {
@@ -14,7 +15,7 @@ class Depth extends Component {
   }
 
   componentDidMount() {
-    fetch('http://10.58.3.102:8000/products/categories')
+    fetch(`${API.CategoryView}`)
       // fetch('data/navListData.json')
       .then(res => res.json())
       .then(category => {

@@ -77,7 +77,6 @@ class ItemList extends React.Component {
       )
       .join('')
       .slice(0, -1);
-
     if (prevState.selectFilter !== this.state.selectFilter) {
       fetch(`${API.products}?${filteredData}&${page}`)
         .then(res => res.json())
@@ -89,11 +88,8 @@ class ItemList extends React.Component {
 
   showMoreItem = () => {
     const { limit } = this.state;
-
     this.setState({ limit: limit + 8 });
     const page = `limit=${limit + 8}&offset=0`;
-
-    // this.props.history.push(`${page}`);
 
     fetch(`${API.products}?${page}`)
       .then(res => res.json())
@@ -105,7 +101,6 @@ class ItemList extends React.Component {
   onClickFilter = e => {
     const filterText = e.currentTarget.innerText;
     const { selectFilter } = this.state;
-
     this.setState({
       selectFilter: [...selectFilter, filterText],
     });
@@ -113,7 +108,6 @@ class ItemList extends React.Component {
 
   deleteFilter = selected => {
     const { selectFilter } = this.state;
-
     this.setState({
       selectFilter: selectFilter.filter(select => {
         return select !== selected;

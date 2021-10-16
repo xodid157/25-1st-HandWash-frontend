@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Colorchip from './ColorChip/Colorchip';
-// import API from '../../config';
+import API from '../../config';
 import './Item.scss';
 
 // const TOKEN = localStorage.getItem('token');
@@ -21,11 +21,10 @@ class Item extends React.Component {
       likeBtn: !likeBtn,
     });
 
-    fetch('http://10.58.7.112:8000/likes/like', {
+    fetch(`${API.like}`, {
       method: 'POST',
       headers: {
-        Authorization:
-          'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NX0._pI6VNaa7StYMSyZ3AeMh3c5SQ1b6VH-5O73rTmz3l4',
+        Authorization: localStorage.getItem('token'),
       },
       body: JSON.stringify({ product_id: id }),
     })

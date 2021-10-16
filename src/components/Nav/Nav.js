@@ -61,21 +61,26 @@ class Nav extends React.Component {
               {isUserMenuLogin && <Login />}
             </li>
             <li>
-              <i className="fas fa-heart" />
-              즐겨찾기
+              <Link to="/favorites" className="Link">
+                <i className="fas fa-heart" />
+                즐겨찾기
+              </Link>
             </li>
+
             <li
               onMouseEnter={this.userMenuHoverShopping}
               onMouseLeave={this.userMenuHoverShopping}
             >
-              <i className="fas fa-shopping-bag" />
-              쇼핑백
+              <Link to="/basket" className="Link">
+                <i className="fas fa-shopping-bag" />
+                쇼핑백
+              </Link>
               {isUserMenuShoppingBag && <ShoppingBag />}
             </li>
           </ul>
         </div>
 
-        <Link to="/main" className="logoLink">
+        <Link to="/" className="logoLink">
           <h1 className="logo">
             H <span className="small">&#x0026;</span> W
           </h1>
