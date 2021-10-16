@@ -38,6 +38,12 @@
           font-size: 1.5em;
         }
       }
+      .Link {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: #222;
+      }
     }
 
     .userInfo {
@@ -55,8 +61,8 @@
         top: 25px;
         right: 3%;
         box-shadow: 0 2px 4px 0 #0000001f;
-        z-index: 10;
         background: #faf9f8;
+        z-index: 1000;
 
         li {
           width: 80%;
@@ -90,15 +96,18 @@
     }
   }
 
-  .logo {
-    text-align: center;
-    font-size: 3.2em;
-    font-family: 'South African';
-    letter-spacing: -2.5px;
-    color: #e50510;
+  .logoLink {
+    text-decoration: none;
+    .logo {
+      text-align: center;
+      font-size: 3.2em;
+      font-family: 'South African';
+      letter-spacing: -2.5px;
+      color: #e50510;
 
-    .small {
-      font-size: 0.6em;
+      .small {
+        font-size: 0.6em;
+      }
     }
   }
 

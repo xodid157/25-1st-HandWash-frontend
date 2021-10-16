@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import LoginInput from './LoginInput';
+import API from '../../config';
 import './LoginModal.scss';
 
 class LoginModal extends React.Component {
@@ -21,7 +22,7 @@ class LoginModal extends React.Component {
 
   goToMain = () => {
     const { email, password } = this.state;
-    fetch('http://10.58.2.128:8000/users/signin', {
+    fetch(API.signin, {
       method: 'POST',
       body: JSON.stringify({
         email: email,
@@ -30,10 +31,11 @@ class LoginModal extends React.Component {
     })
       .then(res => res.json())
       .then(res => {
-        if (res) {
-          localStorage.setItem('token', res.token);
-          this.props.history.push('/main');
-        } else if (!res.token) {
+        console.log(res);
+        if (res.ACCESS_TOKEN) {
+          localStorage.setItem('token', res.ACCESS_TOKEN);
+          this.props.history.push('/');
+        } else if (!res.ACCESS_TOKEN) {
           alert('아이디, 비밀번호를 확인해주세요');
         }
       });
@@ -47,12 +49,13 @@ class LoginModal extends React.Component {
   };
 
   render() {
+    console.log(this.state.email, this.state.password);
     // const { email, password } = this.state;
     // const isValid = email.includes('@') && password.length >= 8;
     return (
       <div className="loginModal">
         <div className="loginContainer">
-          <Link to="/main">
+          <Link to="/" className="close">
             <button className="closeButton">
               <i className="fal fa-times"></i>
             </button>

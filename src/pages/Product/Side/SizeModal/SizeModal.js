@@ -2,7 +2,7 @@ import React from 'react';
 import './SizeModal.scss';
 class SizeModal extends React.Component {
   render() {
-    const { product, closeModal } = this.props;
+    const { product, closeModal, id, handleCarts } = this.props;
     return (
       <section className="sizeBox">
         <div className="sizeModal">
@@ -18,10 +18,10 @@ class SizeModal extends React.Component {
             <span>사이즈 선택</span>
             <i className="fas fa-angle-up"></i>
           </div>
-          <ul className="sizeContent">
+          <ul className="sizeContent" onClick={closeModal}>
             {product.size?.map(content => (
-              <li key={content}>
-                <button>
+              <li key={content} onClick={closeModal}>
+                <button onClick={() => handleCarts(content, id)}>
                   <span>{content}</span>
                 </button>
               </li>

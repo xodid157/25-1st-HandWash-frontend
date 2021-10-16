@@ -10,51 +10,6 @@
     display: flex;
     justify-content: center;
     box-sizing: content-box;
-    // width: 112.5em;
     overflow: hidden;
-
-    .styleContent {
-      display: flex;
-      flex-direction: column;
-      margin: 0em 0.7em;
-      width: 21%;
-
-      .box {
-        position: relative;
-      }
-
-      img {
-        width: 100%;
-      }
-
-      i {
-        position: absolute;
-        right: 4%;
-        bottom: 4%;
-        font-size: 1.5em;
-        color: white;
-
-        &.red {
-          color: red;
-        }
-
-        &:hover {
-          color: red;
-        }
-      }
-
-      span,
-      .link {
-        padding-top: 0.5em;
-        color: black;
-        font-size: 0.813em;
-        text-decoration: none;
-      }
-
-      .blank,
-      .newItem {
-        font-size: 0.688em;
-      }
-    }
   }
 }

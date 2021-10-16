@@ -1,29 +1,44 @@
-// import React from 'react';
-// import { Link } from 'react-router-dom';
-// // import './Stylecontent.scss';
+import React from 'react';
+import { Link } from 'react-router-dom';
+import './StyleContent.scss';
 
-// class StyleContent extends React.Component {
-//   render() {
-//     const { colorHeart, isHeart } = this.props;
-//     return (
-//       <>
-//         <li className="styleContent" key={this.props.id}>
-//           <div className="box">
-//             <img alt="styleImg" src={this.props.url} />
-//             <i
-//               className={!isHeart ? 'fas fa-heart' : 'fas fa-heart red '}
-//               onClick={colorHeart}
-//             />
-//           </div>
-//           <span className="blank">blank staples</span>
-//           <Link to="#" className="link">
-//             {this.props.name}
-//           </Link>
-//           <span>₩ {this.props.price}</span>
-//         </li>
-//       </>
-//     );
-//   }
-// }
+class StyleContent extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      isHeart: false,
+    };
+  }
 
-// export default StyleContent;
+  colorHeart = () => {
+    this.setState({
+      isHeart: !this.state.isHeart,
+    });
+  };
+
+  render() {
+    const { isHeart } = this.state;
+    const { url, name, price, is_new, id } = this.props;
+    return (
+      <li className="styleContent">
+        <div className="box">
+          <Link to={`/product/${id}`}>
+            <img alt="styleImg" src={url} />
+          </Link>
+          <i
+            onClick={this.colorHeart}
+            className={`fas fa-heart ${isHeart ? 'red' : ''}`}
+          />
+        </div>
+        <span className="blank">blank staples</span>
+        <Link to={`/product/${id}`} className="link">
+          {name}
+        </Link>
+        <span>₩ {price}</span>
+        <span className="new">{is_new === true ? '최신 상품' : ''}</span>
+      </li>
+    );
+  }
+}
+
+export default StyleContent;

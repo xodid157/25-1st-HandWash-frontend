@@ -4,6 +4,7 @@ import SignupInput from './Component/SignupInput';
 import BirthInput from './Component/BirthInput';
 import AddInformation from '../Signup/Component/AddInformation';
 import Agreementbox from './Component/Agreementbox';
+import API from '../../config';
 import './Signup.scss';
 import '../../styles/common.scss';
 
@@ -47,7 +48,8 @@ class Signup extends React.Component {
       zipCode,
       phoneNumber,
     } = this.state;
-    fetch('http://10.58.2.128:8000/users/signup', {
+
+    fetch(API.signup, {
       method: 'POST',
       body: JSON.stringify({
         email: email,
@@ -62,10 +64,11 @@ class Signup extends React.Component {
     })
       .then(res => res.json())
       .then(res => {
-        console.log(res.token);
-        this.props.history.push('/main');
+        console.log(res);
+        this.props.history.push('/');
       });
   };
+
   checkcondition = () => {
     const { ischeck1, ischeck2, ischeck3 } = this.state;
     if ((ischeck1, ischeck2, ischeck3 === 'on')) {
@@ -74,16 +77,18 @@ class Signup extends React.Component {
       alert('*표시된 필드는 필수 항목입니다.');
     }
   };
+
   changeList = e => {
     this.setState({
       isInfo: !this.state.isInfo,
     });
   };
+
   render() {
     return (
       <div className="signUp">
         <div className="signUpContainer" onChange={this.handleInput}>
-          <Link to="/main">
+          <Link to="/">
             <button className="outButton">
               <i className="fal fa-times"></i>
             </button>
