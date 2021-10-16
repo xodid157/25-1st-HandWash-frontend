@@ -99,7 +99,8 @@ class ItemList extends React.Component {
     const filterText = e.currentTarget.innerText;
     const { selectFilter } = this.state;
     this.setState({
-      selectFilter: [...selectFilter, filterText],
+      selectFilter: [...new Set(selectFilter), filterText],
+      //초반에 두번찍히는거 왜였지 ㅡ
     });
   };
 
