@@ -9,10 +9,26 @@ class Side extends React.Component {
   };
 
   render() {
-    const { product, openSize, isSizeModal, closeModal, goCart } = this.props;
+    const {
+      product,
+      openSize,
+      isSizeModal,
+      closeModal,
+      goCart,
+      handleCarts,
+      id,
+      size,
+    } = this.props;
     return (
       <article className="side">
-        {isSizeModal && <SizeModal product={product} closeModal={closeModal} />}
+        {isSizeModal && (
+          <SizeModal
+            product={product}
+            closeModal={closeModal}
+            id={id}
+            handleCarts={handleCarts}
+          />
+        )}
         <div className="sideBox">
           <div className="sideNameBox">
             <span className="productName">{product.name}</span>
@@ -37,7 +53,7 @@ class Side extends React.Component {
           </ul>
           <div className="size">
             <button type="button" onClick={openSize}>
-              <span>사이즈 선택</span>
+              <span>{size === '' ? '사이즈 선택' : size}</span>
               <i className="fas fa-angle-down"></i>
             </button>
           </div>

@@ -62,10 +62,10 @@ class Signup extends React.Component {
     })
       .then(res => res.json())
       .then(res => {
-        console.log(res.token);
         this.props.history.push('/main');
       });
   };
+
   checkcondition = () => {
     const { ischeck1, ischeck2, ischeck3 } = this.state;
     if ((ischeck1, ischeck2, ischeck3 === 'on')) {
@@ -74,11 +74,13 @@ class Signup extends React.Component {
       alert('*표시된 필드는 필수 항목입니다.');
     }
   };
+
   changeList = e => {
     this.setState({
       isInfo: !this.state.isInfo,
     });
   };
+
   render() {
     return (
       <div className="signUp">

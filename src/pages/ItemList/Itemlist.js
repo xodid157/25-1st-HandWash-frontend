@@ -56,7 +56,9 @@ class ItemList extends React.Component {
 
   componentDidMount() {
     // fetch('data/itemLists.json')
-    fetch(`${API.products}?`)
+    const filterlist = this.props.location.state?.filterlist;
+
+    fetch(`${API.products}?${filterlist ? filterlist : ''}`)
       .then(res => res.json())
       .then(data => {
         this.setState({ itemlist: data.products });

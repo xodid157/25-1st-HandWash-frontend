@@ -4,11 +4,11 @@ import './Magazine.scss';
 
 class Magazine extends Component {
   render() {
-    const { heading, cardLink } = this.props;
+    const { heading, cardLink, magazineImg } = this.props;
     return (
       <div className="magazineCard">
         <Link to="/">
-          <img src="/images/magazin_card_img.jpeg" alt="magazinImg" />
+          <img src={magazineImg} alt="magazinImg" />
         </Link>
         <div className="magazineCardContents">
           <p className="vignette">INSIDE H&#x0026;W</p>

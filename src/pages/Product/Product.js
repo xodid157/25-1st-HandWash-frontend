@@ -7,6 +7,7 @@ import StyleRecommend from './StyleRecommend/StyleRecommend';
 import Recommendations from './Recommendations/Recommendations';
 import ParcelModal from './ParcelModal/ParcelModal';
 import DetailsModal from './DetailsModal/DetailsModal';
+import API from '../../config';
 import './Product.scss';
 
 class Product extends React.Component {
@@ -24,8 +25,8 @@ class Product extends React.Component {
   }
 
   componentDidMount() {
-    fetch('./data/Product/product.json', {
-      // fetch(`http://10.58.4.132:8000/products/${this.props.match.params.id}`, {
+    // fetch('./data/Product/product.json', {
+    fetch(`${API.product}${this.props.match.params.id}`, {
       method: 'GET',
     })
       .then(res => res.json())
@@ -35,6 +36,28 @@ class Product extends React.Component {
         });
       });
   }
+
+  goCart = () => {
+    const { product_id, size } = this.state;
+    fetch(API.cart, {
+      method: 'POST',
+      headers: {
+        Authorization: localStorage.getItem('token'),
+      },
+      body: JSON.stringify({
+        product_id: product_id,
+        size: size,
+      }),
+    });
+  };
+
+  handleCarts = (content, id) => {
+    this.setState({
+      size: content,
+      product_id: id,
+    });
+  };
+
   openSize = () => {
     const { isSizeModal } = this.state;
     this.setState({
@@ -53,11 +76,13 @@ class Product extends React.Component {
       detailsModal: true,
     });
   };
+
   colorHeart = () => {
     this.setState({
       isHeart: !this.state.isHeart,
     });
   };
+
   closeModal = () => {
     this.setState({
       detailsModal: false,
@@ -66,31 +91,10 @@ class Product extends React.Component {
     });
   };
 
-  goCart = () => {
-    const { product_id, size } = this.state;
-    fetch('http://10.58.4.132:8000/carts', {
-      method: 'POST',
-      headers: {
-        Authorization:
-          'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.x31UKAwNRZ5yxDR4VBMMf4M-_r60wtVVIMBwKd7xGRM',
-      },
-      body: JSON.stringify({
-        product_id: product_id,
-        size: size,
-      }),
-    });
-  };
-
-  handleCarts = (content, id) => {
-    this.setState({
-      size: content,
-      product_id: id,
-    });
-  };
-
   render() {
-    const { parcelModal, product, detailsModal, isSizeModal, isHeart } =
+    const { parcelModal, product, detailsModal, isSizeModal, isHeart, size } =
       this.state;
+    console.log(this.state.product_id, this.state.size);
     return (
       <main className="product">
         <section className="productMain">
@@ -102,6 +106,8 @@ class Product extends React.Component {
             closeModal={this.closeModal}
             goCart={this.goCart}
             handleCarts={this.handleCarts}
+            id={product.id}
+            size={size}
           />
           <div
             className={
