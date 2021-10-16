@@ -4,7 +4,7 @@ import Colorchip from './ColorChip/Colorchip';
 import API from '../../config';
 import './Item.scss';
 
-// const TOKEN = localStorage.getItem('token');
+const TOKEN = localStorage.getItem('token');
 
 class Item extends React.Component {
   constructor(props) {
@@ -24,7 +24,7 @@ class Item extends React.Component {
     fetch(`${API.like}`, {
       method: 'POST',
       headers: {
-        Authorization: localStorage.getItem('token'),
+        Authorization: TOKEN,
       },
       body: JSON.stringify({ product_id: id }),
     })
