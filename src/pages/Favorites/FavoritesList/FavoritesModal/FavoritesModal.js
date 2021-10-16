@@ -3,8 +3,7 @@ import './FavoritesModal.scss';
 
 class FavoritesModal extends React.Component {
   render() {
-    const { handleSizeModal, sizes, handleCarts, id } = this.props;
-
+    const { handleSizeModal, sizes, handleCarts, id, handleText } = this.props;
     return (
       <section className="favoritesModal">
         <div className="sizesModal">
@@ -23,7 +22,7 @@ class FavoritesModal extends React.Component {
           <ul className="sizeContent">
             {sizes.map(content => {
               return (
-                <li key={content}>
+                <li key={content} onClick={() => handleText(content)}>
                   <button onClick={() => handleCarts(content, id)}>
                     <span>{content}</span>
                   </button>

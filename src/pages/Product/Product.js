@@ -7,6 +7,7 @@ import StyleRecommend from './StyleRecommend/StyleRecommend';
 import Recommendations from './Recommendations/Recommendations';
 import ParcelModal from './ParcelModal/ParcelModal';
 import DetailsModal from './DetailsModal/DetailsModal';
+import API from '../../config';
 import './Product.scss';
 
 class Product extends React.Component {
@@ -25,7 +26,7 @@ class Product extends React.Component {
 
   componentDidMount() {
     // fetch('./data/Product/product.json', {
-    fetch(`http://10.58.4.132:8000/products/${this.props.match.params.id}`, {
+    fetch(`${API.product}${this.props.match.params.id}`, {
       method: 'GET',
     })
       .then(res => res.json())
@@ -38,11 +39,10 @@ class Product extends React.Component {
 
   goCart = () => {
     const { product_id, size } = this.state;
-    fetch('http://10.58.4.132:8000/carts', {
+    fetch(API.cart, {
       method: 'POST',
       headers: {
-        Authorization:
-          'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.x31UKAwNRZ5yxDR4VBMMf4M-_r60wtVVIMBwKd7xGRM',
+        Authorization: localStorage.getItem('token'),
       },
       body: JSON.stringify({
         product_id: product_id,
