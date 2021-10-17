@@ -34,7 +34,8 @@ class Product extends React.Component {
         this.setState({
           product: result,
         });
-      });
+      })
+      .then(x => console.log(x));
   }
 
   goCart = () => {

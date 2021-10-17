@@ -6,6 +6,42 @@ import Items from './Items/Items';
 import API from '../../config';
 import './Itemlist.scss';
 
+function changeFilterName(filter) {
+  const filterTable = {
+    낮은가격: 'ascPrice',
+    높은가격: 'descPrice',
+    최신: 'recent',
+    conscious: 'True',
+  };
+  return filterTable[filter] ?? filter;
+}
+
+function findFilterUl(filter) {
+  const filters = [
+    { text: '추천', type: 'sort' },
+    { text: '최신', type: 'sort' },
+    { text: '낮은가격', type: 'sort' },
+    { text: '높은가격', type: 'sort' },
+    { text: 'conscious', type: 'conscious' },
+    { text: 'XS', type: 'size' },
+    { text: 'S', type: 'size' },
+    { text: 'M', type: 'size' },
+    { text: 'L', type: 'size' },
+    { text: '화이트', type: 'color' },
+    { text: '레드', type: 'color' },
+    { text: '블루', type: 'color' },
+    { text: '차콜', type: 'color' },
+    { text: '스카이블루', type: 'color' },
+    { text: '옐로우', type: 'color' },
+    { text: '브라운', type: 'color' },
+    { text: '네이비', type: 'color' },
+    { text: '그린', type: 'color' },
+    { text: '블랙', type: 'color' },
+  ];
+
+  return filters.find(f => f.text === filter).type;
+}
+
 class ItemList extends React.Component {
   constructor(props) {
     super(props);
@@ -17,52 +53,16 @@ class ItemList extends React.Component {
     };
   }
 
-  findFilterUl = filter => {
-    const filters = [
-      { text: '추천', type: 'sort' },
-      { text: '최신', type: 'sort' },
-      { text: '낮은가격', type: 'sort' },
-      { text: '높은가격', type: 'sort' },
-      { text: 'conscious', type: 'conscious' },
-      { text: 'XS', type: 'size' },
-      { text: 'S', type: 'size' },
-      { text: 'M', type: 'size' },
-      { text: 'L', type: 'size' },
-      { text: '화이트', type: 'color' },
-      { text: '레드', type: 'color' },
-      { text: '블루', type: 'color' },
-      { text: '차콜', type: 'color' },
-      { text: '스카이블루', type: 'color' },
-      { text: '옐로우', type: 'color' },
-      { text: '브라운', type: 'color' },
-      { text: '네이비', type: 'color' },
-      { text: '그린', type: 'color' },
-      { text: '블랙', type: 'color' },
-    ];
-
-    return filters.find(f => f.text === filter).type;
-  };
-
-  changeFilterName = filter => {
-    const filterTable = {
-      낮은가격: 'ascPrice',
-      높은가격: 'descPrice',
-      최신: 'recent',
-      conscious: 'True',
-    };
-
-    return filterTable[filter] ?? filter;
-  };
-
   componentDidMount() {
-    // fetch('data/itemLists.json')
     const filterlist = this.props.location.state?.filterlist;
 
-    fetch(`${API.products}?${filterlist ? filterlist : ''}`)
+    fetch('data/itemLists.json')
+      // fetch(`${API.products}?${filterlist ? filterlist : ''}`)
       .then(res => res.json())
       .then(data => {
-        this.setState({ itemlist: data.products });
+        this.setState({ itemlist: data });
       });
+    // products
   }
 
   componentDidUpdate(_, prevState) {
@@ -71,13 +71,17 @@ class ItemList extends React.Component {
     const filteredData = selectFilter
       .map(
         filterName =>
-          `${this.findFilterUl(filterName)}=${this.changeFilterName(
-            filterName
-          )}&`
+          `${findFilterUl(filterName)}=${changeFilterName(filterName)}&`
       )
       .join('')
       .slice(0, -1);
-    if (prevState.selectFilter !== this.state.selectFilter) {
+    console.log(filteredData);
+    //if조건에 필터링만 되어있어서 페이징기능이 안먹혔던거 조건추가함
+    //작동되는지는 서버연결안되서 아직 확인불가 ㅠㅠ
+    if (
+      prevState.selectFilter !== this.state.selectFilter ||
+      prevState.limit !== this.state.limit
+    ) {
       fetch(`${API.products}?${filteredData}&${page}`)
         .then(res => res.json())
         .then(data => {
@@ -89,20 +93,14 @@ class ItemList extends React.Component {
   showMoreItem = () => {
     const { limit } = this.state;
     this.setState({ limit: limit + 8 });
-    const page = `limit=${limit + 8}&offset=0`;
-
-    fetch(`${API.products}?${page}`)
-      .then(res => res.json())
-      .then(data => {
-        this.setState({ itemlist: data.products });
-      });
   };
 
   onClickFilter = e => {
     const filterText = e.currentTarget.innerText;
     const { selectFilter } = this.state;
     this.setState({
-      selectFilter: [...selectFilter, filterText],
+      selectFilter: [...new Set(selectFilter), filterText],
+      //초반에 두번찍히는거 왜였지 ㅡ
     });
   };
 
